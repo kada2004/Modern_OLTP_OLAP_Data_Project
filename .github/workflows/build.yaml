@@ -25,12 +25,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Verify directory structure
-        run: |
-          pwd
-          ls -R
-        working-directory: azure_data_platform/terraform/backend
-        continue-on-error: true  # Continue even if directory is missing to debug
+     - name: 🔍 Show directory structure
+      run: |
+        echo "PWD: $(pwd)"
+        echo "--- List of files and folders ---"
+        find . -type f
+
 
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v3
