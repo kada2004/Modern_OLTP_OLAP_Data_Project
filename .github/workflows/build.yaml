@@ -3,7 +3,7 @@ name: Terraform Build
 on:
   push:
     branches:
-      - main
+      - master
     paths-ignore:
       - 'README.md'
       - '.gitignore'
