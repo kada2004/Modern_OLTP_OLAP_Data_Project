@@ -13,17 +13,24 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
 
     steps:
-      - name: Checkout code
+      - name: Download source from triggering workflow
+        uses: actions/download-artifact@v4
+        with:
+          name: terraform-plan
+          path: backend
+
+      - name: Checkout the commit that triggered the workflow
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.workflow_run.head_branch }}
+          repository: ${{ github.repository }}
+          ref: ${{ github.event.workflow_run.head_commit.id }}
 
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: 1.9.8
 
-      - name: Set Terraform Azure credentials
+      - name: Set Azure Credentials
         run: |
           echo '${{ secrets.AZURE_CREDENTIALS }}' > creds.json
           echo "ARM_CLIENT_ID=$(jq -r .clientId creds.json)" >> $GITHUB_ENV
@@ -32,12 +39,6 @@ jobs:
           echo "ARM_TENANT_ID=$(jq -r .tenantId creds.json)" >> $GITHUB_ENV
           rm -f creds.json
         shell: bash
-
-      - name: Download Plan Artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: terraform-plan
-          path: backend
 
       - name: Terraform Init
         run: terraform init
