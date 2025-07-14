@@ -1,15 +1,10 @@
 name: Terraform Deploy
 
 on:
-  push:
-    branches:
-      - master
-    paths-ignore:
-      - 'README.md'
-      - '.gitignore'
-      - 'scripts/**'
-      - 'data-factory/**'
-      - 'databricks-spark/**'
+  workflow_run:
+    workflows: ["Terraform Build"]  
+    types:
+      - completed
 
 jobs:
   deploy:
