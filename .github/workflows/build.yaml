@@ -11,6 +11,14 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    # ✅ Secrets available to ALL steps in this job
+    env:
+      ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+      ARM_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+      ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+      ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -21,6 +29,14 @@ jobs:
           echo "--- List of files and folders ---"
           find . -type f
 
+      - name: 🔍 Verify Azure env vars
+        run: |
+          echo "Checking ARM_* environment variables..."
+          [ -z "$ARM_CLIENT_ID" ] && echo "❌ ARM_CLIENT_ID is empty" || echo "✅ ARM_CLIENT_ID is set"
+          [ -z "$ARM_CLIENT_SECRET" ] && echo "❌ ARM_CLIENT_SECRET is empty" || echo "✅ ARM_CLIENT_SECRET is set"
+          [ -z "$ARM_SUBSCRIPTION_ID" ] && echo "❌ ARM_SUBSCRIPTION_ID is empty" || echo "✅ ARM_SUBSCRIPTION_ID is set"
+          [ -z "$ARM_TENANT_ID" ] && echo "❌ ARM_TENANT_ID is empty" || echo "✅ ARM_TENANT_ID is set"
+
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v3
         with:
@@ -30,27 +46,9 @@ jobs:
         run: terraform fmt -check -recursive
         working-directory: backend
 
-      - name: ✅ Verify Azure env vars
-        run: |
-          echo "Checking ARM_* environment variables..."
-          [ -z "$ARM_CLIENT_ID" ] && echo "❌ ARM_CLIENT_ID is empty" || echo "✅ ARM_CLIENT_ID is set"
-          [ -z "$ARM_CLIENT_SECRET" ] && echo "❌ ARM_CLIENT_SECRET is empty" || echo "✅ ARM_CLIENT_SECRET is set"
-          [ -z "$ARM_SUBSCRIPTION_ID" ] && echo "❌ ARM_SUBSCRIPTION_ID is empty" || echo "✅ ARM_SUBSCRIPTION_ID is set"
-          [ -z "$ARM_TENANT_ID" ] && echo "❌ ARM_TENANT_ID is empty" || echo "✅ ARM_TENANT_ID is set"
-        env:
-          ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
-          ARM_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
-          ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-          ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
-
       - name: Terraform Init
         run: terraform init
         working-directory: backend
-        env:
-          ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
-          ARM_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
-          ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-          ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
 
       - name: Terraform Validate
         run: terraform validate
@@ -59,11 +57,6 @@ jobs:
       - name: Terraform Plan
         run: terraform plan -out=tfplan
         working-directory: backend
-        env:
-          ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
-          ARM_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
-          ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-          ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
 
       - name: Upload Plan Artifact
         uses: actions/upload-artifact@v4
