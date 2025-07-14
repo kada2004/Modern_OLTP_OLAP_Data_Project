@@ -28,11 +28,11 @@ jobs:
 
       - name: Terraform Format
         run: terraform fmt -check -recursive
-        working-directory: azure_data_platform/terraform/backend
+        working-directory: backend
 
       - name: Terraform Init
         run: terraform init
-        working-directory: azure_data_platform/terraform/backend
+        working-directory: backend
         env:
           ARM_CLIENT_ID: ${{ secrets.AZURE_CREDENTIALS.clientId }}
           ARM_CLIENT_SECRET: ${{ secrets.AZURE_CREDENTIALS.clientSecret }}
@@ -41,11 +41,11 @@ jobs:
 
       - name: Terraform Validate
         run: terraform validate
-        working-directory: azure_data_platform/terraform/backend
+        working-directory: backend
 
       - name: Terraform Plan
         run: terraform plan -out=tfplan
-        working-directory: azure_data_platform/terraform/backend
+        working-directory: backend
         env:
           ARM_CLIENT_ID: ${{ secrets.AZURE_CREDENTIALS.clientId }}
           ARM_CLIENT_SECRET: ${{ secrets.AZURE_CREDENTIALS.clientSecret }}
@@ -56,5 +56,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: terraform-plan
-          path: azure_data_platform/terraform/backend/tfplan
+          path: backend/tfplan
           retention-days: 1

@@ -10,35 +10,34 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     environment: production
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}  # Only run if build succeeds
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
           ref: ${{ github.event.workflow_run.head_branch }}
 
-
       - name: Verify directory structure
         run: |
           pwd
           ls -R
-        working-directory: azure_data_platform/terraform/backend
-        continue-on-error: true  # Continue to debug directory issues
+        working-directory: backend
+        continue-on-error: true
 
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v3
         with:
-          terraform_version: 1.9.8  # Match the build job version
+          terraform_version: 1.9.8
 
       - name: Download Plan Artifact
         uses: actions/download-artifact@v4
         with:
           name: terraform-plan
-          path: azure_data_platform/terraform/backend
+          path: backend
 
       - name: Terraform Init
         run: terraform init
-        working-directory: azure_data_platform/terraform/backend
+        working-directory: backend
         env:
           ARM_CLIENT_ID: ${{ secrets.AZURE_CREDENTIALS.clientId }}
           ARM_CLIENT_SECRET: ${{ secrets.AZURE_CREDENTIALS.clientSecret }}
@@ -47,7 +46,7 @@ jobs:
 
       - name: Terraform Apply
         run: terraform apply -auto-approve tfplan
-        working-directory: azure_data_platform/terraform/backend
+        working-directory: backend
         env:
           ARM_CLIENT_ID: ${{ secrets.AZURE_CREDENTIALS.clientId }}
           ARM_CLIENT_SECRET: ${{ secrets.AZURE_CREDENTIALS.clientSecret }}
