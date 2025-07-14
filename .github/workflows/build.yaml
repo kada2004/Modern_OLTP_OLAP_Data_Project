@@ -16,16 +16,25 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # Azure login step authenticates CLI using service principal JSON secret
+      # ✅ Azure login (optional — good for other Azure CLI commands)
       - name: Azure Login
         uses: azure/login@v2
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
+      # ✅ Parse AZURE_CREDENTIALS secret and export as TF environment variables
+      - name: Set Terraform Azure credentials
+        run: |
+          echo '${{ secrets.AZURE_CREDENTIALS }}' > creds.json
+          echo "ARM_CLIENT_ID=$(jq -r .clientId creds.json)" >> $GITHUB_ENV
+          echo "ARM_CLIENT_SECRET=$(jq -r .clientSecret creds.json)" >> $GITHUB_ENV
+          echo "ARM_SUBSCRIPTION_ID=$(jq -r .subscriptionId creds.json)" >> $GITHUB_ENV
+          echo "ARM_TENANT_ID=$(jq -r .tenantId creds.json)" >> $GITHUB_ENV
+        shell: bash
+
       - name: Show directory structure
         run: |
           echo "PWD: $(pwd)"
-          echo "--- List of files and folders ---"
           find . -type f
 
       - name: Set up Terraform
