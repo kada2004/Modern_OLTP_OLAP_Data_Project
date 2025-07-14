@@ -11,7 +11,7 @@ on:
       - 'data-factory/**'
   pull_request:
     branches:
-      - main
+      - master
     paths-ignore:
       - 'README.md'
       - '.gitignore'
@@ -25,10 +25,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Verify directory structure
+        run: |
+          pwd
+          ls -R
+        working-directory: azure_data_platform/terraform/backend
+        continue-on-error: true  # Continue even if directory is missing to debug
+
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v3
         with:
-          terraform_version: 1.12.2
+          terraform_version: 1.9.8  # Updated to a recent stable version
 
       - name: Terraform Format
         run: terraform fmt -check -recursive

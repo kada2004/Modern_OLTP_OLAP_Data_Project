@@ -2,7 +2,7 @@ name: Terraform Deploy
 
 on:
   workflow_run:
-    workflows: ["Terraform Build"]  
+    workflows: ["Terraform Build"]
     types:
       - completed
 
@@ -10,14 +10,22 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     environment: production
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}  # Only run if build succeeds
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Verify directory structure
+        run: |
+          pwd
+          ls -R
+        working-directory: azure_data_platform/terraform/backend
+        continue-on-error: true  # Continue to debug directory issues
+
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v3
         with:
-          terraform_version: 1.12.2
+          terraform_version: 1.9.8  # Match the build job version
 
       - name: Download Plan Artifact
         uses: actions/download-artifact@v4
