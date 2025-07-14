@@ -3,32 +3,29 @@ name: Terraform Deploy
 on:
   workflow_run:
     workflows: ["Terraform Build"]
-    types:
-      - completed
+    types: [ completed ]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment: production
+    permissions:
+      actions: read
+      contents: read
+
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
 
     steps:
-      - name: Download source from triggering workflow
+      - name: Download Terraform plan artifact
         uses: actions/download-artifact@v4
         with:
           name: terraform-plan
           path: backend
 
-      - name: Checkout the commit that triggered the workflow
+      - name: Checkout triggering commit
         uses: actions/checkout@v4
         with:
           repository: ${{ github.repository }}
           ref: ${{ github.event.workflow_run.head_commit.id }}
-
-      - name: Set up Terraform
-        uses: hashicorp/setup-terraform@v3
-        with:
-          terraform_version: 1.9.8
 
       - name: Set Azure Credentials
         run: |
@@ -39,6 +36,11 @@ jobs:
           echo "ARM_TENANT_ID=$(jq -r .tenantId creds.json)" >> $GITHUB_ENV
           rm -f creds.json
         shell: bash
+
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.9.8
 
       - name: Terraform Init
         run: terraform init
