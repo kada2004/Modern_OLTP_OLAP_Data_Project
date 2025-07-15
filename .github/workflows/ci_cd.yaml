@@ -35,6 +35,10 @@ jobs:
           rm -f creds.json
         shell: bash
 
+      - name: Set Synapse SQL Password for Terraform
+        run: echo "TF_VAR_synapse_sql_password=${{ secrets.SYNAPSE_SQL_PASSWORD }}" >> $GITHUB_ENV
+        shell: bash
+
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v3
         with:
@@ -87,6 +91,10 @@ jobs:
           echo "ARM_TENANT_ID=$(jq -r .tenantId creds.json)" >> $GITHUB_ENV
           rm -f creds.json
         shell: bash
+        
+      - name: Set Synapse SQL Password for Terraform
+        run: echo "TF_VAR_synapse_sql_password=${{ secrets.SYNAPSE_SQL_PASSWORD }}" >> $GITHUB_ENV
+        shell: bash  
 
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v3
