@@ -1,10 +1,15 @@
+# https://developer.hashicorp.com/terraform/language/values/locals
 
 locals {
   resource_group_name  = "data_platform"
   location             = "West Europe"
   storage_account_name = "datastorage${random_string.suffix.result}"
   container_name       = "terraform-state"
-  #filesystem_name      = "data-lake"
+  bronze_container_name   = "bronze"
+  silver_container_name   = "silver"
+  synapse_workspace_name  = "synapse-data-platform"
+  data_factory_name       = "adf-data-platform"
+  key_vault_name          = "kv-data-platform"
 }
 
 resource "random_string" "suffix" {
@@ -33,4 +38,102 @@ resource "azurerm_storage_container" "state_file" {
   storage_account_name  = azurerm_storage_account.stg_account.name
   container_access_type = "private"
 }
+
+resource "azurerm_storage_container" "bronze" {
+  name                  = local.bronze_container_name
+  storage_account_name  = azurerm_storage_account.stg_account.name
+  container_access_type = "private"
+}
+
+resource "azurerm_storage_container" "silver" {
+  name                  = local.silver_container_name
+  storage_account_name  = azurerm_storage_account.stg_account.name
+  container_access_type = "private"
+}
+
+# https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault
+
+resource "azurerm_key_vault" "kv" {
+  name                        = local.key_vault_name
+  location                    = azurerm_resource_group.rg.location
+  resource_group_name         = azurerm_resource_group.rg.name
+  tenant_id                   = data.azurerm_subscription.current.tenant_id
+  sku_name                    = "standard"
+  purge_protection_enabled    = false
+  soft_delete_retention_days  = 7
+}
+
+resource "azurerm_key_vault_access_policy" "terraform" {
+  key_vault_id = azurerm_key_vault.kv.id
+  tenant_id    = data.azurerm_subscription.current.tenant_id
+  object_id    = var.terraform_sp_object_id
+
+  secret_permissions = ["Get", "Set", "List"]
+}
+
+resource "azurerm_key_vault_secret" "storage_key" {
+  name         = "storage-key"
+  value        = azurerm_storage_account.stg_account.primary_access_key
+  key_vault_id = azurerm_key_vault.kv.id
+}
+
+resource "azurerm_key_vault_access_policy" "adf_access" {
+  key_vault_id = azurerm_key_vault.kv.id
+  tenant_id    = data.azurerm_subscription.current.tenant_id
+  object_id    = azurerm_data_factory.adf.identity[0].principal_id
+  secret_permissions = ["Get", "List"]
+}
+
+resource "azurerm_key_vault_secret" "synapse_password" {
+  name         = "synapse-sql-password"
+  value        = var.synapse_sql_password
+  key_vault_id = azurerm_key_vault.kv.id
+}
+
+resource "azurerm_synapse_workspace" "synapse" {
+  name                                 = local.synapse_workspace_name
+  resource_group_name                  = azurerm_resource_group.rg.name
+  location                             = azurerm_resource_group.rg.location
+  storage_data_lake_gen2_filesystem_id = azurerm_storage_container.bronze.id
+  sql_administrator_login              = "sqladminuser"
+  sql_administrator_login_password     = var.synapse_sql_password
+  identity {
+    type = "SystemAssigned"
+  }
+}
+
+resource "azurerm_synapse_firewall_rule" "allow_all" {
+  name                 = "AllowAll"
+  synapse_workspace_id = azurerm_synapse_workspace.synapse.id
+  start_ip_address     = "0.0.0.0"
+  end_ip_address       = "255.255.255.255"
+}
+
+resource "azurerm_synapse_spark_pool" "spark_pool" {
+  name                   = "sparkpool01"
+  synapse_workspace_id   = azurerm_synapse_workspace.synapse.id
+  node_size_family       = "MemoryOptimized"
+  node_size              = "Small"
+  #node_count             = 3
+  spark_version          = "3.3"  
+  
+
+  auto_pause {
+    delay_in_minutes = 10
+  }
+    auto_scale {
+    min_node_count = 3
+    max_node_count = 3
+  }
+}
+
+resource "azurerm_data_factory" "adf" {
+  name                = local.data_factory_name
+  location            = azurerm_resource_group.rg.location
+  resource_group_name = azurerm_resource_group.rg.name
+  identity {
+    type = "SystemAssigned"
+  }
+}
+
 

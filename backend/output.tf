@@ -12,3 +12,13 @@ output "container_name" {
   value       = azurerm_storage_container.state_file.name
   description = "The name of the blob container"
 }
+
+output "synapse_workspace_name" {
+  value       = azurerm_synapse_workspace.synapse.name
+  description = "The name of the Synapse workspace"
+}
+
+output "data_factory_name" {
+  value       = azurerm_data_factory.adf.name
+  description = "The name of the Data Factory instance"
+}
