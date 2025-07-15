@@ -7,7 +7,7 @@ locals {
   container_name         = "terraform-state"
   bronze_container_name  = "bronze"
   silver_container_name  = "silver"
-  synapse_workspace_name = "synapse-data-platform"
+  synapse_workspace_name = "synapse-data-platform-${random_string.suffix.result}"
   data_factory_name      = "adf-data-platform"
   key_vault_name         = "kv-data-platform-${random_string.suffix.result}"
 }
