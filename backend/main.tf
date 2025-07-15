@@ -1,15 +1,15 @@
 # https://developer.hashicorp.com/terraform/language/values/locals
 
 locals {
-  resource_group_name  = "data_platform"
-  location             = "West Europe"
-  storage_account_name = "datastorage${random_string.suffix.result}"
-  container_name       = "terraform-state"
-  bronze_container_name   = "bronze"
-  silver_container_name   = "silver"
-  synapse_workspace_name  = "synapse-data-platform"
-  data_factory_name       = "adf-data-platform"
-  key_vault_name          = "kv-data-platform"
+  resource_group_name    = "data_platform"
+  location               = "West Europe"
+  storage_account_name   = "datastorage${random_string.suffix.result}"
+  container_name         = "terraform-state"
+  bronze_container_name  = "bronze"
+  silver_container_name  = "silver"
+  synapse_workspace_name = "synapse-data-platform"
+  data_factory_name      = "adf-data-platform"
+  key_vault_name         = "kv-data-platform"
 }
 
 resource "random_string" "suffix" {
@@ -54,13 +54,13 @@ resource "azurerm_storage_container" "silver" {
 # https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault
 
 resource "azurerm_key_vault" "kv" {
-  name                        = local.key_vault_name
-  location                    = azurerm_resource_group.rg.location
-  resource_group_name         = azurerm_resource_group.rg.name
-  tenant_id                   = data.azurerm_subscription.current.tenant_id
-  sku_name                    = "standard"
-  purge_protection_enabled    = false
-  soft_delete_retention_days  = 7
+  name                       = local.key_vault_name
+  location                   = azurerm_resource_group.rg.location
+  resource_group_name        = azurerm_resource_group.rg.name
+  tenant_id                  = data.azurerm_subscription.current.tenant_id
+  sku_name                   = "standard"
+  purge_protection_enabled   = false
+  soft_delete_retention_days = 7
 }
 
 resource "azurerm_key_vault_access_policy" "terraform" {
@@ -78,9 +78,9 @@ resource "azurerm_key_vault_secret" "storage_key" {
 }
 
 resource "azurerm_key_vault_access_policy" "adf_access" {
-  key_vault_id = azurerm_key_vault.kv.id
-  tenant_id    = data.azurerm_subscription.current.tenant_id
-  object_id    = azurerm_data_factory.adf.identity[0].principal_id
+  key_vault_id       = azurerm_key_vault.kv.id
+  tenant_id          = data.azurerm_subscription.current.tenant_id
+  object_id          = azurerm_data_factory.adf.identity[0].principal_id
   secret_permissions = ["Get", "List"]
 }
 
@@ -110,18 +110,18 @@ resource "azurerm_synapse_firewall_rule" "allow_all" {
 }
 
 resource "azurerm_synapse_spark_pool" "spark_pool" {
-  name                   = "sparkpool01"
-  synapse_workspace_id   = azurerm_synapse_workspace.synapse.id
-  node_size_family       = "MemoryOptimized"
-  node_size              = "Small"
+  name                 = "sparkpool01"
+  synapse_workspace_id = azurerm_synapse_workspace.synapse.id
+  node_size_family     = "MemoryOptimized"
+  node_size            = "Small"
   #node_count             = 3
-  spark_version          = "3.3"  
-  
+  spark_version = "3.3"
+
 
   auto_pause {
     delay_in_minutes = 10
   }
-    auto_scale {
+  auto_scale {
     min_node_count = 3
     max_node_count = 3
   }
