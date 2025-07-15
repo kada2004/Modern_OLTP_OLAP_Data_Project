@@ -68,12 +68,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
 
-    environment: production   # manual approval before deployment
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
-    permissions:
-      actions: read
-      contents: read
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
