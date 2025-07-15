@@ -9,7 +9,7 @@ locals {
   silver_container_name  = "silver"
   synapse_workspace_name = "synapse-data-platform"
   data_factory_name      = "adf-data-platform"
-  key_vault_name         = "kv-data-platform"
+  key_vault_name         = "kv-data-platform-${random_string.suffix.result}"
 }
 
 resource "random_string" "suffix" {
@@ -93,10 +93,11 @@ resource "azurerm_key_vault_secret" "synapse_password" {
 resource "azurerm_synapse_workspace" "synapse" {
   name                                 = local.synapse_workspace_name
   resource_group_name                  = azurerm_resource_group.rg.name
-  location                             = azurerm_resource_group.rg.location
-  storage_data_lake_gen2_filesystem_id = azurerm_storage_container.bronze.id
+  location                             = "northeurope" # Only Synapse in northeurope free subscription is not allowed to create synapse in westeurope
+  storage_data_lake_gen2_filesystem_id = "https://${azurerm_storage_account.stg_account.name}.dfs.core.windows.net/${azurerm_storage_container.bronze.name}"
   sql_administrator_login              = "sqladminuser"
   sql_administrator_login_password     = var.synapse_sql_password
+
   identity {
     type = "SystemAssigned"
   }
