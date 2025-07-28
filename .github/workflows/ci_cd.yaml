@@ -5,7 +5,7 @@ on:
     branches:
       - master
     paths-ignore:
-      - 'README.md'
+      - 'README.md'   #exclude readme
       - '*.md'
       - 'docs/**'
   pull_request:
