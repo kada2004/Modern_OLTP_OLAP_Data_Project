@@ -1,0 +1,9 @@
+{
+	"name": "adf-data-platform",
+	"location": "westeurope",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "ecab0255-1fdc-4259-b130-bd3d48f32543",
+		"tenantId": "9b617bf3-2377-4477-b5c4-396bb56461d6"
+	}
+}
