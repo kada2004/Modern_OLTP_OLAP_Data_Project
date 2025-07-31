@@ -1,0 +1,14 @@
+{
+	"name": "LS_SynapseServerless",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"server": "synapse-data-platform-7i4ws2-ondemand.sql.azuresynapse.net",
+			"database": "master",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "SystemAssignedManagedIdentity"
+		}
+	}
+}
