@@ -94,6 +94,12 @@
 									},
 									"type": "NotebookReference"
 								},
+								"parameters": {
+									"date": {
+										"value": "@pipeline().parameters.date",
+										"type": "string"
+									}
+								},
 								"snapshot": true,
 								"sparkPool": {
 									"referenceName": {
