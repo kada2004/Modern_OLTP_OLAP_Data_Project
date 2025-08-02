@@ -54,25 +54,6 @@
 						"value": "@greater(length(activity('Get Metadata2').output.childItems), 0)\n",
 						"type": "Expression"
 					},
-					"ifFalseActivities": [
-						{
-							"name": "errorMessage",
-							"type": "SetVariable",
-							"dependsOn": [],
-							"policy": {
-								"secureOutput": false,
-								"secureInput": false
-							},
-							"userProperties": [],
-							"typeProperties": {
-								"variableName": "errorMessage",
-								"value": {
-									"value": "@concat('No files found in path for date: ', pipeline().parameters.date)\n",
-									"type": "Expression"
-								}
-							}
-						}
-					],
 					"ifTrueActivities": [
 						{
 							"name": "TransformBronzeToSilver",
