@@ -29,6 +29,7 @@
 					],
 					"storeSettings": {
 						"type": "AzureBlobFSReadSettings",
+						"recursive": true,
 						"enablePartitionDiscovery": false
 					},
 					"formatSettings": {
@@ -50,7 +51,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"expression": {
-						"value": "@greater(length(activity('GetMetadataActivityName').output.childItems), 0)\n",
+						"value": "@greater(length(activity('Get Metadata2').output.childItems), 0)\n",
 						"type": "Expression"
 					},
 					"ifFalseActivities": [
@@ -65,13 +66,70 @@
 							"userProperties": [],
 							"typeProperties": {
 								"variableName": "errorMessage",
-								"value": "@concat('No files found in path for date: ', pipeline().parameters.date)"
+								"value": {
+									"value": "@concat('No files found in path for date: ', pipeline().parameters.date)\n",
+									"type": "Expression"
+								}
+							}
+						}
+					],
+					"ifTrueActivities": [
+						{
+							"name": "TransformBronzeToSilver",
+							"type": "SynapseNotebook",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [
+								{
+									"name": "date",
+									"value": "@pipeline().parameters.date"
+								}
+							],
+							"typeProperties": {
+								"notebook": {
+									"referenceName": {
+										"value": "TransformBronzeToSilver",
+										"type": "Expression"
+									},
+									"type": "NotebookReference"
+								},
+								"parameters": {
+									"date": {
+										"value": "@pipeline().parameters.date",
+										"type": "string"
+									}
+								},
+								"snapshot": true,
+								"sparkPool": {
+									"referenceName": {
+										"value": "sparkpool01",
+										"type": "Expression"
+									},
+									"type": "BigDataPoolReference"
+								},
+								"executorSize": "Small",
+								"driverSize": "Small"
+							},
+							"linkedServiceName": {
+								"referenceName": "AzureSynapseArtifacts1",
+								"type": "LinkedServiceReference"
 							}
 						}
 					]
 				}
 			}
 		],
+		"parameters": {
+			"date": {
+				"type": "string"
+			}
+		},
 		"variables": {
 			"errorMessage": {
 				"type": "String"
