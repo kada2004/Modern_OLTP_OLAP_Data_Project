@@ -54,6 +54,25 @@
 						"value": "@greater(length(activity('Get Metadata2').output.childItems), 0)\n",
 						"type": "Expression"
 					},
+					"ifFalseActivities": [
+						{
+							"name": "Error Message",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"policy": {
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "errorMessage",
+								"value": {
+									"value": "@concat('No files found in path for date: ', pipeline().parameters.date)  ",
+									"type": "Expression"
+								}
+							}
+						}
+					],
 					"ifTrueActivities": [
 						{
 							"name": "TransformBronzeToSilver",
@@ -75,12 +94,6 @@
 									},
 									"type": "NotebookReference"
 								},
-								"parameters": {
-									"date": {
-										"value": "@pipeline().parameters.date",
-										"type": "string"
-									}
-								},
 								"snapshot": true,
 								"sparkPool": {
 									"referenceName": {
@@ -90,7 +103,16 @@
 									"type": "BigDataPoolReference"
 								},
 								"executorSize": "Small",
-								"driverSize": "Small"
+								"conf": {
+									"spark.dynamicAllocation.enabled": null,
+									"spark.dynamicAllocation.minExecutors": null,
+									"spark.dynamicAllocation.maxExecutors": null
+								},
+								"driverSize": "Small",
+								"numExecutors": null,
+								"baseParameters": {
+									"date": "@pipeline().parameters.date"
+								}
 							},
 							"linkedServiceName": {
 								"referenceName": "AzureSynapseArtifacts1",
@@ -108,6 +130,9 @@
 		},
 		"variables": {
 			"errorMessage": {
+				"type": "String"
+			},
+			"Error Message": {
 				"type": "String"
 			}
 		},
