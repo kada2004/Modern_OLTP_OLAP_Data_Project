@@ -85,12 +85,7 @@
 								"secureOutput": false,
 								"secureInput": false
 							},
-							"userProperties": [
-								{
-									"name": "date",
-									"value": "@pipeline().parameters.date"
-								}
-							],
+							"userProperties": [],
 							"typeProperties": {
 								"notebook": {
 									"referenceName": {
