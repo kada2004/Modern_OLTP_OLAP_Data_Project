@@ -132,11 +132,12 @@ resource "azurerm_synapse_spark_pool" "spark_pool" {
 
 # Adding dedicated sql pool to synapse
 resource "azurerm_synapse_sql_pool" "dedicated_pool" {
-  name                 = local.dedicated_pool
-  synapse_workspace_id = azurerm_synapse_workspace.synapse.id
-  sku_name             = "DW100c"
-  create_mode          = "Default"
-  storage_account_type = "LRS"
+  name                      = local.dedicated_pool
+  synapse_workspace_id      = azurerm_synapse_workspace.synapse.id
+  sku_name                  = "DW100c"
+  create_mode               = "Default"
+  storage_account_type      = "LRS"
+  geo_backup_policy_enabled = false
   lifecycle {
     ignore_changes = [
       storage_account_type
@@ -151,6 +152,12 @@ resource "azurerm_data_factory" "adf" {
   identity {
     type = "SystemAssigned"
   }
+  lifecycle {
+    ignore_changes = [
+      github_configuration,
+    ]
+  }
 }
+
 
 
