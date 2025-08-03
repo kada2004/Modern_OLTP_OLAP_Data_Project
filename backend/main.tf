@@ -136,7 +136,7 @@ resource "azurerm_synapse_sql_pool" "dedicated_pool" {
   synapse_workspace_id = azurerm_synapse_workspace.synapse.id
   sku_name             = "DW100c"
   create_mode          = "Default"
-  storage_account_type = "lRS"
+  storage_account_type = "LRS"
 }
 
 resource "azurerm_data_factory" "adf" {
