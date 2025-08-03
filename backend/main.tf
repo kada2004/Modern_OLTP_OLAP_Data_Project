@@ -10,6 +10,7 @@ locals {
   synapse_workspace_name = "synapse-data-platform-${random_string.suffix.result}"
   data_factory_name      = "adf-data-platform"
   key_vault_name         = "kv-data-platform-${random_string.suffix.result}"
+  dedicated_pool         = "synape_sql_pool"
 }
 
 resource "random_string" "suffix" {
@@ -127,6 +128,15 @@ resource "azurerm_synapse_spark_pool" "spark_pool" {
     min_node_count = 3
     max_node_count = 3
   }
+}
+
+# Adding dedicated sql pool to synapse
+resource "azurerm_synapse_sql_pool" "dedicated_pool" {
+  name                 = local.dedicated_pool
+  synapse_workspace_id = azurerm_synapse_workspace.synapse.id
+  sku_name             = "DW100c"
+  create_mode          = "Default"
+  storage_account_type = "lRS"
 }
 
 resource "azurerm_data_factory" "adf" {
