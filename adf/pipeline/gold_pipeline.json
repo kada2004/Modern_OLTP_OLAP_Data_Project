@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Get Metadata1",
+				"name": "Get Metadata silver",
 				"type": "GetMetadata",
 				"dependsOn": [],
 				"policy": {
@@ -17,7 +17,12 @@
 				"typeProperties": {
 					"dataset": {
 						"referenceName": "Parquet1",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"yearFolder": "@formatDateTime(pipeline().parameters.date, 'yyyy')",
+							"monthFolder": "@formatDateTime(pipeline().parameters.date, 'MM')",
+							"dayFolder": "@formatDateTime(pipeline().parameters.date, 'dd')"
+						}
 					},
 					"fieldList": [
 						"childItems"
@@ -30,8 +35,97 @@
 						"type": "ParquetReadSettings"
 					}
 				}
+			},
+			{
+				"name": "If Condition1",
+				"type": "IfCondition",
+				"dependsOn": [
+					{
+						"activity": "Get Metadata silver",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"expression": {
+						"value": "@greater(length(activity('Get Metadata silver').output.childItems), 0)",
+						"type": "Expression"
+					},
+					"ifFalseActivities": [
+						{
+							"name": "Error Message",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"policy": {
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "Message",
+								"value": "@concat('No files found in path for date: ', pipeline().parameters.date)  "
+							}
+						}
+					],
+					"ifTrueActivities": [
+						{
+							"name": "TransformSilverToGold",
+							"type": "SynapseNotebook",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"notebook": {
+									"referenceName": {
+										"value": "TransformSilverToGold",
+										"type": "Expression"
+									},
+									"type": "NotebookReference"
+								},
+								"parameters": {
+									"date": {
+										"value": "@pipeline().parameters.date",
+										"type": "string"
+									}
+								},
+								"snapshot": true,
+								"sparkPool": {
+									"referenceName": {
+										"value": "sparkpool01",
+										"type": "Expression"
+									},
+									"type": "BigDataPoolReference"
+								},
+								"executorSize": "Small",
+								"driverSize": "Small"
+							},
+							"linkedServiceName": {
+								"referenceName": "AzureSynapseArtifacts1",
+								"type": "LinkedServiceReference"
+							}
+						}
+					]
+				}
 			}
 		],
+		"parameters": {
+			"date": {
+				"type": "string"
+			}
+		},
+		"variables": {
+			"Message": {
+				"type": "String"
+			}
+		},
 		"annotations": []
 	}
 }
