@@ -1,0 +1,71 @@
+{
+	"name": "Parquet1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"yearFolder": {
+				"type": "string"
+			},
+			"monthFolder": {
+				"type": "string"
+			},
+			"dayFolder": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": {
+					"value": "@concat(dataset().yearFolder, '/', dataset().monthFolder, '/', dataset().dayFolder)\n",
+					"type": "Expression"
+				},
+				"fileSystem": "silver"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "_c0",
+				"type": "UTF8"
+			},
+			{
+				"name": "_c1",
+				"type": "UTF8"
+			},
+			{
+				"name": "_c2",
+				"type": "UTF8"
+			},
+			{
+				"name": "_c3",
+				"type": "UTF8"
+			},
+			{
+				"name": "_c4",
+				"type": "UTF8"
+			},
+			{
+				"name": "_c5",
+				"type": "UTF8"
+			},
+			{
+				"name": "_c6",
+				"type": "UTF8"
+			},
+			{
+				"name": "_c7",
+				"type": "UTF8"
+			},
+			{
+				"name": "_c8",
+				"type": "UTF8"
+			}
+		]
+	}
+}
