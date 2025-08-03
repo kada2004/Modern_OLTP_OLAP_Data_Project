@@ -138,8 +138,8 @@ resource "azurerm_synapse_sql_pool" "dedicated_pool" {
   create_mode          = "Default"
   storage_account_type = "LRS"
   lifecycle {
-  ignore_changes = [
-  storage_account_type      
+    ignore_changes = [
+      storage_account_type
     ]
   }
 }
