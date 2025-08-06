@@ -1,0 +1,21 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adf-data-platform"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://datastorage7i4ws2.dfs.core.windows.net/"
+		},
+		"AzureSynapseArtifacts1_properties_typeProperties_endpoint": {
+			"value": "https://synapse-data-platform-7i4ws2.dev.azuresynapse.net"
+		},
+		"LS_SynapseServerless_properties_typeProperties_server": {
+			"value": "synapse-data-platform-7i4ws2-ondemand.sql.azuresynapse.net"
+		},
+		"LS_SynapseServerless_properties_typeProperties_database": {
+			"value": "master"
+		}
+	}
+}
