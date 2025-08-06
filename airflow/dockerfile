@@ -1,0 +1,11 @@
+FROM apache/airflow:3.0.3
+USER root
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    libssl-dev \
+    libffi-dev \
+    python3-dev \
+    libabsl-dev
+USER airflow
+COPY requirements.txt /
+RUN pip install --no-cache-dir -r /requirements.txt -c https://raw.githubusercontent.com/apache/airflow/constraints-3.0.3/constraints-3.10.txt
