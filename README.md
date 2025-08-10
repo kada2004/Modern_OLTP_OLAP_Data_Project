@@ -24,5 +24,6 @@ The project contains a complete data pipeline that supports both OLTP (Online Tr
                                      to be continuee for azure under construction
 
 
+# Managed Identity between Azure data Lake and Synapse to create External table: Need to document this.
 # Project Architecture
 ![Diagram-diagram](https://github.com/user-attachments/assets/861cfeb7-3703-4058-a826-3fefe097fda1)
