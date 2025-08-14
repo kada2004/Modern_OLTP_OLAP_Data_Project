@@ -17,6 +17,12 @@
 		"LS_SynapseServerless_properties_typeProperties_database": {
 			"value": "master"
 		},
+		"AzureSynapseAnalytics_dedicated_sql_pool_properties_typeProperties_server": {
+			"value": "synapse-data-platform-7i4ws2.sql.azuresynapse.net"
+		},
+		"AzureSynapseAnalytics_dedicated_sql_pool_properties_typeProperties_database": {
+			"value": "synape_sql_pool"
+		},
 		"containerUri": {
 			"value": ""
 		},

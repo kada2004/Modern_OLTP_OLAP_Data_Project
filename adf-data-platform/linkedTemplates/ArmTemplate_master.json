@@ -23,6 +23,14 @@
 			"type": "string",
 			"defaultValue": "master"
 		},
+		"AzureSynapseAnalytics_dedicated_sql_pool_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "synapse-data-platform-7i4ws2.sql.azuresynapse.net"
+		},
+		"AzureSynapseAnalytics_dedicated_sql_pool_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "synape_sql_pool"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -61,6 +69,12 @@
 					},
 					"LS_SynapseServerless_properties_typeProperties_database": {
 						"value": "[parameters('LS_SynapseServerless_properties_typeProperties_database')]"
+					},
+					"AzureSynapseAnalytics_dedicated_sql_pool_properties_typeProperties_server": {
+						"value": "[parameters('AzureSynapseAnalytics_dedicated_sql_pool_properties_typeProperties_server')]"
+					},
+					"AzureSynapseAnalytics_dedicated_sql_pool_properties_typeProperties_database": {
+						"value": "[parameters('AzureSynapseAnalytics_dedicated_sql_pool_properties_typeProperties_database')]"
 					}
 				}
 			},

@@ -22,6 +22,14 @@
 		"LS_SynapseServerless_properties_typeProperties_database": {
 			"type": "string",
 			"defaultValue": "master"
+		},
+		"AzureSynapseAnalytics_dedicated_sql_pool_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "synapse-data-platform-7i4ws2.sql.azuresynapse.net"
+		},
+		"AzureSynapseAnalytics_dedicated_sql_pool_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "synape_sql_pool"
 		}
 	},
 	"variables": {
@@ -66,6 +74,23 @@
 				"typeProperties": {
 					"server": "[parameters('LS_SynapseServerless_properties_typeProperties_server')]",
 					"database": "[parameters('LS_SynapseServerless_properties_typeProperties_database')]",
+					"encrypt": "mandatory",
+					"trustServerCertificate": false,
+					"authenticationType": "SystemAssignedManagedIdentity"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSynapseAnalytics_dedicated_sql_pool')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDW",
+				"typeProperties": {
+					"server": "[parameters('AzureSynapseAnalytics_dedicated_sql_pool_properties_typeProperties_server')]",
+					"database": "[parameters('AzureSynapseAnalytics_dedicated_sql_pool_properties_typeProperties_database')]",
 					"encrypt": "mandatory",
 					"trustServerCertificate": false,
 					"authenticationType": "SystemAssignedManagedIdentity"
@@ -217,6 +242,255 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/gold_store_procedures_pipeline')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "SP_Call_Merge_DimDate",
+						"type": "SqlServerStoredProcedure",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"storedProcedureName": "[[dbo].[usp_Merge_GoldDim_Date_ByDate]",
+							"storedProcedureParameters": {
+								"Year": {
+									"value": "@pipeline().parameters.Year",
+									"type": "String"
+								},
+								"Month": {
+									"value": "@pipeline().parameters.Month",
+									"type": "String"
+								},
+								"Day": {
+									"value": "@pipeline().parameters.Day",
+									"type": "String"
+								}
+							}
+						},
+						"linkedServiceName": {
+							"referenceName": "AzureSynapseAnalytics_dedicated_sql_pool",
+							"type": "LinkedServiceReference"
+						}
+					},
+					{
+						"name": "SP_Call_Merge_DimCustomer",
+						"type": "SqlServerStoredProcedure",
+						"dependsOn": [
+							{
+								"activity": "SP_Call_Merge_DimDate",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"storedProcedureName": "[[dbo].[usp_Merge_GoldDim_Customer_ByDate]",
+							"storedProcedureParameters": {
+								"Year": {
+									"value": "@pipeline().parameters.Year",
+									"type": "String"
+								},
+								"Month": {
+									"value": {
+										"value": "@pipeline().parameters.Month",
+										"type": "Expression"
+									},
+									"type": "String"
+								},
+								"Day": {
+									"value": {
+										"value": "@pipeline().parameters.Day",
+										"type": "Expression"
+									},
+									"type": "String"
+								}
+							}
+						},
+						"linkedServiceName": {
+							"referenceName": "AzureSynapseAnalytics_dedicated_sql_pool",
+							"type": "LinkedServiceReference"
+						}
+					},
+					{
+						"name": "SP_Call_Merge_DimProduct",
+						"type": "SqlServerStoredProcedure",
+						"dependsOn": [
+							{
+								"activity": "SP_Call_Merge_DimCustomer",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"storedProcedureName": "[[dbo].[usp_Merge_GoldDim_Products_ByDate]",
+							"storedProcedureParameters": {
+								"Year": {
+									"value": "@pipeline().parameters.Year",
+									"type": "String"
+								},
+								"Month": {
+									"value": {
+										"value": "@pipeline().parameters.Month",
+										"type": "Expression"
+									},
+									"type": "String"
+								},
+								"Day": {
+									"value": {
+										"value": "@pipeline().parameters.Day",
+										"type": "Expression"
+									},
+									"type": "String"
+								}
+							}
+						},
+						"linkedServiceName": {
+							"referenceName": "AzureSynapseAnalytics_dedicated_sql_pool",
+							"type": "LinkedServiceReference"
+						}
+					},
+					{
+						"name": "SP_Call_Merge_Invoice",
+						"type": "SqlServerStoredProcedure",
+						"dependsOn": [
+							{
+								"activity": "SP_Call_Merge_DimProduct",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"storedProcedureName": "[[dbo].[usp_Merge_GoldDim_Invoice_ByDate]",
+							"storedProcedureParameters": {
+								"Year": {
+									"value": "@pipeline().parameters.Year",
+									"type": "String"
+								},
+								"Month": {
+									"value": {
+										"value": "@pipeline().parameters.Month",
+										"type": "Expression"
+									},
+									"type": "String"
+								},
+								"Day": {
+									"value": {
+										"value": "@pipeline().parameters.Day",
+										"type": "Expression"
+									},
+									"type": "String"
+								}
+							}
+						},
+						"linkedServiceName": {
+							"referenceName": "AzureSynapseAnalytics_dedicated_sql_pool",
+							"type": "LinkedServiceReference"
+						}
+					},
+					{
+						"name": "SP_Call_Merge_FactSales",
+						"type": "SqlServerStoredProcedure",
+						"dependsOn": [
+							{
+								"activity": "SP_Call_Merge_Invoice",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"storedProcedureName": "[[dbo].[usp_Merge_GoldFact_Sales_ByDate]",
+							"storedProcedureParameters": {
+								"Year": {
+									"value": "@pipeline().parameters.Year",
+									"type": "Single"
+								},
+								"Month": {
+									"value": {
+										"value": "@pipeline().parameters.Month",
+										"type": "Expression"
+									},
+									"type": "String"
+								},
+								"Day": {
+									"value": {
+										"value": "@pipeline().parameters.Day",
+										"type": "Expression"
+									},
+									"type": "String"
+								}
+							}
+						},
+						"linkedServiceName": {
+							"referenceName": "AzureSynapseAnalytics_dedicated_sql_pool",
+							"type": "LinkedServiceReference"
+						}
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {}
+				},
+				"parameters": {
+					"Year": {
+						"type": "string"
+					},
+					"Month": {
+						"type": "string"
+					},
+					"Day": {
+						"type": "string"
+					}
+				},
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureSynapseAnalytics_dedicated_sql_pool')]"
 			]
 		},
 		{
