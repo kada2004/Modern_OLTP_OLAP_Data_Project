@@ -78,9 +78,24 @@ RUN pip install --no-cache-dir --upgrade pip && \
 COPY ./app /app
 WORKDIR /app ``` </pre>
 
-## lsklfds
+## API Client 
+The API client sends a JSON payload to the API app and displays the response in the terminal.  
+On success, it returns a status message such as: `Status code:  201`
+<img width="1336" height="321" alt="client_posting_data_api_app_sample" src="https://github.com/user-attachments/assets/db997d70-3dbc-4b36-8f27-23f15ad58f61" />
 
-   what whatups 
+## Set Up Kafka and Zookeeper
+Apache Zookeper acts as the metadata database for kafka, managing brokers, topics, and comsumers. Both Kafka and Zookeeper are defined in single docker Docker Compose file [link_compose](link) Kafka depend on Zookeper to start and both are Network including Spark and PostgreSQL.
+
+    depends_on:
+      - zookeeper
+    networks:
+      - kafka-net
+    user: "root"
+
+A Kafka topic is created to receive  data from the API backend through the producer.
+The Local Consumer subscribes to and read the messages.
+start kafka & Zookeper with command `sudo docker-compose -f docker-compose-kafka.yml build` for building the images or `sudo docker-compose -f docker-compose-kafka.yml up` to start kafka and zookeper and in my case of my setup all in one compose to make sure they are in the same network in order for them to communicat.
+
 
 
 
