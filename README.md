@@ -94,8 +94,36 @@ Apache Zookeper acts as the metadata database for kafka, managing brokers, topic
 
 A Kafka topic is created to receive  data from the API backend through the producer.
 The Local Consumer subscribes to and read the messages.
-start kafka & Zookeper with command `sudo docker-compose -f docker-compose-kafka.yml build` for building the images or `sudo docker-compose -f docker-compose-kafka.yml up` to start kafka and zookeper and in my case of my setup all in one compose to make sure they are in the same network in order for them to communicat.
+start kafka & Zookeper with command `sudo docker-compose -f docker-compose-kafka.yml build` for building the images or `sudo docker-compose -f docker-compose-kafka.yml up` to start kafka and zookeper. And in the project setup all services are defined in a single Docker Compose file to make sure they are in the same network  to ensure communication between the streaming services.
 
+
+<img width="996" height="134" alt="starting container" src="https://github.com/user-attachments/assets/0b9a17a1-34a2-43ae-be70-10468ada102f" />
+<img width="1355" height="595" alt="Zookeeper" src="https://github.com/user-attachments/assets/b63b653d-88cb-4013-9210-fc2408f2270c" />
+
+## Some Important to command to kafka topics:
+
+<pre> ```
+#First to attach the Kafka shell then go to the dictory
+cd /opt/bitnami/kafka/bin
+#comand to list the existing topic of kafka
+./kafka-topics.sh --list --bootstrap-server localhost:9092 
+
+#command to create ingest topic :
+./kafka-topics.sh --create --topic ingestion-topic --bootstrap-server localhost:9092
+./kafka-console-consumer.sh --topic spark-output --bootstrap-server localhost:9092  #spark spark ouput topic
+
+#command to create a local consummer:
+./kafka-console-consumer.sh --topic ingestion-topic --bootstrap-server localhost:9092 ``` </pre>
+
+local consumer:
+<img width="1327" height="386" alt="local_consummer_df" src="https://github.com/user-attachments/assets/3d7c47d5-801f-4126-98be-bae8ebc35463" />
+
+## Spark Set up
+
+Spark read the stream the ingest topic from Kafka and Spark is set in the same compose as kafka and zookeeper and all start at the same time the compose up.
+Spark read the stream and prepare the structure of json into a dataframe in order to math the Data modele in PostgreSQL and at the same time spark write data to Azure data lake in parquet format. without any tranformation for OLAP just the format which change and the deduplicating and logic to in jupiter notebook the way to insert logic into the database for new and update logic because I need preferent to use Store procedures for streaming and let spark handle the insert logic into the databse. and the connection passords and connection between spark and postgress is kept in the .env commit to gitignore to that it will not be display in the repostory. In connection between Saprk and Azure i'm using access key because the SAS token was not behaving properly with the version of my park.
+
+one issue for hfbsf to write to spark . to be continue and write properly.
 
 
 
