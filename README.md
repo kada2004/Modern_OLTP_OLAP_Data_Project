@@ -53,6 +53,8 @@ The project contains a complete data pipeline that supports both OLTP (Online Tr
 I have used an E-Commerce dataset from kaggle [dataset link](https://www.kaggle.com/datasets/tunguz/online-retail)
 which Contains transactional records, customer details, and product information.
 
+## Objectives to achieve with this dataset OLTP & OLAP
+
 ## Building API:
 1. Created a python [script](code to be added after push to repo) that converts Kaggle E-commerce dataset from csv to Json format.
 2. Tested first with Postman and Created API client to POST Json data into the FastAPI app.
