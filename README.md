@@ -11,14 +11,27 @@ This is project is designed to stream workflow data which is sent in Json to Fas
 * Improve understanding of Docker and how to host applications
 * Practice and improve data modelling skills and SQL store procedures
 * Build an end-to-end pipeline in Azure.
+  
   Transaction Use Case (OLTP)
+  * Store all Transaction  happening on the E-commerce platform (Items description,Amount,quantity) make the user to have access to each transaction
+    * User to view their total spend up to date
+    * View Order history by showing all invoices 
+    * View all returned items
+
+  Analytics Use Case (OLTP)
+  * Business Intelligence for the analysts to view aggragate sales over time and analyse the Trends
+    * Total Sales
+    * Sales  Over time
+    * Top 10 Products by sales
+    * Customer summary : Toal, loyal customers
+    * Cancelled Orders or Return
   
 
 ## The Project Overview
 
 The project contains a complete data pipeline that supports both OLTP (Online Transaction Processing) and OLAP (Online Analytical Processing) Workload. The workflow integrates multiple technologies for real-time data processing, storage, transformation and visualization.
 
-# Stack used in the project
+## Stack used in the project
 ## Streaming OLTP
 1. Python Script that Transfom csv to json format for the APi Client
 2. Python Client:
@@ -64,8 +77,6 @@ The project contains a complete data pipeline that supports both OLTP (Online Tr
 ## The Dataset 
 I have used an E-Commerce dataset from kaggle [dataset link](https://www.kaggle.com/datasets/tunguz/online-retail)
 which Contains transactional records, customer details, and product information.
-
-## Objectives to achieve with this dataset OLTP & OLAP
 
 ## Building API:
 1. Created a python [script](code to be added after push to repo) that converts Kaggle E-commerce dataset from csv to Json format.
