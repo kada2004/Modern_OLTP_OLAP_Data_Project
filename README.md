@@ -1,6 +1,18 @@
-# OLTP AND OLAP DATA WORKFLOW
+# Project Introduction & Goals
 
+## Introduction
 This is project is designed to stream workflow data which is sent in Json to FastAPI application. Then the data is published to kafka for further downstream and processing. The data is written to azure as well for OLAP purposes to enable advance analytics. And the OLAP follow the medaillon architecture principle with BRONZE-SILVER-GOLD layers.
+
+## Project Goals
+ Objectives of the project
+* Build streaming data pipeline using open-source technologies.
+* Learn and understand stream processing.
+* Set up and connect different open-source tools to work together(API,Kafka,PostgreSQL)
+* Improve understanding of Docker and how to host applications
+* Practice and improve data modelling skills and SQL store procedures
+* Build an end-to-end pipeline in Azure.
+  Transaction Use Case (OLTP)
+  
 
 ## The Project Overview
 
