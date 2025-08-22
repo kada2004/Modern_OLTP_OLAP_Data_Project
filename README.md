@@ -161,16 +161,26 @@ Spark also managed the configuration and libraries which are required to write d
   I faced a major challenge to connect spark and Azure Data Lake. The Spark docker image (spark 2) was unable to authenticate to Azure because spark 2 don't  have all the required  hadoop libraries to write to Azure.
   error message <pre> ```Writing batch 0 to Azure Blob Failed to write batch 0 to Azure Blob: An error occurred while calling o361.parquet. : org.apache.spark.SparkException: Job aborted.  at org.apache.spark.sql.execution.datasources.FileFormatWriter$.write(FileFormatWriter.scala:198)  at org.apache.spark.sql.execution.datasources.InsertIntoHadoopFsRelationCommand.run(InsertIntoHadoopFsRelationCommand.scala:159)  at org.apache.spark.sql.execution.command.DataWritingCommandExec.sideEffectResult$lzycompute(commands.scala:104)  at org.apache.spark.sql.execution.command.DataWritingCommandExec.sideEffectResult(commands.scala:102)  at org.apache.spark.sql.execution.command.DataWritingCommandExec.doExecute(commands.scala:122)``` </pre>
    Solution:
-   To solve this, I upgraded spark image from version 2 to version 3. This allowed me to use the use abfbs:// scheme instead of old wasb:// scheme, which is better supported in Spark 3. After the upgrade Spark is writting to Azure Data Lake without any problem.
-   #### nedd to check what exactly in the code about this: abfbs://
+   To solve this, I upgraded spark image from version 2 to version 3. This allowed me to use the use abfss:// scheme instead of old wasb:// scheme, which is better supported in Spark 3. After the upgrade Spark is writting to Azure Data Lake without any problem.
 
  # PostreSQL set up
  PostgreSQL is hosted in Docker and is on the same network as rest of the service. pgAdmin also is configured in Docker to connect to PosgreSQL and visualize the data. The connection and passwords of pgAdmin and postgreSQL are stored in the `.env` file.             PostgreSQL is exposed on port .... and pgAdmin is exposed on port..... 
- In order to meet the objective processing the streaming dataset for OLTP  . I need to do data modelling. Below is the ERD diagram of postgreSQL
+In order to meet the objective processing the streaming dataset for OLTP  . I need to do data modelling. Below is the ERD diagram of postgreSQL
 
  ERD Diagram for PostgreSQL.
  
 <img width="1596" height="994" alt="image (3)" src="https://github.com/user-attachments/assets/4f3e5102-013f-44db-964a-330b64c1cfc5" />
+
+pgAdmin UI connect to PostgreSQL
+<img width="1844" height="939" alt="image" src="https://github.com/user-attachments/assets/61f2054e-f8be-4868-a953-bbaf674dfec0" />
+
+[link PostgreSQL Tables Code]()
+
+
+# Streamlit Dahsboard App set
+
+
+
 
  
 
