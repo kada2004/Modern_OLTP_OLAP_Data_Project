@@ -177,7 +177,7 @@ pgAdmin UI connect to PostgreSQL
 [link PostgreSQL Tables Code]()
 
 
-# Streamlit Dahsboard App set
+# Streamlit Dahsboard App set up
 
 
 
