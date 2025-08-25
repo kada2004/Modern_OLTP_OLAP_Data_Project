@@ -178,6 +178,39 @@ pgAdmin UI connect to PostgreSQL
 
 
 # Streamlit Dahsboard App set up
+Streamlit an open-source python Library that helps you to build customs application to share data and machine kearning web app.
+
+In my setup, Streamlit connect directly to PostgreSQL database using SQLAlchemy Library. it runs SQL queries and shows the results as a dashboard in Streamlit app.
+[Link to code]()
+
+# Azure OLAP Configuration
+# Infrastructure as code : Terraform
+The entire infrastructure in Azure has been provisioned using Terraform, following best practices. Terraform State is stored in a remote backend in azure blob storage. This approach offers several benefits:
+* State Locking to prevent concurrent modifications
+* Improved security by avoiding having state locally.
+* Centralized State file, providing a single source of truth for the current state infrastructure state
+* Better Collaboration accross teams by allowing shared access to the state backend.
+  
+snippet code :
+<pre> ```
+terraform {
+  backend "azurerm" {
+    resource_group_name  = "data_platform"
+    storage_account_name = "datastorage7i4ws2"
+    container_name       = "terraform-state"
+    key                  = "terraform.tfstate"
+  }
+} ``` </pre>
+
+And Storage account access key store in KeyVault for better security
+
+<img width="2548" height="257" alt="image" src="https://github.com/user-attachments/assets/52cd6aa1-2e68-4976-9e03-7e2e4da70912" />
+
+# Terraform CI/CD Set up
+
+
+
+
 
 
 
