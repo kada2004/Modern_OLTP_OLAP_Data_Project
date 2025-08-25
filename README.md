@@ -125,6 +125,7 @@ start kafka & Zookeper with command `sudo docker-compose -f docker-compose-kafka
 <img width="996" height="134" alt="starting container" src="https://github.com/user-attachments/assets/0b9a17a1-34a2-43ae-be70-10468ada102f" />
 <img width="1355" height="595" alt="Zookeeper" src="https://github.com/user-attachments/assets/b63b653d-88cb-4013-9210-fc2408f2270c" />
 
+
 ## Some Important to command to kafka topics:
 
 <pre> ```
@@ -152,7 +153,13 @@ Connection details (like passwords) are store in the `.env` files, which is list
 link to jupiter notebook code [link]()
 
 Spark Jupiter Notebook is exposed on Port 8080 and Spark UI is available on Port 4040
-screenshooot here of the run.
+
+Spark UI
+
+<img width="1848" height="932" alt="spark_ui1" src="https://github.com/user-attachments/assets/284f167c-f7bc-418a-8bb8-1b7f4727169b" />
+
+<img width="1848" height="450" alt="spark_ui" src="https://github.com/user-attachments/assets/1654c9a6-7a0e-4a83-8c6a-f78f68e30e7a" />
+
 
 For connection between Spark and Azure, an access key is used instead of SAS token because SAS token was not working well was not handling the rename of folder in Azure even with all privileges.
 Spark also managed the configuration and libraries which are required to write data to PostgreSQL.
@@ -183,6 +190,8 @@ Streamlit an open-source python Library that helps you to build customs applicat
 In my setup, Streamlit connect directly to PostgreSQL database using SQLAlchemy Library. it runs SQL queries and shows the results as a dashboard in Streamlit app.
 [Link to code]()
 
+Streamlit images screenshot here 
+
 # Azure OLAP Configuration
 # Infrastructure as code : Terraform
 The entire infrastructure in Azure has been provisioned using Terraform, following best practices. Terraform State is stored in a remote backend in azure blob storage. This approach offers several benefits:
@@ -201,6 +210,10 @@ terraform {
     key                  = "terraform.tfstate"
   }
 } ``` </pre>
+
+Migrate state to remote backend :
+
+<img width="1080" height="482" alt="migrate_the_remote_backend_to_blob" src="https://github.com/user-attachments/assets/872061e4-a096-4095-831b-7ebb33ea8eb2" />
 
 And Storage account access key store in KeyVault for better security
 
