@@ -190,9 +190,20 @@ pgAdmin UI connect to PostgreSQL
 Streamlit an open-source python Library that helps you to build customs application to share data and machine kearning web app.
 
 In my setup, Streamlit connect directly to PostgreSQL database using SQLAlchemy Library. it runs SQL queries and shows the results as a dashboard in Streamlit app.
+
+Command to start the app `streamlit run app.py`
 [Link to code]()
 
 Streamlit images screenshot here 
+
+<img width="1846" height="939" alt="image" src="https://github.com/user-attachments/assets/e6234c3a-2bde-4427-b7b9-b4805927e308" />
+
+# e.g Customer with Cancelled InvoiceNo
+
+<img width="1845" height="936" alt="image" src="https://github.com/user-attachments/assets/868b6866-a827-4f11-8a5d-b0aa6df6d042" />
+
+
+
 
 # Azure OLAP Configuration
 # Infrastructure as code : Terraform
