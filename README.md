@@ -107,6 +107,7 @@ WORKDIR /app ``` </pre>
 The API client sends a JSON payload to the API app and displays the response in the terminal.  
 On success, it returns a status message such as: `Status code:  201`
 <img width="1336" height="321" alt="client_posting_data_api_app_sample" src="https://github.com/user-attachments/assets/db997d70-3dbc-4b36-8f27-23f15ad58f61" />
+Api app receiving the json documents
 <img width="1328" height="540" alt="fastapi_app_view" src="https://github.com/user-attachments/assets/d108d39b-3b55-4708-b411-75c10e66ea56" />
 
 
@@ -233,6 +234,61 @@ And Storage account access key store in KeyVault for better security
 <img width="2548" height="257" alt="image" src="https://github.com/user-attachments/assets/52cd6aa1-2e68-4976-9e03-7e2e4da70912" />
 
 # Terraform CI/CD Set up
+
+I have built a CI/CD pipeline to automate the infrastructure provision with Terraform:
+ * Authentication: via service principal (Contributor role), credentialas store in GitHub Secrets.
+ * Workflow: defined in `.github/workflows/ci_cd.yaml`. (code)[].
+   * Build job: Azure login --> Terraform init/validate --> save plan as artifaact.
+   * Deploy job: Azure login --> download plan --> Terraform init/apply.
+
+ * Currently using `terraform apply -auto-approve` however in a team settings, a manual approval before apply is recommended.
+
+   Terraform SP
+   
+   <img width="2546" height="1000" alt="image" src="https://github.com/user-attachments/assets/0755b2d3-dd80-4b34-802f-0326e3b157ac" />
+
+   secrets
+   
+   <img width="1423" height="951" alt="image" src="https://github.com/user-attachments/assets/922a83f0-8c69-452d-a7c5-74b912d61908" />
+
+   view CD/CD
+   
+   <img width="2542" height="860" alt="image" src="https://github.com/user-attachments/assets/44e846a5-29b2-4d8d-8ccb-21dadc7b7123" />
+   
+   view build task
+   
+   <img width="852" height="797" alt="image" src="https://github.com/user-attachments/assets/8da33a27-c84a-43a9-8a4f-5c31571171b0" />
+
+   view deploy task
+   
+   <img width="790" height="750" alt="image" src="https://github.com/user-attachments/assets/84604555-7cbf-4afc-b4d7-3f5ee855e362" />
+
+   view plan
+
+   
+   <img width="748" height="1142" alt="image" src="https://github.com/user-attachments/assets/05ecef73-4c15-440b-babe-e6811f434ef1" />
+
+   view apply
+
+   <img width="496" height="1008" alt="image" src="https://github.com/user-attachments/assets/47c67dd0-8f8c-4e7b-bb97-d3448f2aa707" />
+
+   Azure infrastructure created via Terraform
+
+   <img width="1732" height="755" alt="image" src="https://github.com/user-attachments/assets/5cfd6d75-0caf-4b20-8acc-f65a46937fe5" />
+
+
+   
+
+
+
+
+   
+
+   
+
+   
+
+
 
 
 
