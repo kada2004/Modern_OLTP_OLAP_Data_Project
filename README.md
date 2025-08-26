@@ -107,6 +107,8 @@ WORKDIR /app ``` </pre>
 The API client sends a JSON payload to the API app and displays the response in the terminal.  
 On success, it returns a status message such as: `Status code:  201`
 <img width="1336" height="321" alt="client_posting_data_api_app_sample" src="https://github.com/user-attachments/assets/db997d70-3dbc-4b36-8f27-23f15ad58f61" />
+<img width="1328" height="540" alt="fastapi_app_view" src="https://github.com/user-attachments/assets/d108d39b-3b55-4708-b411-75c10e66ea56" />
+
 
 ## Set Up Kafka and Zookeeper
 Apache Zookeper acts as the metadata database for kafka, managing brokers, topics, and comsumers. Both Kafka and Zookeeper are defined in single docker Docker Compose file [link_compose](link) Kafka depend on Zookeper to start and both are Network including Spark and PostgreSQL.
