@@ -1,0 +1,17 @@
+{
+	"name": "Total_Most_Repeating_Customers_View",
+	"properties": {
+		"content": {
+			"query": "----- Total Customers & Most Repeating Cust\n-----DROP VIEW vw_CustomerStats;\n\n\n---SELECT * FROM vw_CustomerStats\n\n-----\n--DROP VIEW vw_CustomerStats\nCREATE VIEW vw_CustomerStats AS\nWITH CustomerOrderCounts AS (\n    SELECT \n        I.CustomerID,\n        COUNT(DISTINCT F.InvoiceNo) AS OrderCount\n    FROM GoldFact_Sales AS F\n    JOIN GoldDim_Invoice AS I\n        ON F.InvoiceNo = I.InvoiceNo\n    GROUP BY I.CustomerID\n),\nMaxOrderCount AS (\n    SELECT MAX(OrderCount) AS MostRepeatingOrders\n    FROM CustomerOrderCounts\n)\nSELECT \n    C.CustomerID,\n    C.CustomerName,\n    CO.OrderCount,\n    (SELECT COUNT(DISTINCT CustomerID) FROM GoldDim_Customer) AS TotalCustomers,\n    M.MostRepeatingOrders\nFROM CustomerOrderCounts AS CO\nJOIN MaxOrderCount AS M\n    ON 1 = 1 -- Cartesien join to attach the max value to all row\nJOIN GoldDim_Customer AS C\n    ON CO.CustomerID = C.CustomerID\nWHERE CO.OrderCount > 1;  -- Filter customers who made more than 1 order\n\n\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "synape_sql_pool",
+				"poolName": "synape_sql_pool"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

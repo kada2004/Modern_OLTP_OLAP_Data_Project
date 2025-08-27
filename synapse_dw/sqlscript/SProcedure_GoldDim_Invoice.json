@@ -1,0 +1,17 @@
+{
+	"name": "SProcedure_GoldDim_Invoice",
+	"properties": {
+		"content": {
+			"query": "\n--- Invoice Table SP \n\n\n\n\n----SELECT * FROM GoldDim_Invoice;\n---EXEC usp_Merge_GoldDim_Invoice;\n\n\n------ Clean SP \n\nIF OBJECT_ID('dbo.usp_Merge_GoldDim_Invoice_ByDate', 'P') IS NOT NULL\n    DROP PROCEDURE dbo.usp_Merge_GoldDim_Invoice_ByDate;\nGO\n\nCREATE PROCEDURE usp_Merge_GoldDim_Invoice_ByDate\n    @Year NVARCHAR(4),\n    @Month NVARCHAR(2),\n    @Day NVARCHAR(2)\nAS\nBEGIN\n    SET NOCOUNT ON;\n\n    -- Build dynamic path to the correct date folder\n    DECLARE @Location NVARCHAR(200) = \n        CONCAT('silver/dim_invoice/', @Year, '/', @Month, '/', @Day, '/');\n\n    DECLARE @sql NVARCHAR(MAX) = '\n    -- Create temp external table pointing to the specific date folder\n    CREATE EXTERNAL TABLE ExternalGoldDimInvoiceTemp (\n        InvoiceNo VARCHAR(50),\n        InvoiceDate DATE,\n        CustomerID INT,\n        DateID INT\n    )\n    WITH (\n        LOCATION = ''' + @Location + ''',\n        DATA_SOURCE = SilverDataLake,\n        FILE_FORMAT = ParquetFormat\n    );\n\n    -- Merge logic with deduplication based on InvoiceNo\n    MERGE GoldDim_Invoice AS tgt\n    USING (\n        SELECT InvoiceNo, InvoiceDate, CustomerID, DateID\n        FROM (\n            SELECT \n                InvoiceNo,\n                InvoiceDate,\n                CustomerID,\n                DateID,\n                ROW_NUMBER() OVER (PARTITION BY InvoiceNo ORDER BY InvoiceDate DESC) AS rn\n            FROM ExternalGoldDimInvoiceTemp\n            WHERE InvoiceNo IS NOT NULL\n        ) AS dedup\n        WHERE rn = 1\n    ) AS src\n    ON tgt.InvoiceNo = src.InvoiceNo\n    WHEN MATCHED THEN\n        UPDATE SET\n            tgt.InvoiceDate = src.InvoiceDate,\n            tgt.CustomerID = src.CustomerID,\n            tgt.DateID = src.DateID\n    WHEN NOT MATCHED BY TARGET THEN\n        INSERT (InvoiceNo, InvoiceDate, CustomerID, DateID)\n        VALUES (src.InvoiceNo, src.InvoiceDate, src.CustomerID, src.DateID);\n\n    -- Drop temp external table\n    DROP EXTERNAL TABLE ExternalGoldDimInvoiceTemp;\n    ';\n\n    -- Execute dynamic SQL\n    EXEC sp_executesql @sql;\nEND;\nGO\n\n---DROP EXTERNAL TABLE ExternalGoldDimInvoiceTemp\n---EXEC usp_Merge_GoldDim_Invoice_ByDate\n    ---@Year = '2025',\n    ---@Month = '08',\n    ---@Day = '13';\n\n\n\n--SELECT * FROM GoldDim_Invoice\n\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "synape_sql_pool",
+				"poolName": "synape_sql_pool"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

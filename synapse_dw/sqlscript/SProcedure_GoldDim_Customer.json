@@ -1,0 +1,17 @@
+{
+	"name": "SProcedure_GoldDim_Customer",
+	"properties": {
+		"content": {
+			"query": "\n----Upsert Logic for Dim_Customer\n\n-----DROP IF EXIST AS ALTER IS NOT SUPPORTED IN SYNAPSE\n\n----- New Great SP\n----- IF sp exist do not create and if don't exit create one\nIF OBJECT_ID('dbo.usp_Merge_GoldDim_Customer_ByDate', 'P') IS NOT NULL\n    DROP PROCEDURE dbo.usp_Merge_GoldDim_Customer_ByDate;\nGO\nCREATE PROCEDURE usp_Merge_GoldDim_Customer_ByDate\n    @Year NVARCHAR(4),\n    @Month NVARCHAR(2),\n    @Day NVARCHAR(2)\nAS\nBEGIN\n    SET NOCOUNT ON;\n\n    DECLARE @Location NVARCHAR(200) = \n        CONCAT('silver/dim_customer/', @Year, '/', @Month, '/', @Day, '/');\n\n    DECLARE @sql NVARCHAR(MAX) = '\n    CREATE EXTERNAL TABLE ExternalGoldDimCustomerTemp (\n        CustomerID INT,\n        CustomerName NVARCHAR(100),\n        CountryName NVARCHAR(100)\n    )\n    WITH (\n        LOCATION = ''' + @Location + ''',\n        DATA_SOURCE = SilverDataLake,\n        FILE_FORMAT = ParquetFormat\n    );\n\n    MERGE GoldDim_Customer AS tgt\n    USING (\n        SELECT CustomerID, CustomerName, CountryName\n        FROM (\n            SELECT \n                CustomerID,\n                CustomerName,\n                CountryName,\n                ROW_NUMBER() OVER (PARTITION BY CustomerID ORDER BY CustomerName) AS rn\n            FROM ExternalGoldDimCustomerTemp\n            WHERE CustomerID IS NOT NULL\n        ) AS dedup\n        WHERE rn = 1\n    ) AS src\n    ON tgt.CustomerID = src.CustomerID\n    WHEN MATCHED THEN\n        UPDATE SET\n            tgt.CustomerName = src.CustomerName,\n            tgt.CountryName = src.CountryName\n    WHEN NOT MATCHED BY TARGET THEN\n        INSERT (CustomerID, CustomerName, CountryName)\n        VALUES (src.CustomerID, src.CustomerName, src.CountryName);\n\n    DROP EXTERNAL TABLE ExternalGoldDimCustomerTemp;\n    ';\n\n    EXEC sp_executesql @sql;\nEND\n\n---EXEC usp_Merge_GoldDim_Customer_ByDate \n    --@Year = '2025',\n---@Month = '08',\n    ---@Day = '13';\n\n----SELECT * FROM GoldDim_Customer\n\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "synape_sql_pool",
+				"poolName": "synape_sql_pool"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
