@@ -331,6 +331,9 @@ The orchestration of data pipelins is managed using Azure Data Factory (ADF) and
   * Handles scheduling and triggering of ADF pipelins using Data Factory operator withing the DAG
   * Airflow run inside Docker
   * The run is scheduled to run every day at 07:40
+  * Connects to Azure via Service Principal:
+    * The service principal is granted the ADF Contributor role.
+    * The secrets are securely stored in Keyvault and use Airflow Variable to retrieve the secrets and authenticate to Azure
 
 This hybrid approach leverages ADF for data movement and transformation orchestration, while Airflow provide robust workflow scheduling and control.
 
