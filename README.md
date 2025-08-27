@@ -346,13 +346,18 @@ ADF UI Gold pipeline
 <img width="1995" height="993" alt="image" src="https://github.com/user-attachments/assets/f47419cf-9e2c-401d-be85-202f641d8b69" />
 
 Run from monitor trigger by Airflow
+
 <img width="2140" height="442" alt="image" src="https://github.com/user-attachments/assets/a7f481ba-be7a-4bff-a179-c29ec9cc3cab" />
+Airflow UI Run
 
+<img width="1849" height="938" alt="airflow_dag_ui" src="https://github.com/user-attachments/assets/9a02d356-9a26-43f0-8e19-8e74770913e9" />
+Run Logs
 
+<img width="1490" height="475" alt="airflow_logs_anotherONE" src="https://github.com/user-attachments/assets/83c9c788-9c10-4773-94c7-b14d9b740c1d" />
 
+VsCode Logs
 
-
-
+<img width="1324" height="602" alt="dag_trigger_logs_from_vscode" src="https://github.com/user-attachments/assets/c1d3b1e8-55bb-4985-9680-7289accd124c" />
 
 
  
