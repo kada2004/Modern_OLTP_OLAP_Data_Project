@@ -323,6 +323,7 @@ The data transformation floows the Medaillion Architecture flow:
 
   <img width="1792" height="286" alt="image" src="https://github.com/user-attachments/assets/bd2d6ebb-66eb-466b-97be-71fd3bbde87c" />
 
+Document about linked service between synapse and data lake gen2 and so on and synpase store code in github as json
 
  
 
