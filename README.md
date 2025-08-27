@@ -284,7 +284,28 @@ I have built a CI/CD pipeline to automate the infrastructure provision with Terr
      Also store in Azure Data Lake Gen2
      Data is transformed and split into structures tables
      
-     -
+     - Dim_Customer
+     - Dim_Date
+     - Dim_Invoice
+     - Dim_Product
+     - Fact_Sales
+
+Datastore portal
+<img width="1927" height="1078" alt="image" src="https://github.com/user-attachments/assets/c12b013f-fbfd-4541-9641-f7e10eb23f23" />
+
+Silver Layer Tables
+
+<img width="558" height="405" alt="image" src="https://github.com/user-attachments/assets/c9cb3990-3caf-43b1-bfda-7e1242513adf" />
+
+
+
+
+   * Gold Layer
+     Store in Azure Synapse Analytics.
+     Serves as query engine for Power BI
+     Data from Silver is loaded via SQL stored procedures.
+
+    
 
 
    
