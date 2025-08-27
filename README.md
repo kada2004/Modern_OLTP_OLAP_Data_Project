@@ -302,7 +302,9 @@ Silver Layer Tables
 
    * Gold Layer
      Store in Azure Synapse Analytics.
+     
      Serves as query engine for Power BI
+     
      Data from Silver is loaded via SQL stored procedures.
 
     
