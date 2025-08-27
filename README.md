@@ -59,12 +59,6 @@ The project contains a complete data pipeline that supports both OLTP (Online Tr
 8. Power BI: Dashboards and Reports are powered by Power BI
    
 
-
-
-                                     to be continuee for azure under construction
-
-
-# Managed Identity between Azure data Lake and Synapse to create External table: Need to document this.
 # Project Architecture
 ![Diagram-diagram](https://github.com/user-attachments/assets/861cfeb7-3703-4058-a826-3fefe097fda1)
 
@@ -324,6 +318,7 @@ The data transformation floows the Medaillion Architecture flow:
   <img width="1792" height="286" alt="image" src="https://github.com/user-attachments/assets/bd2d6ebb-66eb-466b-97be-71fd3bbde87c" />
 
 Document about linked service between synapse and data lake gen2 and so on and synpase store code in github as json
+Managed Identity between Azure data Lake and Synapse to create External table: Need to document this.
 
  
 
