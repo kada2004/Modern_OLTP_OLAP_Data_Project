@@ -276,6 +276,16 @@ I have built a CI/CD pipeline to automate the infrastructure provision with Terr
 
    <img width="1732" height="755" alt="image" src="https://github.com/user-attachments/assets/5cfd6d75-0caf-4b20-8acc-f65a46937fe5" />
 
+   ## Datastore (Medallion Architecture)
+    The datastore is organized using the Medallion Architecture pattern with 3 Layers
+   * Bronze Layer
+     Store in Azure Data Lake Gen2, holds raw data in parquet format.
+   * Silver Layer
+     Also store in Azure Data Lake Gen2
+     Data is transformed and split into structures tables
+     
+     -
+
 
    
 
