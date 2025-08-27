@@ -334,6 +334,23 @@ The orchestration of data pipelins is managed using Azure Data Factory (ADF) and
 
 This hybrid approach leverages ADF for data movement and transformation orchestration, while Airflow provide robust workflow scheduling and control.
 
+ADF UI Silver pipeline
+
+<img width="1810" height="991" alt="image" src="https://github.com/user-attachments/assets/03c0dabe-80f3-457a-a03d-cbedcd78da91" />
+
+ADF UI Gold pipeline
+
+<img width="1995" height="993" alt="image" src="https://github.com/user-attachments/assets/f47419cf-9e2c-401d-be85-202f641d8b69" />
+
+Run from monitor trigger by Airflow
+<img width="2140" height="442" alt="image" src="https://github.com/user-attachments/assets/a7f481ba-be7a-4bff-a179-c29ec9cc3cab" />
+
+
+
+
+
+
+
 
  
 
