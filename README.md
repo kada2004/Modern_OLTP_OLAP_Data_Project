@@ -317,8 +317,23 @@ The data transformation floows the Medaillion Architecture flow:
 
   <img width="1792" height="286" alt="image" src="https://github.com/user-attachments/assets/bd2d6ebb-66eb-466b-97be-71fd3bbde87c" />
 
-Document about linked service between synapse and data lake gen2 and so on and synpase store code in github as json
-Managed Identity between Azure data Lake and Synapse to create External table: Need to document this.
+Synapse connect to Azure Data Lake Gen2 via Managed Identity
+
+## Orchestration
+
+The orchestration of data pipelins is managed using Azure Data Factory (ADF) and Apache Airflow.
+
+* Azure Data Factory
+  * Orchestrates transformation from Bronze → Silver by executing Synapse Spark notebooks with conditional activities.
+  * Manges Silver → Gold by running stored procedures in the correct sequence inside Synapse Dedicated SQL Pool
+
+* Apache Airflow
+  * Handles scheduling and triggering of ADF pipelins using Data Factory operator withing the DAG
+  * Airflow run inside Docker
+  * The run is scheduled to run every day at 07:40
+
+This hybrid approach leverages ADF for data movement and transformation orchestration, while Airflow provide robust workflow scheduling and control.
+
 
  
 
