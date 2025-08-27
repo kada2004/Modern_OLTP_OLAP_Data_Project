@@ -319,6 +319,11 @@ The data transformation floows the Medaillion Architecture flow:
   Transformations are handle via SQL stored procedures using upsert/merge logic
   Outputs are loaded into Synapse Tables
 
+  Analytics pools
+
+  <img width="1792" height="286" alt="image" src="https://github.com/user-attachments/assets/bd2d6ebb-66eb-466b-97be-71fd3bbde87c" />
+
+
   [Link to code]()
 
 
