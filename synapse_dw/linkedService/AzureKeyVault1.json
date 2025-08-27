@@ -1,0 +1,11 @@
+{
+	"name": "AzureKeyVault1",
+	"type": "Microsoft.Synapse/workspaces/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://kv-data-platform-7i4ws2.vault.azure.net/"
+		}
+	}
+}
