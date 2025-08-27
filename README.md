@@ -292,12 +292,16 @@ I have built a CI/CD pipeline to automate the infrastructure provision with Terr
  <img width="558" height="405" alt="image" src="https://github.com/user-attachments/assets/c9cb3990-3caf-43b1-bfda-7e1242513adf" />
 
 
- * Gold Layer
-   Store in Azure Synapse Analytics.
-   
-   Serves as query engine for Power BI
-   
-   Data from Silver is loaded via SQL stored procedures.
+* Gold Layer
+  Store in Azure Synapse Analytics.
+  
+  Serves as query engine for Power BI
+  
+  Data from Silver is loaded via SQL stored procedures.
+
+  ERD GOLD
+  
+  <img width="1168" height="808" alt="image (5)" src="https://github.com/user-attachments/assets/c36fd257-72d9-478f-862d-f186f146696e" />
 
 
 ## Data Transformation
@@ -359,6 +363,16 @@ VsCode Logs
 
 <img width="1324" height="602" alt="dag_trigger_logs_from_vscode" src="https://github.com/user-attachments/assets/c1d3b1e8-55bb-4985-9680-7289accd124c" />
 
+## POWER BY 
+
+Power BY is connected directly to Azure Synapse (Gold Layer) direct query to enable reporting for the analyst.
+I have built a Sales Dashboard that supports The objectives defined for this dataset with insights such as:
+
+* Total Sales
+* Sales Over Time
+* Cancelled Orders
+* Top 10 Products by sales
+* Top loyal customers
 
  
 
