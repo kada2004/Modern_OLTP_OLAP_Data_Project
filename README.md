@@ -374,6 +374,11 @@ I have built a Sales Dashboard that supports The objectives defined for this dat
 * Top 10 Products by sales
 * Top loyal customers
 
+Power By Dashboard 
+
+<img width="1421" height="746" alt="image" src="https://github.com/user-attachments/assets/38a736ee-a267-49dd-8829-31b0449d81fd" />
+
+
  
 
 
