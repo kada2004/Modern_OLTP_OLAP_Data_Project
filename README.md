@@ -290,22 +290,38 @@ I have built a CI/CD pipeline to automate the infrastructure provision with Terr
      - Dim_Product
      - Fact_Sales
 
-Datastore portal
-<img width="1927" height="1078" alt="image" src="https://github.com/user-attachments/assets/c12b013f-fbfd-4541-9641-f7e10eb23f23" />
-
-Silver Layer Tables
-
-<img width="558" height="405" alt="image" src="https://github.com/user-attachments/assets/c9cb3990-3caf-43b1-bfda-7e1242513adf" />
-
-
+ Datastore portal
+ <img width="1927" height="1078" alt="image" src="https://github.com/user-attachments/assets/c12b013f-fbfd-4541-9641-f7e10eb23f23" />
+ 
+ Silver Layer Tables
+ 
+ <img width="558" height="405" alt="image" src="https://github.com/user-attachments/assets/c9cb3990-3caf-43b1-bfda-7e1242513adf" />
 
 
-   * Gold Layer
-     Store in Azure Synapse Analytics.
-     
-     Serves as query engine for Power BI
-     
-     Data from Silver is loaded via SQL stored procedures.
+ * Gold Layer
+   Store in Azure Synapse Analytics.
+   
+   Serves as query engine for Power BI
+   
+   Data from Silver is loaded via SQL stored procedures.
+
+
+## Data Transformation
+The data transformation floows the Medaillion Architecture flow:
+
+* Bronze → Silver
+  Transformations are performed using Synapse Spark Serveless Pool.
+  Raw Parquet data from Bronze layer is cleaned, deduplicated and split into structured tables (`dim_customer,dim_date,dim_invoice,dim_product,fact_sales`)
+  The processed outputs are stored in silver layer (ADLS Gen2).
+
+* Silver → Gold
+  Data is accessed through external tables  on the fly from stored procedures
+  Transformations are handle via SQL stored procedures using upsert/merge logic
+  Outputs are loaded into Synapse Tables
+
+  [Link to code]()
+
+
 
     
 
