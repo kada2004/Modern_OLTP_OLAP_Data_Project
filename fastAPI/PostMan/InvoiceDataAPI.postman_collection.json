@@ -1,0 +1,110 @@
+{
+  "info": {
+    "name": "Invoice Data API",
+    "_postman_id": "12345678-1234-1234-1234-123456789abc",
+    "description": "Collection to POST individual invoice items to FastAPI endpoint /invoicedata",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Invoice 1",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"InvoiceNo\":536365,\"StockCode\":\"85123A\",\"Description\":\"WHITE HANGING HEART T-LIGHT HOLDER\",\"Quantity\":6,\"InvoiceDate\":\"12/01/2010 08:26\",\"UnitPrice\":2.55,\"CustomerID\":17850,\"Country\":\"United Kingdom\"}"
+        },
+        "url": {
+          "raw": "http://localhost:80/invoicedata",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "80",
+          "path": ["invoicedata"]
+        }
+      }
+    },
+    {
+      "name": "Invoice 2",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"InvoiceNo\":536365,\"StockCode\":\"71053\",\"Description\":\"WHITE METAL LANTERN\",\"Quantity\":6,\"InvoiceDate\":\"12/01/2010 08:26\",\"UnitPrice\":3.39,\"CustomerID\":17850,\"Country\":\"United Kingdom\"}"
+        },
+        "url": {
+          "raw": "http://localhost:80/invoicedata",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "80",
+          "path": ["invoicedata"]
+        }
+      }
+    },
+    {
+      "name": "Invoice 3",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"InvoiceNo\":536365,\"StockCode\":\"84406B\",\"Description\":\"CREAM CUPID HEARTS COAT HANGER\",\"Quantity\":8,\"InvoiceDate\":\"12/01/2010 08:26\",\"UnitPrice\":2.75,\"CustomerID\":17850,\"Country\":\"United Kingdom\"}"
+        },
+        "url": {
+          "raw": "http://localhost:80/invoicedata",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "80",
+          "path": ["invoicedata"]
+        }
+      }
+    },
+    {
+      "name": "Invoice 4",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"InvoiceNo\":536365,\"StockCode\":\"84029G\",\"Description\":\"KNITTED UNION FLAG HOT WATER BOTTLE\",\"Quantity\":6,\"InvoiceDate\":\"12/01/2010 08:26\",\"UnitPrice\":3.39,\"CustomerID\":17850,\"Country\":\"United Kingdom\"}"
+        },
+        "url": {
+          "raw": "http://localhost:80/invoicedata",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "80",
+          "path": ["invoicedata"]
+        }
+      }
+    },
+    {
+      "name": "Invoice 5",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"InvoiceNo\":536365,\"StockCode\":\"84029E\",\"Description\":\"RED WOOLLY HOTTIE WHITE HEART.\",\"Quantity\":6,\"InvoiceDate\":\"12/01/2010 08:26\",\"UnitPrice\":3.39,\"CustomerID\":17850,\"Country\":\"United Kingdom\"}"
+        },
+        "url": {
+          "raw": "http://localhost:80/invoicedata",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "80",
+          "path": ["invoicedata"]
+        }
+      }
+    }
+  ]
+}
