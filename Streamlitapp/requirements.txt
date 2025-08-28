@@ -1,0 +1,4 @@
+streamlit==1.40.1
+psycopg2-binary==2.9.9
+pandas>=1.4.0,<3
+python-decouple==3.8
