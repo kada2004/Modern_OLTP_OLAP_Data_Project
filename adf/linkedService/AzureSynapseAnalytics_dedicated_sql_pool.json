@@ -1,0 +1,14 @@
+{
+	"name": "AzureSynapseAnalytics_dedicated_sql_pool",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDW",
+		"typeProperties": {
+			"server": "synapse-data-platform-7i4ws2.sql.azuresynapse.net",
+			"database": "synape_sql_pool",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "SystemAssignedManagedIdentity"
+		}
+	}
+}

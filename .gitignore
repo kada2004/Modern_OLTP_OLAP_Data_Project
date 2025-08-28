@@ -1,0 +1,8 @@
+# Ignore Terraform local state and provider binaries
+terraform.tfstate
+terraform.tfstate.backup
+.terraform/
+
+# Ignore ZIP files and LICENSE
+*.zip
+LICENSE.txt

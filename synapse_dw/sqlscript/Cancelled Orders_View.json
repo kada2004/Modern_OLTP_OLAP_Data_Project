@@ -1,0 +1,17 @@
+{
+	"name": "Cancelled Orders_View",
+	"properties": {
+		"content": {
+			"query": "\n--- Cancelled Orders Starting with C\n----DROP VIEW  vw_CancelledOrders\nCREATE VIEW vw_CancelledOrders AS\nSELECT \n    F.InvoiceNo,\n    COUNT(DISTINCT F.InvoiceNo) AS Cancelled_Order,\n    SUM(\n        CASE \n            WHEN (F.Quantity * F.UnitPrice) > 0 THEN -1 * (F.Quantity * F.UnitPrice)\n            ELSE F.Quantity * F.UnitPrice\n        END\n    ) AS CancelledRevenue\nFROM GoldFact_Sales AS F\nWHERE F.InvoiceNo LIKE 'C%'\nGROUP BY F.InvoiceNo;\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "synape_sql_pool",
+				"poolName": "synape_sql_pool"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

@@ -1,0 +1,17 @@
+{
+	"name": "DWH_Tables",
+	"properties": {
+		"content": {
+			"query": "-----------------------------------------\n-- DIMENSION TABLES\n-----------------------------------------\n----https://learn.microsoft.com/en-us/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-tables-index\n----PRIMARY KEY ARE NOT ENFORCED IN SYNAPSE SO I WILL USE SP TO ENFORCE THEM\n--  Customer Dimension\n----DROP TABLE GoldDim_Customer\nCREATE TABLE GoldDim_Customer (\n    CustomerID INT NOT NULL,\n    CustomerName NVARCHAR(100),\n    CountryName NVARCHAR(100)\n)\nWITH (\n    DISTRIBUTION = HASH(CustomerID),\n    HEAP\n);\n\n--  Product Dimension\n--DROP TABLE GoldDim_Products;\n\nCREATE TABLE GoldDim_Products (\n    StockCode VARCHAR(100),\n    Description NVARCHAR(255)\n)\nWITH (\n    DISTRIBUTION = HASH(StockCode),  ----HASH ON StockCode required for the merge to\n    HEAP\n);\n\n\n--  Date Dimension\n\n--DROP TABLE GoldDim_Date;\nCREATE TABLE GoldDim_Date (\n    DateID INT NOT NULL,\n    [Date] DATE,\n    DayOfWeek NVARCHAR(100),\n    WeekNumber INT,\n    Month INT,\n    Quarter INT,\n    Year INT\n)\nWITH (\n    DISTRIBUTION = HASH(DateID),\n    HEAP\n);\n\n--  Invoice Dimension\n----DROP TABLE GoldDim_Invoice\nCREATE TABLE GoldDim_Invoice (\n    InvoiceNo VARCHAR(100) NOT NULL,\n    InvoiceDate DATE,\n    CustomerID INT,\n    DateID INT\n)\nWITH (\n    DISTRIBUTION = HASH(InvoiceNo),\n    CLUSTERED INDEX (InvoiceNo)\n);\n\n-----------------------------------------\n-- FACT TABLE\n-----------------------------------------\n\n----DROP TABLE GoldFact_Sales\nCREATE TABLE GoldFact_Sales (\n    InvoiceNo VARCHAR(100) NOT NULL,\n    StockCode VARCHAR(100) NOT NULL,\n    Quantity INT,\n    UnitPrice FLOAT,\n    InvoiceDate DATE,\n    DateID INT\n)\nWITH (\n    DISTRIBUTION = HASH(InvoiceNo),\n    CLUSTERED COLUMNSTORE INDEX\n);\n\n\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "synape_sql_pool",
+				"poolName": "synape_sql_pool"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

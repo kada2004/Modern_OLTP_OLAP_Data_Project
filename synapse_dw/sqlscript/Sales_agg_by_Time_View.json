@@ -1,0 +1,17 @@
+{
+	"name": "Sales_agg_by_Time_View",
+	"properties": {
+		"content": {
+			"query": "\n--Aggregation of sales by Time\nCREATE VIEW vw_SalesByTime AS\nSELECT \n    D.Year,\n    D.Month,\n    D.Quarter,\n    D.WeekNumber,\n    D.DayOfWeek,\n    SUM(F.Quantity * F.UnitPrice) AS TotalRevenue\nFROM GoldFact_Sales AS F\nJOIN GoldDim_Date AS D\n    ON F.DateID = D.DateID\n    WHERE F.InvoiceNo NOT LIKE 'C%'\nGROUP BY \n    D.Year, D.Month, D.Quarter, D.WeekNumber, D.DayOfWeek;\n\n\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "synape_sql_pool",
+				"poolName": "synape_sql_pool"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

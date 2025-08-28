@@ -1,0 +1,120 @@
+name: Terraform CI/CD
+
+on:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - 'README.md'   #exclude readme
+      - '*.md'
+      - 'docs/**'
+      - 'adf/**' 
+  pull_request:
+    branches:
+      - master
+    paths-ignore:
+      - 'README.md'
+      - '*.md'
+      - 'docs/**'
+      - 'adf/**' 
+
+jobs:
+  build:
+    name: Terraform Build
+    runs-on: ubuntu-latest
+
+    outputs:
+      artifact-name: terraform-plan
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Azure Login
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Set Terraform Azure credentials
+        run: |
+          echo '${{ secrets.AZURE_CREDENTIALS }}' > creds.json
+          echo "ARM_CLIENT_ID=$(jq -r .clientId creds.json)" >> $GITHUB_ENV
+          echo "ARM_CLIENT_SECRET=$(jq -r .clientSecret creds.json)" >> $GITHUB_ENV
+          echo "ARM_SUBSCRIPTION_ID=$(jq -r .subscriptionId creds.json)" >> $GITHUB_ENV
+          echo "ARM_TENANT_ID=$(jq -r .tenantId creds.json)" >> $GITHUB_ENV
+          rm -f creds.json
+        shell: bash
+
+      - name: Set Synapse SQL Password for Terraform
+        run: echo "TF_VAR_synapse_sql_password=${{ secrets.SYNAPSE_SQL_PASSWORD }}" >> $GITHUB_ENV
+        shell: bash
+
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.9.8
+
+      - name: Terraform Format
+        run: terraform fmt -check -recursive
+        working-directory: backend
+
+      - name: Terraform Init
+        run: terraform init
+        working-directory: backend
+
+      - name: Terraform Validate
+        run: terraform validate
+        working-directory: backend
+
+      - name: Terraform Plan
+        run: terraform plan -out=tfplan
+        working-directory: backend
+
+      - name: Upload Plan Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: terraform-plan
+          path: backend/tfplan
+          retention-days: 1
+
+  deploy:
+    name: Terraform Deploy
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Download Terraform plan artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: terraform-plan
+          path: backend
+
+      - name: Set Azure Credentials
+        run: |
+          echo '${{ secrets.AZURE_CREDENTIALS }}' > creds.json
+          echo "ARM_CLIENT_ID=$(jq -r .clientId creds.json)" >> $GITHUB_ENV
+          echo "ARM_CLIENT_SECRET=$(jq -r .clientSecret creds.json)" >> $GITHUB_ENV
+          echo "ARM_SUBSCRIPTION_ID=$(jq -r .subscriptionId creds.json)" >> $GITHUB_ENV
+          echo "ARM_TENANT_ID=$(jq -r .tenantId creds.json)" >> $GITHUB_ENV
+          rm -f creds.json
+        shell: bash
+        
+      - name: Set Synapse SQL Password for Terraform
+        run: echo "TF_VAR_synapse_sql_password=${{ secrets.SYNAPSE_SQL_PASSWORD }}" >> $GITHUB_ENV
+        shell: bash  
+
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.9.8
+
+      - name: Terraform Init
+        run: terraform init
+        working-directory: backend
+
+      - name: Terraform Apply
+        run: terraform apply -auto-approve tfplan
+        working-directory: backend

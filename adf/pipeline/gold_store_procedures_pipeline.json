@@ -1,0 +1,241 @@
+{
+	"name": "gold_store_procedures_pipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "SP_Call_Merge_DimDate",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[usp_Merge_GoldDim_Date_ByDate]",
+					"storedProcedureParameters": {
+						"Year": {
+							"value": "@pipeline().parameters.Year",
+							"type": "String"
+						},
+						"Month": {
+							"value": "@pipeline().parameters.Month",
+							"type": "String"
+						},
+						"Day": {
+							"value": "@pipeline().parameters.Day",
+							"type": "String"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureSynapseAnalytics_dedicated_sql_pool",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "SP_Call_Merge_DimCustomer",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "SP_Call_Merge_DimDate",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[usp_Merge_GoldDim_Customer_ByDate]",
+					"storedProcedureParameters": {
+						"Year": {
+							"value": "@pipeline().parameters.Year",
+							"type": "String"
+						},
+						"Month": {
+							"value": {
+								"value": "@pipeline().parameters.Month",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"Day": {
+							"value": {
+								"value": "@pipeline().parameters.Day",
+								"type": "Expression"
+							},
+							"type": "String"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureSynapseAnalytics_dedicated_sql_pool",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "SP_Call_Merge_DimProduct",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "SP_Call_Merge_DimCustomer",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[usp_Merge_GoldDim_Products_ByDate]",
+					"storedProcedureParameters": {
+						"Year": {
+							"value": "@pipeline().parameters.Year",
+							"type": "String"
+						},
+						"Month": {
+							"value": {
+								"value": "@pipeline().parameters.Month",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"Day": {
+							"value": {
+								"value": "@pipeline().parameters.Day",
+								"type": "Expression"
+							},
+							"type": "String"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureSynapseAnalytics_dedicated_sql_pool",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "SP_Call_Merge_Invoice",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "SP_Call_Merge_DimProduct",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[usp_Merge_GoldDim_Invoice_ByDate]",
+					"storedProcedureParameters": {
+						"Year": {
+							"value": "@pipeline().parameters.Year",
+							"type": "String"
+						},
+						"Month": {
+							"value": {
+								"value": "@pipeline().parameters.Month",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"Day": {
+							"value": {
+								"value": "@pipeline().parameters.Day",
+								"type": "Expression"
+							},
+							"type": "String"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureSynapseAnalytics_dedicated_sql_pool",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "SP_Call_Merge_FactSales",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "SP_Call_Merge_Invoice",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[usp_Merge_GoldFact_Sales_ByDate]",
+					"storedProcedureParameters": {
+						"Year": {
+							"value": "@pipeline().parameters.Year",
+							"type": "Single"
+						},
+						"Month": {
+							"value": {
+								"value": "@pipeline().parameters.Month",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"Day": {
+							"value": {
+								"value": "@pipeline().parameters.Day",
+								"type": "Expression"
+							},
+							"type": "String"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureSynapseAnalytics_dedicated_sql_pool",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"parameters": {
+			"Year": {
+				"type": "string"
+			},
+			"Month": {
+				"type": "string"
+			},
+			"Day": {
+				"type": "string"
+			}
+		},
+		"annotations": []
+	}
+}
