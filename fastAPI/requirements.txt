@@ -1,0 +1,4 @@
+#fastapi
+kafka-python
+#pydantic
+#uvicorn
