@@ -75,7 +75,7 @@ which Contains transactional records, customer details, and product information.
 ## Building API:
 1. Created a python [script](code to be added after push to repo) that converts Kaggle E-commerce dataset from csv to Json format.
 2. Tested first with Postman and Created API client to POST Json data into the FastAPI app.
-3. The Fast API application is build in python [code](to be added later) run inside of the Docker container and exposed on port 80:80 [link to compose and dockerfile](to be added later) 
+3. The Fast API application is build in python [code](https://github.com/kada2004/Modern_OLTP_OLAP_Data_Project/blob/master/fastAPI/app/main.py) run inside of the Docker container and exposed on port 80:80 [link to compose and dockerfile](https://github.com/kada2004/Modern_OLTP_OLAP_Data_Project/blob/master/docker/docker-compose-kafka.yml)
 ## PostMan
    <img width="978" height="459" alt="image" src="https://github.com/user-attachments/assets/b02fc3d3-7fb1-4a23-a4ca-61626f71cd91" />
    
@@ -106,7 +106,7 @@ Api app receiving the json documents
 
 
 ## Set Up Kafka and Zookeeper
-Apache Zookeper acts as the metadata database for kafka, managing brokers, topics, and comsumers. Both Kafka and Zookeeper are defined in single docker Docker Compose file [link_compose](link) Kafka depend on Zookeper to start and both are Network including Spark and PostgreSQL.
+Apache Zookeper acts as the metadata database for kafka, managing brokers, topics, and comsumers. Both Kafka and Zookeeper are defined in single docker Docker Compose file [link_compose](https://github.com/kada2004/Modern_OLTP_OLAP_Data_Project/blob/master/docker/docker-compose-kafka.yml) Kafka depend on Zookeper to start and both are Network including Spark and PostgreSQL.
 
     depends_on:
       - zookeeper
@@ -147,7 +147,6 @@ Spark reads the stream from Kafka ingest topic. Spark reads the Json stream and 
 At the same time, spark also writes the data to Azure  Data Lake in Parquet format as it is. Spark also managed the logic of insertion or update into PostgresSQL.
 Connection details (like passwords) are store in the `.env` files, which is listed in `.gitignore` so that the credentials are not shown in the repository.
 
-link to jupiter notebook code [link]()
 
 Spark Jupiter Notebook is exposed on Port 8080 and Spark UI is available on Port 4040
 
@@ -178,16 +177,16 @@ In order to meet the objective processing the streaming dataset for OLTP  . I ne
 pgAdmin UI connect to PostgreSQL
 <img width="1844" height="939" alt="image" src="https://github.com/user-attachments/assets/61f2054e-f8be-4868-a953-bbaf674dfec0" />
 
-[link PostgreSQL Tables Code]()
+[link PostgreSQL Tables Code](https://github.com/kada2004/Modern_OLTP_OLAP_Data_Project/blob/master/postgrsql/spark_db_schema.py)
 
 
 # Streamlit Dahsboard App set up
 Streamlit an open-source python Library that helps you to build customs application to share data and machine kearning web app.
 
-In my setup, Streamlit connect directly to PostgreSQL database using SQLAlchemy Library. it runs SQL queries and shows the results as a dashboard in Streamlit app.
+In my setup, Streamlit connect directly to PostgreSQL database using psycopg2 Library. it runs SQL queries and shows the results as a dashboard in Streamlit app.
 
 Command to start the app `streamlit run app.py`
-[Link to code]()
+[Link to code](https://github.com/kada2004/Modern_OLTP_OLAP_Data_Project/blob/master/Streamlitapp/app.py)
 
 Streamlit DashBoard
 
@@ -377,6 +376,17 @@ I have built a Sales Dashboard that supports The objectives defined for this dat
 Power By Dashboard 
 
 <img width="1421" height="746" alt="image" src="https://github.com/user-attachments/assets/38a736ee-a267-49dd-8829-31b0449d81fd" />
+
+
+## Conclusion
+
+This project helped me deepen my understanding of data engineering tools and data modelling by prioritizing end users goals and the overall project objectives and problems that the project will solve for the end-users. I have intergrated FastAP,Kafka, Zookeeper, Spark, Airflow and PostgrSQL withing a Dockerized environment.
+
+I have learned a lot from official documentation, especially for Airflow and Azure.
+Key challenges was to configure Zookeeper and Kafka, allow Spark to write to my Azure data lake.
+
+Going forward, I plan to explore how to run kafka without Zookeeper and adopt best practices for manging Docker images using container registries and deepen my knowledge about Data Modelling.
+
 
 
  
