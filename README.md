@@ -189,7 +189,7 @@ In my setup, Streamlit connect directly to PostgreSQL database using SQLAlchemy 
 Command to start the app `streamlit run app.py`
 [Link to code]()
 
-Streamlit images screenshot here 
+Streamlit DashBoard
 
 <img width="1846" height="939" alt="image" src="https://github.com/user-attachments/assets/e6234c3a-2bde-4427-b7b9-b4805927e308" />
 
