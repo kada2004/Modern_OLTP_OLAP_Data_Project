@@ -1,0 +1,17 @@
+{
+	"name": "SQL External Table Creation Script",
+	"properties": {
+		"content": {
+			"query": "-- Onetime setup to create connection between data lake and synapse\nCREATE DATABASE SCOPED CREDENTIAL SilverCred\nWITH IDENTITY = 'Managed Identity';\n\nCREATE EXTERNAL DATA SOURCE SilverDataLake\nWITH (\n    TYPE = HADOOP,\n    LOCATION = 'abfss://silver@datastorage7i4ws2.dfs.core.windows.net',\n    CREDENTIAL = SilverCred\n);\n\nCREATE EXTERNAL FILE FORMAT ParquetFormat\nWITH (\n    FORMAT_TYPE = PARQUET\n);\n\n----Creat External DimCustomer Table \n-----DROP EXTERNAL TABLE ExternalGoldDimCustomer\nCREATE EXTERNAL TABLE ExternalGoldDimCustomer (\n    CustomerID INT,\n    CustomerName NVARCHAR(100),\n    CountryName NVARCHAR(100)\n)\nWITH (\n    LOCATION = '/dim_customer/',\n    DATA_SOURCE = SilverDataLake,\n    FILE_FORMAT = ParquetFormat\n);\n\n--SELECT * FROM  ExternalGoldDimCustomer\n\n---SELECT TOP 3 *\n---FROM ExternalGoldDimCustomer;\n\n----Creat External DimProducts Table \n---DROP EXTERNAL TABLE ExternalGoldDimProucts\nCREATE EXTERNAL TABLE ExternalGoldDimProucts (\n    StockCode  VARCHAR(100),\n    Description VARCHAR(100)\n    \n)\nWITH (\n    LOCATION = '/dim_product/',\n    DATA_SOURCE = SilverDataLake,\n    FILE_FORMAT = ParquetFormat\n);\n\n\n----Creat External DimInvoice Table \n---DROP EXTERNAL TABLE ExternalGoldDimInvoice\nCREATE EXTERNAL TABLE ExternalGoldDimInvoice (\n    InvoiceNo  VARCHAR(100),\n    InvoiceDate DATE,\n    CustomerID  INT ,\n    DateID INT \n    \n)\nWITH (\n    LOCATION = '/dim_invoice/',\n    DATA_SOURCE = SilverDataLake,\n    FILE_FORMAT = ParquetFormat\n);\n\n\n---DROP EXTERNAL TABLE ExternalGoldDimDate;\n----Creat External DimDate Table \nCREATE EXTERNAL TABLE ExternalGoldDimDate (\n    Date Date,\n    DateID  INT,\n    DayOfWeek  VARCHAR(100),\n    WeekNumber INT ,\n    Month INT,\n    Quarter INT,\n    Year INT\n    \n)\nWITH (\n    LOCATION = '/dim_date/',\n    DATA_SOURCE = SilverDataLake,\n    FILE_FORMAT = ParquetFormat\n);\n\n\nDROP EXTERNAL TABLE ExternalGoldFactSales\n----Creat External FactSales Table \nCREATE EXTERNAL TABLE ExternalGoldFactSales (\n    InvoiceNo VARCHAR(100),\n    StockCode  VARCHAR(100),\n    Quantity  INT,\n    UnitPrice FLOAT,\n    InvoiceDate DATE,\n    DateID INT\n    \n)\nWITH (\n    LOCATION = '/fact_sales/',\n    DATA_SOURCE = SilverDataLake,\n    FILE_FORMAT = ParquetFormat\n);\n\n--SELECT  * \n--FROM ExternalGoldFactSales;\n\n\n\n\n\n\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "synape_sql_pool",
+				"poolName": "synape_sql_pool"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

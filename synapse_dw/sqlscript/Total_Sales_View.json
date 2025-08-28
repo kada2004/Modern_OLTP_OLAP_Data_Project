@@ -1,0 +1,17 @@
+{
+	"name": "Total_Sales_View",
+	"properties": {
+		"content": {
+			"query": "--- Total sales\n\n\n-----DROP VIEW vw_TotalSales\nCREATE VIEW vw_TotalSales AS\nSELECT \n    SUM(F.Quantity * F.UnitPrice) AS SALES\nFROM GoldFact_Sales AS F\nWHERE InvoiceNo NOT LIKE 'C%';  ----- Exclude Cancelled products in the Total Sales\n\n---SELECT * FROM vw_TotalSales\n\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "synape_sql_pool",
+				"poolName": "synape_sql_pool"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

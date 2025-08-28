@@ -1,0 +1,17 @@
+{
+	"name": "Average_Order_Value_View",
+	"properties": {
+		"content": {
+			"query": "\n\n-----AverageOrderValue\nCREATE VIEW vw_AverageOrderValue AS\nSELECT \n    SUM(F.Quantity * F.UnitPrice) / COUNT(DISTINCT F.InvoiceNo) AS AvgOrderValue\nFROM GoldFact_Sales AS F\nWHERE  F.InvoiceNo NOT LIKE 'C%';\n\n\n----SELECT * FROM vw_AverageOrderValue",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "synape_sql_pool",
+				"poolName": "synape_sql_pool"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

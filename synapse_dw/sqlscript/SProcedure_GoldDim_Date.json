@@ -1,0 +1,17 @@
+{
+	"name": "SProcedure_GoldDim_Date",
+	"properties": {
+		"content": {
+			"query": "\n\n---SELECT * FROM GoldDim_Date\n-----EXEC usp_Merge_GoldDim_Date;\n\n\nIF OBJECT_ID('dbo.usp_Merge_GoldDim_Date_ByDate', 'P') IS NOT NULL\n    DROP PROCEDURE dbo.usp_Merge_GoldDim_Date_ByDate;\nGO\n\nCREATE PROCEDURE usp_Merge_GoldDim_Date_ByDate\n    @Year NVARCHAR(4),\n    @Month NVARCHAR(2),\n    @Day NVARCHAR(2)\nAS\nBEGIN\n    SET NOCOUNT ON;\n\n    -- Build the path for the specific date partition\n    DECLARE @Location NVARCHAR(200) = \n        CONCAT('silver/dim_date/', @Year, '/', @Month, '/', @Day, '/');\n\n    DECLARE @sql NVARCHAR(MAX) = '\n    -- Create temporary external table\n    CREATE EXTERNAL TABLE ExternalGoldDimDateTemp (\n        [Date] DATE,\n        DateID INT,\n        DayOfWeek VARCHAR(20),\n        WeekNumber INT,\n        Month INT,\n        Quarter INT,\n        Year INT\n        \n    )\n    WITH (\n        LOCATION = ''' + @Location + ''',\n        DATA_SOURCE = SilverDataLake,\n        FILE_FORMAT = ParquetFormat\n    );\n\n    -- Merge into GoldDim_Date\n    MERGE GoldDim_Date AS tgt\n    USING (\n        SELECT DISTINCT\n            DateID,\n            [Date],\n            DayOfWeek,\n            WeekNumber,\n            Month,\n            Quarter,\n            Year\n        FROM ExternalGoldDimDateTemp\n        WHERE DateID IS NOT NULL\n    ) AS src\n    ON tgt.DateID = src.DateID\n    WHEN MATCHED THEN\n        UPDATE SET\n            tgt.[Date] = src.[Date],\n            tgt.DayOfWeek = src.DayOfWeek,\n            tgt.WeekNumber = src.WeekNumber,\n            tgt.Month = src.Month,\n            tgt.Quarter = src.Quarter,\n            tgt.Year = src.Year\n    WHEN NOT MATCHED BY TARGET THEN\n        INSERT (DateID, [Date], DayOfWeek, WeekNumber, Month, Quarter, Year)\n        VALUES (src.DateID, src.[Date], src.DayOfWeek, src.WeekNumber, src.Month, src.Quarter, src.Year);\n\n    -- Drop the temporary external table\n    DROP EXTERNAL TABLE ExternalGoldDimDateTemp;\n    ';\n\n    -- Execute the dynamic SQL\n    EXEC sp_executesql @sql;\nEND;\nGO\n\n---DROP EXTERNAL TABLE ExternalGoldDimDateTemp\n\n---EXEC usp_Merge_GoldDim_Date_ByDate\n    ---@Year = '2025',\n    ---@Month = '08',\n    ----@Day = '13';\n\n\n\n------SELECT * FROM GoldDim_Date\n\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "synape_sql_pool",
+				"poolName": "synape_sql_pool"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

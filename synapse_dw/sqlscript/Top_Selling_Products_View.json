@@ -1,0 +1,17 @@
+{
+	"name": "Top_Selling_Products_View",
+	"properties": {
+		"content": {
+			"query": "-----Top 10 MOST Sold Products\n\n--- -----ProductRevenue TOP 10 \n----DROP VIEW vw_Top10SellingProducts\n\nCREATE VIEW vw_Top10SellingProducts AS\nSELECT TOP 10\n    P.StockCode,\n    P.Description,\n    SUM(F.Quantity * F.UnitPrice) AS SOLD_PRODUCTS \nFROM GoldFact_Sales AS F\nJOIN GoldDim_Products AS P\n    ON F.StockCode = P.StockCode\n    WHERE  F.InvoiceNo NOT LIKE 'C%'\nGROUP BY P.StockCode, P.Description\nORDER BY SOLD_PRODUCTS DESC;\n\n--SELECT * FROM vw_Top10SellingProducts\n\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "synape_sql_pool",
+				"poolName": "synape_sql_pool"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

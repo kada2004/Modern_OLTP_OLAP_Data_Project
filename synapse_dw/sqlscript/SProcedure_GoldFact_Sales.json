@@ -1,0 +1,17 @@
+{
+	"name": "SProcedure_GoldFact_Sales",
+	"properties": {
+		"content": {
+			"query": "\n\n----EXEC usp_Merge_GoldFact_Sales;\n\n--SELECT * FROM GoldFact_Sales\n\n------Clean and Proper SP for GoldTable\nIF OBJECT_ID('dbo.usp_Merge_GoldFact_Sales_ByDate', 'P') IS NOT NULL\n    DROP PROCEDURE dbo.usp_Merge_GoldFact_Sales_ByDate;\nGO\n\nCREATE PROCEDURE usp_Merge_GoldFact_Sales_ByDate\n    @Year NVARCHAR(4),\n    @Month NVARCHAR(2),\n    @Day NVARCHAR(2)\nAS\nBEGIN\n    SET NOCOUNT ON;\n\n    -- Build the dynamic folder path\n    DECLARE @Location NVARCHAR(200) = \n        CONCAT('silver/fact_sales/', @Year, '/', @Month, '/', @Day, '/');\n\n    DECLARE @sql NVARCHAR(MAX) = '\n    -- Create a temporary external table for the given date partition\n    CREATE EXTERNAL TABLE ExternalGoldFactSalesTemp (\n        InvoiceNo VARCHAR(100),\n        StockCode VARCHAR(100),\n        Quantity INT,\n        UnitPrice FLOAT,\n        InvoiceDate DATE,\n        DateID INT\n    )\n    WITH (\n        LOCATION = ''' + @Location + ''',\n        DATA_SOURCE = SilverDataLake,\n        FILE_FORMAT = ParquetFormat\n    );\n\n    -- Merge data into GoldFact_Sales\n    MERGE GoldFact_Sales AS tgt\n    USING (\n        SELECT\n            InvoiceNo,\n            StockCode,\n            Quantity,\n            UnitPrice,\n            InvoiceDate,\n            DateID\n        FROM ExternalGoldFactSalesTemp\n        WHERE InvoiceNo IS NOT NULL\n    ) AS src\n    ON tgt.InvoiceNo = src.InvoiceNo\n       AND tgt.StockCode = src.StockCode\n       AND tgt.DateID = src.DateID\n    WHEN MATCHED THEN\n        UPDATE SET\n            tgt.Quantity = src.Quantity,\n            tgt.UnitPrice = src.UnitPrice,\n            tgt.InvoiceDate = src.InvoiceDate\n    WHEN NOT MATCHED BY TARGET THEN\n        INSERT (InvoiceNo, StockCode, Quantity, UnitPrice, InvoiceDate, DateID)\n        VALUES (src.InvoiceNo, src.StockCode, src.Quantity, src.UnitPrice, src.InvoiceDate, src.DateID);\n\n    -- Drop the temporary external table\n    DROP EXTERNAL TABLE ExternalGoldFactSalesTemp;\n    ';\n\n    -- Execute the dynamic SQL\n    EXEC sp_executesql @sql;\nEND;\nGO\n\n----DROP EXTERNAL TABLE ExternalGoldFactSalesTemp\n\n--EXEC usp_Merge_GoldFact_Sales_ByDate \n   --- @Year = '2025',\n    ---@Month = '08',\n    ----@Day = '13';\n\n\n---SELECT * FROM GoldFact_Sales",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "synape_sql_pool",
+				"poolName": "synape_sql_pool"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
