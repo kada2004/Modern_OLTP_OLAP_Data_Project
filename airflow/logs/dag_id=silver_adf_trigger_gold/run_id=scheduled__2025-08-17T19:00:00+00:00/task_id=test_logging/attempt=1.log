@@ -1,0 +1,19 @@
+[2025-08-19T18:46:55.572+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-08-19T18:46:56.258+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: silver_adf_trigger_gold.test_logging scheduled__2025-08-17T19:00:00+00:00 [queued]>
+[2025-08-19T18:46:56.290+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: silver_adf_trigger_gold.test_logging scheduled__2025-08-17T19:00:00+00:00 [queued]>
+[2025-08-19T18:46:56.290+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-08-19T18:46:56.445+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): test_logging> on 2025-08-17 19:00:00+00:00
+[2025-08-19T18:46:56.463+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'silver_adf_trigger_gold', 'test_logging', 'scheduled__2025-08-17T19:00:00+00:00', '--job-id', '115', '--raw', '--subdir', 'DAGS_FOLDER/data_factory_pipeline.py', '--cfg-path', '/tmp/tmpezq89n63']
+[2025-08-19T18:46:56.467+0000] {standard_task_runner.py:91} INFO - Job 115: Subtask test_logging
+[2025-08-19T18:46:56.490+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=279) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-08-19T18:46:56.494+0000] {standard_task_runner.py:64} INFO - Started process 281 to run task
+[2025-08-19T18:46:56.723+0000] {task_command.py:426} INFO - Running <TaskInstance: silver_adf_trigger_gold.test_logging scheduled__2025-08-17T19:00:00+00:00 [running]> on host 979dc743a20c
+[2025-08-19T18:46:57.493+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='silver_adf_trigger_gold' AIRFLOW_CTX_TASK_ID='test_logging' AIRFLOW_CTX_EXECUTION_DATE='2025-08-17T19:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-08-17T19:00:00+00:00'
+[2025-08-19T18:46:57.494+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-08-19T18:46:59.272+0000] {data_factory_pipeline.py:26} INFO - Hello from Airflow test task
+[2025-08-19T18:46:59.273+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-08-19T18:46:59.274+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-08-19T18:46:59.504+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=silver_adf_trigger_gold, task_id=test_logging, run_id=scheduled__2025-08-17T19:00:00+00:00, execution_date=20250817T190000, start_date=20250819T184656, end_date=20250819T184659
+[2025-08-19T18:46:59.771+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-08-19T18:46:59.813+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-08-19T18:47:00.073+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

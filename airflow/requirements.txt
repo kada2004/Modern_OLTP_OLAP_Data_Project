@@ -1,11 +1,9 @@
 pandas
 pyarrow
-
 # Airflow + Azure provider
 #apache-airflow
 apache-airflow-providers-microsoft-azure
-
-# Azure SDK 
+# Azure SDK
 azure-identity
 azure-mgmt-datafactory
 azure-core

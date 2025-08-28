@@ -1,0 +1,659 @@
+[2025-08-25T05:26:24.475+0000] {processor.py:161} INFO - Started process (PID=162) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:26:24.476+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:26:24.479+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:26:24.476+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:26:24.572+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:26:25.049+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:26:25.048+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:26:25.088+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:26:25.087+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-24 06:00:00+00:00, run_after=2025-08-25 06:00:00+00:00
+[2025-08-25T05:26:25.213+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.760 seconds
+[2025-08-25T05:26:55.468+0000] {processor.py:161} INFO - Started process (PID=176) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:26:55.480+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:26:55.482+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:26:55.481+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:26:55.514+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:26:55.532+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:26:55.532+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:26:55.575+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:26:55.575+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-24 06:00:00+00:00, run_after=2025-08-25 06:00:00+00:00
+[2025-08-25T05:26:55.615+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.153 seconds
+[2025-08-25T05:27:16.765+0000] {processor.py:161} INFO - Started process (PID=25) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:27:16.781+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:27:16.782+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:27:16.782+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:27:16.915+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:27:17.013+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:27:17.012+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:27:17.067+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:27:17.067+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-24 06:00:00+00:00, run_after=2025-08-25 06:00:00+00:00
+[2025-08-25T05:27:17.123+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.390 seconds
+[2025-08-25T05:27:47.634+0000] {processor.py:161} INFO - Started process (PID=40) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:27:47.649+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:27:47.650+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:27:47.650+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:27:47.677+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:27:47.703+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:27:47.702+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:27:47.737+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:27:47.737+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-24 06:00:00+00:00, run_after=2025-08-25 06:00:00+00:00
+[2025-08-25T05:27:47.774+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.149 seconds
+[2025-08-25T05:28:17.968+0000] {processor.py:161} INFO - Started process (PID=55) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:28:18.159+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:28:18.160+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:28:18.159+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:28:18.191+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:28:18.223+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:28:18.223+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:28:18.270+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:28:18.269+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-24 06:00:00+00:00, run_after=2025-08-25 06:00:00+00:00
+[2025-08-25T05:28:18.310+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.347 seconds
+[2025-08-25T05:28:48.421+0000] {processor.py:161} INFO - Started process (PID=70) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:28:48.422+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:28:48.424+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:28:48.423+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:28:48.477+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:28:48.510+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:28:48.510+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:28:48.569+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:28:48.569+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-24 06:00:00+00:00, run_after=2025-08-25 06:00:00+00:00
+[2025-08-25T05:28:48.621+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.213 seconds
+[2025-08-25T05:29:19.062+0000] {processor.py:161} INFO - Started process (PID=85) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:29:19.069+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:29:19.070+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:29:19.070+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:29:19.100+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:29:19.115+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:29:19.115+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:29:19.145+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:29:19.145+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-24 06:00:00+00:00, run_after=2025-08-25 06:00:00+00:00
+[2025-08-25T05:29:19.182+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.126 seconds
+[2025-08-25T05:29:25.422+0000] {processor.py:161} INFO - Started process (PID=92) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:29:25.424+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:29:25.426+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:29:25.425+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:29:25.468+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:29:25.464+0000] {dagbag.py:452} ERROR - Failed to bag_dag: /opt/airflow/dags/data_factory_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/timetables/_cron.py", line 100, in validate
+    croniter(self._expression)
+  File "/home/airflow/.local/lib/python3.12/site-packages/croniter/croniter.py", line 187, in __init__
+    self.expanded, self.nth_weekday_of_month = self.expand(expr_format, hash_id=hash_id)
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/croniter/croniter.py", line 821, in expand
+    return cls._expand(expr_format, hash_id=hash_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/croniter/croniter.py", line 659, in _expand
+    raise CroniterBadCronError(cls.bad_length)
+croniter.croniter.CroniterBadCronError: Exactly 5 or 6 columns has to be specified for iterator expression.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 447, in _process_modules
+    dag.validate()
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dag.py", line 768, in validate
+    self.timetable.validate()
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/timetables/_cron.py", line 102, in validate
+    raise AirflowTimetableInvalid(str(e))
+airflow.exceptions.AirflowTimetableInvalid: Exactly 5 or 6 columns has to be specified for iterator expression.
+[2025-08-25T05:29:25.469+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:29:25.703+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.293 seconds
+[2025-08-25T05:29:27.288+0000] {processor.py:161} INFO - Started process (PID=93) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:29:27.289+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:29:27.290+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:29:27.290+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:29:27.322+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:29:27.495+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:29:27.494+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:29:27.529+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:29:27.529+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-23 06:40:00+00:00, run_after=2025-08-24 06:40:00+00:00
+[2025-08-25T05:29:27.576+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.296 seconds
+[2025-08-25T05:29:33.375+0000] {processor.py:161} INFO - Started process (PID=94) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:29:33.376+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:29:33.378+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:29:33.377+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:29:33.413+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:29:33.417+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:29:33.417+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:29:33.445+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:29:33.444+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-24 05:40:00+00:00, run_after=2025-08-25 05:40:00+00:00
+[2025-08-25T05:29:33.486+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.121 seconds
+[2025-08-25T05:29:38.426+0000] {processor.py:161} INFO - Started process (PID=102) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:29:38.427+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:29:38.428+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:29:38.427+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:29:38.462+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:29:38.466+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:29:38.466+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:29:38.499+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:29:38.499+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-24 05:40:00+00:00, run_after=2025-08-25 05:40:00+00:00
+[2025-08-25T05:29:38.559+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.144 seconds
+[2025-08-25T05:29:41.567+0000] {processor.py:161} INFO - Started process (PID=103) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:29:41.568+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:29:41.570+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:29:41.569+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:29:41.602+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:29:41.607+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:29:41.607+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:29:41.637+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:29:41.637+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-24 05:40:00+00:00, run_after=2025-08-25 05:40:00+00:00
+[2025-08-25T05:29:41.670+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.109 seconds
+[2025-08-25T05:29:43.679+0000] {processor.py:161} INFO - Started process (PID=104) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:29:43.679+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:29:43.680+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:29:43.680+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:29:43.720+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:29:43.725+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:29:43.725+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:29:43.757+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:29:43.756+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-24 05:40:00+00:00, run_after=2025-08-25 05:40:00+00:00
+[2025-08-25T05:29:43.809+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.136 seconds
+[2025-08-25T05:30:14.059+0000] {processor.py:161} INFO - Started process (PID=118) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:30:14.075+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:30:14.077+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:30:14.076+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:30:14.146+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:30:14.378+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:30:14.377+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:30:14.423+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:30:14.423+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-24 05:40:00+00:00, run_after=2025-08-25 05:40:00+00:00
+[2025-08-25T05:30:14.476+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.425 seconds
+[2025-08-25T05:30:44.707+0000] {processor.py:161} INFO - Started process (PID=133) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:30:44.713+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:30:44.715+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:30:44.714+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:30:44.768+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:30:44.806+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:30:44.806+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:30:44.865+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:30:44.865+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-24 05:40:00+00:00, run_after=2025-08-25 05:40:00+00:00
+[2025-08-25T05:30:44.962+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.265 seconds
+[2025-08-25T05:31:15.066+0000] {processor.py:161} INFO - Started process (PID=148) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:31:15.187+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:31:15.189+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:31:15.188+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:31:15.230+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:31:15.265+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:31:15.265+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:31:15.316+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:31:15.315+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-24 05:40:00+00:00, run_after=2025-08-25 05:40:00+00:00
+[2025-08-25T05:31:15.417+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.360 seconds
+[2025-08-25T05:31:45.681+0000] {processor.py:161} INFO - Started process (PID=162) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:31:45.699+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:31:45.701+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:31:45.700+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:31:45.731+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:31:45.756+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:31:45.756+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:31:45.794+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:31:45.794+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-24 05:40:00+00:00, run_after=2025-08-25 05:40:00+00:00
+[2025-08-25T05:31:45.835+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.160 seconds
+[2025-08-25T05:32:16.094+0000] {processor.py:161} INFO - Started process (PID=177) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:32:16.112+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:32:16.113+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:32:16.112+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:32:16.145+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:32:16.167+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:32:16.167+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:32:16.211+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:32:16.211+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-24 05:40:00+00:00, run_after=2025-08-25 05:40:00+00:00
+[2025-08-25T05:32:16.276+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.189 seconds
+[2025-08-25T05:32:46.604+0000] {processor.py:161} INFO - Started process (PID=192) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:32:46.619+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:32:46.620+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:32:46.619+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:32:46.645+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:32:46.661+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:32:46.660+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:32:46.689+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:32:46.688+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-24 05:40:00+00:00, run_after=2025-08-25 05:40:00+00:00
+[2025-08-25T05:32:46.728+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.129 seconds
+[2025-08-25T05:33:16.952+0000] {processor.py:161} INFO - Started process (PID=207) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:33:16.953+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:33:16.953+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:33:16.953+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:33:16.981+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:33:16.997+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:33:16.997+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:33:17.024+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:33:17.024+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-24 05:40:00+00:00, run_after=2025-08-25 05:40:00+00:00
+[2025-08-25T05:33:17.058+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.115 seconds
+[2025-08-25T05:33:47.385+0000] {processor.py:161} INFO - Started process (PID=221) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:33:47.399+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:33:47.400+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:33:47.400+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:33:47.432+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:33:47.457+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:33:47.457+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:33:47.501+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:33:47.500+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-24 05:40:00+00:00, run_after=2025-08-25 05:40:00+00:00
+[2025-08-25T05:33:47.545+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.167 seconds
+[2025-08-25T05:34:17.807+0000] {processor.py:161} INFO - Started process (PID=237) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:34:17.823+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:34:17.824+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:34:17.824+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:34:17.851+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:34:17.872+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:34:17.872+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:34:17.907+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:34:17.907+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-24 05:40:00+00:00, run_after=2025-08-25 05:40:00+00:00
+[2025-08-25T05:34:17.945+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.147 seconds
+[2025-08-25T05:34:48.245+0000] {processor.py:161} INFO - Started process (PID=252) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:34:48.246+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:34:48.247+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:34:48.247+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:34:48.273+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:34:48.290+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:34:48.290+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:34:48.315+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:34:48.315+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-24 05:40:00+00:00, run_after=2025-08-25 05:40:00+00:00
+[2025-08-25T05:34:48.345+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.106 seconds
+[2025-08-25T05:35:18.738+0000] {processor.py:161} INFO - Started process (PID=267) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:35:18.748+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:35:18.749+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:35:18.749+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:35:18.785+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:35:18.804+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:35:18.804+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:35:18.840+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:35:18.840+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-24 05:40:00+00:00, run_after=2025-08-25 05:40:00+00:00
+[2025-08-25T05:35:18.887+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.166 seconds
+[2025-08-25T05:35:49.299+0000] {processor.py:161} INFO - Started process (PID=283) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:35:49.316+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:35:49.317+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:35:49.317+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:35:49.349+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:35:49.367+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:35:49.367+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:35:49.403+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:35:49.402+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-24 05:40:00+00:00, run_after=2025-08-25 05:40:00+00:00
+[2025-08-25T05:35:49.437+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.148 seconds
+[2025-08-25T05:36:19.892+0000] {processor.py:161} INFO - Started process (PID=298) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:36:19.907+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:36:19.908+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:36:19.907+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:36:19.945+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:36:19.966+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:36:19.966+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:36:20.009+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:36:20.008+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-24 05:40:00+00:00, run_after=2025-08-25 05:40:00+00:00
+[2025-08-25T05:36:20.050+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.169 seconds
+[2025-08-25T05:36:50.517+0000] {processor.py:161} INFO - Started process (PID=314) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:36:50.560+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:36:50.561+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:36:50.560+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:36:50.612+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:36:50.641+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:36:50.641+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:36:50.678+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:36:50.677+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-24 05:40:00+00:00, run_after=2025-08-25 05:40:00+00:00
+[2025-08-25T05:36:50.721+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.215 seconds
+[2025-08-25T05:37:20.987+0000] {processor.py:161} INFO - Started process (PID=330) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:37:21.006+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:37:21.007+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:37:21.007+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:37:21.106+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:37:21.152+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:37:21.152+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:37:21.208+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:37:21.208+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-24 05:40:00+00:00, run_after=2025-08-25 05:40:00+00:00
+[2025-08-25T05:37:21.252+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.287 seconds
+[2025-08-25T05:37:51.619+0000] {processor.py:161} INFO - Started process (PID=345) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:37:51.631+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:37:51.632+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:37:51.632+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:37:51.685+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:37:51.720+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:37:51.719+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:37:51.781+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:37:51.781+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-24 05:40:00+00:00, run_after=2025-08-25 05:40:00+00:00
+[2025-08-25T05:37:51.835+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.232 seconds
+[2025-08-25T05:38:22.118+0000] {processor.py:161} INFO - Started process (PID=362) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:38:22.129+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:38:22.131+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:38:22.131+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:38:22.188+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:38:22.219+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:38:22.219+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:38:22.267+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:38:22.266+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-24 05:40:00+00:00, run_after=2025-08-25 05:40:00+00:00
+[2025-08-25T05:38:22.330+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.229 seconds
+[2025-08-25T05:38:52.633+0000] {processor.py:161} INFO - Started process (PID=377) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:38:52.634+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:38:52.636+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:38:52.635+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:38:52.672+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:38:52.701+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:38:52.701+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:38:52.748+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:38:52.748+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-24 05:40:00+00:00, run_after=2025-08-25 05:40:00+00:00
+[2025-08-25T05:38:52.794+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.171 seconds
+[2025-08-25T05:39:23.127+0000] {processor.py:161} INFO - Started process (PID=392) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:39:23.143+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:39:23.144+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:39:23.143+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:39:23.179+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:39:23.201+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:39:23.201+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:39:23.243+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:39:23.242+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-24 05:40:00+00:00, run_after=2025-08-25 05:40:00+00:00
+[2025-08-25T05:39:23.274+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.157 seconds
+[2025-08-25T05:39:53.609+0000] {processor.py:161} INFO - Started process (PID=401) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:39:53.610+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:39:53.611+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:39:53.611+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:39:53.642+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:39:53.664+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:39:53.663+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:39:53.697+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:39:53.696+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-24 05:40:00+00:00, run_after=2025-08-25 05:40:00+00:00
+[2025-08-25T05:39:53.733+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.132 seconds
+[2025-08-25T05:40:24.148+0000] {processor.py:161} INFO - Started process (PID=416) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:40:24.164+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:40:24.166+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:40:24.165+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:40:24.198+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:40:24.217+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:40:24.217+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:40:24.254+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:40:24.254+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T05:40:24.295+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.155 seconds
+[2025-08-25T05:40:54.558+0000] {processor.py:161} INFO - Started process (PID=431) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:40:54.559+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:40:54.561+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:40:54.560+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:40:54.589+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:40:54.611+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:40:54.610+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:40:54.644+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:40:54.644+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T05:40:54.685+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.133 seconds
+[2025-08-25T05:41:24.981+0000] {processor.py:161} INFO - Started process (PID=446) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:41:24.989+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:41:24.990+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:41:24.990+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:41:25.018+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:41:25.038+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:41:25.038+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:41:25.072+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:41:25.072+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T05:41:25.105+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.131 seconds
+[2025-08-25T05:41:55.388+0000] {processor.py:161} INFO - Started process (PID=461) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:41:55.389+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:41:55.390+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:41:55.390+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:41:55.417+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:41:55.441+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:41:55.441+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:41:55.476+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:41:55.476+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T05:41:55.510+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.130 seconds
+[2025-08-25T05:42:25.802+0000] {processor.py:161} INFO - Started process (PID=483) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:42:25.803+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:42:25.804+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:42:25.804+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:42:25.839+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:42:25.858+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:42:25.857+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:42:25.893+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:42:25.892+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T05:42:25.921+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.129 seconds
+[2025-08-25T05:42:56.288+0000] {processor.py:161} INFO - Started process (PID=497) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:42:56.304+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:42:56.305+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:42:56.305+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:42:56.336+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:42:56.367+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:42:56.366+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:42:56.410+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:42:56.410+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T05:42:56.454+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.174 seconds
+[2025-08-25T05:43:26.683+0000] {processor.py:161} INFO - Started process (PID=513) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:43:26.684+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:43:26.685+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:43:26.685+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:43:26.729+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:43:26.758+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:43:26.758+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:43:26.816+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:43:26.816+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T05:43:26.874+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.202 seconds
+[2025-08-25T05:43:57.065+0000] {processor.py:161} INFO - Started process (PID=527) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:43:57.074+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:43:57.075+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:43:57.074+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:43:57.104+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:43:57.121+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:43:57.121+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:43:57.153+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:43:57.153+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T05:43:57.194+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.135 seconds
+[2025-08-25T05:44:27.500+0000] {processor.py:161} INFO - Started process (PID=541) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:44:27.501+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:44:27.502+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:44:27.502+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:44:27.529+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:44:27.548+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:44:27.548+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:44:27.579+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:44:27.579+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T05:44:27.614+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.120 seconds
+[2025-08-25T05:44:58.079+0000] {processor.py:161} INFO - Started process (PID=556) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:44:58.091+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:44:58.093+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:44:58.092+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:44:58.136+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:44:58.159+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:44:58.159+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:44:58.199+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:44:58.199+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T05:44:58.232+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.162 seconds
+[2025-08-25T05:45:28.597+0000] {processor.py:161} INFO - Started process (PID=570) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:45:28.598+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:45:28.599+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:45:28.599+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:45:28.627+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:45:28.647+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:45:28.647+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:45:28.683+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:45:28.683+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T05:45:28.721+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.132 seconds
+[2025-08-25T05:45:59.075+0000] {processor.py:161} INFO - Started process (PID=585) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:45:59.084+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:45:59.085+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:45:59.085+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:45:59.113+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:45:59.129+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:45:59.129+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:45:59.160+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:45:59.160+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T05:45:59.191+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.123 seconds
+[2025-08-25T05:46:29.449+0000] {processor.py:161} INFO - Started process (PID=600) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:46:29.463+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:46:29.464+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:46:29.464+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:46:29.498+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:46:29.521+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:46:29.521+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:46:29.567+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:46:29.567+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T05:46:29.630+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.186 seconds
+[2025-08-25T05:46:59.901+0000] {processor.py:161} INFO - Started process (PID=615) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:46:59.902+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:46:59.903+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:46:59.903+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:46:59.974+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:47:00.008+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:47:00.007+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:47:00.055+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:47:00.054+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T05:47:00.088+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.210 seconds
+[2025-08-25T05:47:30.408+0000] {processor.py:161} INFO - Started process (PID=631) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:47:30.422+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:47:30.423+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:47:30.423+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:47:30.457+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:47:30.479+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:47:30.477+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:47:30.514+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:47:30.513+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T05:47:30.588+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.188 seconds
+[2025-08-25T05:48:00.888+0000] {processor.py:161} INFO - Started process (PID=646) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:48:00.903+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:48:00.905+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:48:00.904+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:48:00.965+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:48:01.001+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:48:01.001+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:48:01.055+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:48:01.055+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T05:48:01.116+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.247 seconds
+[2025-08-25T05:48:31.290+0000] {processor.py:161} INFO - Started process (PID=661) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:48:31.291+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:48:31.293+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:48:31.292+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:48:31.352+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:48:31.389+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:48:31.388+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:48:31.431+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:48:31.431+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T05:48:31.468+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.188 seconds
+[2025-08-25T05:49:01.794+0000] {processor.py:161} INFO - Started process (PID=676) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:49:01.806+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:49:01.807+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:49:01.806+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:49:01.837+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:49:01.854+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:49:01.854+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:49:01.881+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:49:01.881+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T05:49:01.910+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.125 seconds
+[2025-08-25T05:49:32.164+0000] {processor.py:161} INFO - Started process (PID=691) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:49:32.166+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:49:32.168+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:49:32.167+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:49:32.218+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:49:32.239+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:49:32.239+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:49:32.271+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:49:32.270+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T05:49:32.308+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.151 seconds
+[2025-08-25T05:50:02.541+0000] {processor.py:161} INFO - Started process (PID=706) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:50:02.554+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:50:02.555+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:50:02.554+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:50:02.586+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:50:02.609+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:50:02.609+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:50:02.649+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:50:02.649+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T05:50:02.688+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.154 seconds
+[2025-08-25T05:50:32.963+0000] {processor.py:161} INFO - Started process (PID=720) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:50:32.979+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:50:32.980+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:50:32.980+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:50:33.028+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:50:33.060+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:50:33.059+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:50:33.107+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:50:33.107+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T05:50:33.150+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.199 seconds
+[2025-08-25T05:51:03.370+0000] {processor.py:161} INFO - Started process (PID=735) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:51:03.379+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:51:03.380+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:51:03.380+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:51:03.423+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:51:03.454+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:51:03.453+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:51:03.480+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:51:03.480+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T05:51:03.513+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.152 seconds
+[2025-08-25T05:51:33.806+0000] {processor.py:161} INFO - Started process (PID=750) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:51:33.807+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:51:33.807+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:51:33.807+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:51:33.836+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:51:33.854+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:51:33.854+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:51:33.890+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:51:33.890+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T05:51:33.924+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.126 seconds
+[2025-08-25T05:52:04.209+0000] {processor.py:161} INFO - Started process (PID=765) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:52:04.210+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:52:04.212+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:52:04.211+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:52:04.253+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:52:04.271+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:52:04.271+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:52:04.308+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:52:04.307+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T05:52:04.352+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.153 seconds
+[2025-08-25T05:52:34.643+0000] {processor.py:161} INFO - Started process (PID=779) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:52:34.654+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:52:34.655+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:52:34.654+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:52:34.696+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:52:34.718+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:52:34.718+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:52:34.754+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:52:34.754+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T05:52:34.788+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.154 seconds
+[2025-08-25T05:53:05.059+0000] {processor.py:161} INFO - Started process (PID=800) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:53:05.067+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:53:05.068+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:53:05.068+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:53:05.118+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:53:05.145+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:53:05.145+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:53:05.194+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:53:05.193+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T05:53:05.234+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.185 seconds
+[2025-08-25T05:53:35.480+0000] {processor.py:161} INFO - Started process (PID=815) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:53:35.490+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:53:35.492+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:53:35.491+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:53:35.524+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:53:35.544+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:53:35.544+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:53:35.589+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:53:35.588+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T05:53:35.634+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.168 seconds
+[2025-08-25T05:54:05.925+0000] {processor.py:161} INFO - Started process (PID=829) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:54:05.936+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:54:05.938+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:54:05.937+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:54:05.980+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:54:06.007+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:54:06.007+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:54:06.044+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:54:06.044+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T05:54:06.077+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.161 seconds
+[2025-08-25T05:54:36.471+0000] {processor.py:161} INFO - Started process (PID=845) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:54:36.475+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:54:36.479+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:54:36.478+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:54:36.531+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:54:36.578+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:54:36.577+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:54:36.656+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:54:36.656+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T05:54:36.703+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.245 seconds
+[2025-08-25T05:55:06.972+0000] {processor.py:161} INFO - Started process (PID=860) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:55:06.982+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:55:06.984+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:55:06.984+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:55:07.049+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:55:07.077+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:55:07.077+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:55:07.133+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:55:07.132+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T05:55:07.180+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.220 seconds
+[2025-08-25T05:55:37.507+0000] {processor.py:161} INFO - Started process (PID=876) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:55:37.515+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:55:37.516+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:55:37.516+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:55:37.546+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:55:37.565+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:55:37.565+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:55:37.595+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:55:37.595+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T05:55:37.625+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.125 seconds
+[2025-08-25T05:56:07.885+0000] {processor.py:161} INFO - Started process (PID=891) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:56:07.887+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:56:07.888+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:56:07.887+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:56:07.923+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:56:07.941+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:56:07.941+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:56:07.966+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:56:07.966+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T05:56:07.998+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.122 seconds
+[2025-08-25T05:56:38.250+0000] {processor.py:161} INFO - Started process (PID=907) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:56:38.263+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:56:38.264+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:56:38.264+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:56:38.291+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:56:38.306+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:56:38.306+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:56:38.334+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:56:38.334+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T05:56:38.363+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.119 seconds
+[2025-08-25T05:57:08.657+0000] {processor.py:161} INFO - Started process (PID=924) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:57:08.658+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:57:08.659+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:57:08.659+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:57:08.688+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:57:08.704+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:57:08.704+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:57:08.757+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:57:08.756+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T05:57:08.790+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.141 seconds
+[2025-08-25T05:57:39.083+0000] {processor.py:161} INFO - Started process (PID=947) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:57:39.093+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:57:39.094+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:57:39.094+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:57:39.122+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:57:39.148+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:57:39.147+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:57:39.184+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:57:39.183+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T05:57:39.223+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.147 seconds
+[2025-08-25T05:58:09.484+0000] {processor.py:161} INFO - Started process (PID=961) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:58:09.485+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:58:09.486+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:58:09.485+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:58:09.519+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:58:09.550+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:58:09.549+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:58:09.584+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:58:09.584+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T05:58:09.628+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.153 seconds
+[2025-08-25T05:58:39.812+0000] {processor.py:161} INFO - Started process (PID=976) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:58:39.818+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:58:39.819+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:58:39.819+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:58:39.855+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:58:39.875+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:58:39.875+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:58:39.901+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:58:39.901+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T05:58:39.928+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.124 seconds
+[2025-08-25T05:59:10.252+0000] {processor.py:161} INFO - Started process (PID=992) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:59:10.253+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:59:10.254+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:59:10.253+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:59:10.283+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:59:10.300+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:59:10.300+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:59:10.327+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:59:10.327+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T05:59:10.358+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.114 seconds
+[2025-08-25T05:59:40.650+0000] {processor.py:161} INFO - Started process (PID=1007) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:59:40.666+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T05:59:40.667+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:59:40.666+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:59:40.692+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T05:59:40.718+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:59:40.717+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T05:59:40.757+0000] {logging_mixin.py:188} INFO - [2025-08-25T05:59:40.757+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T05:59:40.787+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.144 seconds
+[2025-08-25T06:00:11.065+0000] {processor.py:161} INFO - Started process (PID=1028) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:00:11.078+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T06:00:11.080+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:00:11.079+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:00:11.106+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:00:11.123+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:00:11.123+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T06:00:11.158+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:00:11.158+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T06:00:11.186+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.129 seconds
+[2025-08-25T06:00:41.746+0000] {processor.py:161} INFO - Started process (PID=1043) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:00:41.757+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T06:00:41.758+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:00:41.758+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:00:41.786+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:00:41.809+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:00:41.808+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T06:00:41.841+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:00:41.841+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T06:00:41.882+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.143 seconds
+[2025-08-25T06:01:11.990+0000] {processor.py:161} INFO - Started process (PID=1058) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:01:12.003+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T06:01:12.004+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:01:12.004+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:01:12.031+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:01:12.049+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:01:12.048+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T06:01:12.073+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:01:12.073+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T06:01:12.102+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.118 seconds
+[2025-08-25T06:01:42.371+0000] {processor.py:161} INFO - Started process (PID=1073) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:01:42.372+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T06:01:42.374+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:01:42.374+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:01:42.408+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:01:42.428+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:01:42.428+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T06:01:42.460+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:01:42.460+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T06:01:42.494+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.131 seconds
+[2025-08-25T06:02:12.762+0000] {processor.py:161} INFO - Started process (PID=1096) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:02:12.776+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T06:02:12.778+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:02:12.778+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:02:12.805+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:02:12.821+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:02:12.821+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T06:02:12.855+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:02:12.855+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T06:02:12.888+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.133 seconds
+[2025-08-25T06:02:43.119+0000] {processor.py:161} INFO - Started process (PID=1111) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:02:43.120+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T06:02:43.121+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:02:43.120+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:02:43.151+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:02:43.169+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:02:43.168+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T06:02:43.200+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:02:43.200+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T06:02:43.232+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.120 seconds
+[2025-08-25T06:03:13.443+0000] {processor.py:161} INFO - Started process (PID=1126) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:03:13.449+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T06:03:13.450+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:03:13.449+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:03:13.474+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:03:13.492+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:03:13.492+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T06:03:13.516+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:03:13.516+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T06:03:13.546+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.111 seconds
+[2025-08-25T06:03:43.821+0000] {processor.py:161} INFO - Started process (PID=1142) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:03:43.821+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T06:03:43.822+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:03:43.822+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:03:43.850+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:03:43.866+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:03:43.866+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T06:03:43.899+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:03:43.898+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T06:03:43.936+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.122 seconds
+[2025-08-25T06:04:14.201+0000] {processor.py:161} INFO - Started process (PID=1157) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:04:14.207+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T06:04:14.209+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:04:14.208+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:04:14.245+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:04:14.270+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:04:14.269+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T06:04:14.309+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:04:14.309+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T06:04:14.349+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.156 seconds
+[2025-08-25T06:04:44.625+0000] {processor.py:161} INFO - Started process (PID=1180) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:04:44.631+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T06:04:44.632+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:04:44.631+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:04:44.662+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:04:44.687+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:04:44.687+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T06:04:44.724+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:04:44.723+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T06:04:44.758+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.139 seconds
+[2025-08-25T06:05:15.167+0000] {processor.py:161} INFO - Started process (PID=1196) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:05:15.168+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T06:05:15.170+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:05:15.169+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:05:15.230+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:05:15.263+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:05:15.263+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T06:05:15.329+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:05:15.329+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T06:05:15.386+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.231 seconds
+[2025-08-25T06:05:45.530+0000] {processor.py:161} INFO - Started process (PID=1211) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:05:45.542+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T06:05:45.543+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:05:45.543+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:05:45.570+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:05:45.589+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:05:45.589+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T06:05:45.615+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:05:45.615+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T06:05:45.653+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.130 seconds
+[2025-08-25T06:06:15.861+0000] {processor.py:161} INFO - Started process (PID=1226) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:06:15.862+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T06:06:15.862+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:06:15.862+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:06:15.895+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:06:15.917+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:06:15.917+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T06:06:15.953+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:06:15.953+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T06:06:15.988+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.133 seconds
+[2025-08-25T06:06:46.291+0000] {processor.py:161} INFO - Started process (PID=1242) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:06:46.301+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T06:06:46.302+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:06:46.302+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:06:46.333+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:06:46.352+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:06:46.352+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T06:06:46.387+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:06:46.386+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T06:06:46.424+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.142 seconds
+[2025-08-25T06:07:16.712+0000] {processor.py:161} INFO - Started process (PID=1257) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:07:16.713+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T06:07:16.714+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:07:16.714+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:07:16.754+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:07:16.779+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:07:16.779+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T06:07:16.823+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:07:16.823+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T06:07:16.858+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.155 seconds
+[2025-08-25T06:07:47.152+0000] {processor.py:161} INFO - Started process (PID=1274) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:07:47.152+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T06:07:47.153+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:07:47.153+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:07:47.196+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:07:47.226+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:07:47.225+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T06:07:47.269+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:07:47.269+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T06:07:47.304+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.163 seconds
+[2025-08-25T06:08:17.588+0000] {processor.py:161} INFO - Started process (PID=1290) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:08:17.597+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T06:08:17.598+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:08:17.597+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:08:17.630+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:08:17.649+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:08:17.649+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T06:08:17.692+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:08:17.692+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T06:08:17.730+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.152 seconds
+[2025-08-25T06:08:48.060+0000] {processor.py:161} INFO - Started process (PID=1305) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:08:48.061+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T06:08:48.062+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:08:48.062+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:08:48.096+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:08:48.127+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:08:48.126+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T06:08:48.175+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:08:48.174+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T06:08:48.210+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.156 seconds
+[2025-08-25T06:09:18.420+0000] {processor.py:161} INFO - Started process (PID=1320) to work on /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:09:18.440+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/data_factory_pipeline.py for tasks to queue
+[2025-08-25T06:09:18.442+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:09:18.441+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:09:18.487+0000] {processor.py:840} INFO - DAG(s) 'silver_adf_trigger_gold' retrieved from /opt/airflow/dags/data_factory_pipeline.py
+[2025-08-25T06:09:18.516+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:09:18.515+0000] {dag.py:3089} INFO - Sync 1 DAGs
+[2025-08-25T06:09:18.552+0000] {logging_mixin.py:188} INFO - [2025-08-25T06:09:18.552+0000] {dag.py:3947} INFO - Setting next_dagrun for silver_adf_trigger_gold to 2025-08-25 05:40:00+00:00, run_after=2025-08-26 05:40:00+00:00
+[2025-08-25T06:09:18.591+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/data_factory_pipeline.py took 0.180 seconds

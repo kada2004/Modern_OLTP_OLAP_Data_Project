@@ -1,0 +1,386 @@
+[2025-08-09T10:05:00.562+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-08-09T10:05:00.600+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: silver_and_gold_adf_trigger.trigger_silver_pipeline manual__2025-08-09T10:04:44.704645+00:00 [queued]>
+[2025-08-09T10:05:00.611+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: silver_and_gold_adf_trigger.trigger_silver_pipeline manual__2025-08-09T10:04:44.704645+00:00 [queued]>
+[2025-08-09T10:05:00.612+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-08-09T10:05:00.672+0000] {taskinstance.py:2330} INFO - Executing <Task(AzureDataFactoryRunPipelineOperator): trigger_silver_pipeline> on 2025-08-09 10:04:44.704645+00:00
+[2025-08-09T10:05:00.682+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'silver_and_gold_adf_trigger', 'trigger_silver_pipeline', 'manual__2025-08-09T10:04:44.704645+00:00', '--job-id', '61', '--raw', '--subdir', 'DAGS_FOLDER/data_factory_pipeline.py', '--cfg-path', '/tmp/tmp6isy05ws']
+[2025-08-09T10:05:00.684+0000] {standard_task_runner.py:91} INFO - Job 61: Subtask trigger_silver_pipeline
+[2025-08-09T10:05:00.685+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=27827) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-08-09T10:05:00.686+0000] {standard_task_runner.py:64} INFO - Started process 27829 to run task
+[2025-08-09T10:05:00.819+0000] {task_command.py:426} INFO - Running <TaskInstance: silver_and_gold_adf_trigger.trigger_silver_pipeline manual__2025-08-09T10:04:44.704645+00:00 [running]> on host f43e2d80cc91
+[2025-08-09T10:05:01.019+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='silver_and_gold_adf_trigger' AIRFLOW_CTX_TASK_ID='trigger_silver_pipeline' AIRFLOW_CTX_EXECUTION_DATE='2025-08-09T10:04:44.704645+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-08-09T10:04:44.704645+00:00'
+[2025-08-09T10:05:01.020+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-08-09T10:05:01.037+0000] {data_factory.py:168} INFO - Executing the silver_pipeline pipeline.
+[2025-08-09T10:05:01.673+0000] {connection.py:274} WARNING - Connection schemes (type: azure_data_factory) shall not contain '_' according to RFC3986.
+[2025-08-09T10:05:01.682+0000] {base.py:84} INFO - Using connection ID 'azure_data_factory_default' for task execution.
+[2025-08-09T10:05:01.960+0000] {authority.py:75} INFO - Initializing with Entra authority: https://login.microsoftonline.com/9b617bf3-2377-4477-b5c4-396bb56461d6
+[2025-08-09T10:05:02.006+0000] {_universal.py:513} INFO - Request URL: 'https://login.microsoftonline.com/9b617bf3-2377-4477-b5c4-396bb56461d6/v2.0/.well-known/openid-configuration'
+Request method: 'GET'
+Request headers:
+    'User-Agent': 'azsdk-python-identity/1.17.1 Python/3.12.4 (Linux-5.15.0-139-generic-x86_64-with-glibc2.36)'
+No body was attached to the request
+[2025-08-09T10:05:03.671+0000] {_universal.py:549} INFO - Response status: 200
+Response headers:
+    'Cache-Control': 'max-age=86400, private'
+    'Content-Type': 'application/json; charset=utf-8'
+    'Strict-Transport-Security': 'REDACTED'
+    'X-Content-Type-Options': 'REDACTED'
+    'Access-Control-Allow-Origin': 'REDACTED'
+    'Access-Control-Allow-Methods': 'REDACTED'
+    'P3P': 'REDACTED'
+    'x-ms-request-id': '130f1f07-33bc-44e9-ad88-af7bacec2301'
+    'x-ms-ests-server': 'REDACTED'
+    'x-ms-srs': 'REDACTED'
+    'Content-Security-Policy-Report-Only': 'REDACTED'
+    'X-XSS-Protection': 'REDACTED'
+    'Set-Cookie': 'REDACTED'
+    'Date': 'Sat, 09 Aug 2025 10:05:03 GMT'
+    'Content-Length': '1753'
+[2025-08-09T10:05:03.673+0000] {_universal.py:510} INFO - Request URL: 'https://login.microsoftonline.com/9b617bf3-2377-4477-b5c4-396bb56461d6/oauth2/v2.0/token'
+Request method: 'POST'
+Request headers:
+    'Accept': 'application/json'
+    'x-client-sku': 'REDACTED'
+    'x-client-ver': 'REDACTED'
+    'x-client-os': 'REDACTED'
+    'x-ms-lib-capability': 'REDACTED'
+    'client-request-id': 'REDACTED'
+    'x-client-current-telemetry': 'REDACTED'
+    'x-client-last-telemetry': 'REDACTED'
+    'User-Agent': 'azsdk-python-identity/1.17.1 Python/3.12.4 (Linux-5.15.0-139-generic-x86_64-with-glibc2.36)'
+A body is sent with the request
+[2025-08-09T10:05:03.848+0000] {_universal.py:549} INFO - Response status: 200
+Response headers:
+    'Cache-Control': 'no-store, no-cache'
+    'Pragma': 'no-cache'
+    'Content-Type': 'application/json; charset=utf-8'
+    'Expires': '-1'
+    'Strict-Transport-Security': 'REDACTED'
+    'X-Content-Type-Options': 'REDACTED'
+    'P3P': 'REDACTED'
+    'client-request-id': 'REDACTED'
+    'x-ms-request-id': '77dc742d-3064-4733-b500-7c6edfa91001'
+    'x-ms-ests-server': 'REDACTED'
+    'x-ms-clitelem': 'REDACTED'
+    'x-ms-srs': 'REDACTED'
+    'Content-Security-Policy-Report-Only': 'REDACTED'
+    'X-XSS-Protection': 'REDACTED'
+    'Set-Cookie': 'REDACTED'
+    'Date': 'Sat, 09 Aug 2025 10:05:03 GMT'
+    'Content-Length': '1801'
+[2025-08-09T10:05:03.848+0000] {get_token_mixin.py:104} INFO - ClientSecretCredential.get_token succeeded
+[2025-08-09T10:05:03.849+0000] {_universal.py:510} INFO - Request URL: 'https://management.azure.com/subscriptions/1c39c210-e3f2-4150-9318-db149d7bfec2/resourceGroups/data_platform/providers/Microsoft.DataFactory/factories/adf-data-platform/pipelines/silver_pipeline/createRun?api-version=REDACTED'
+Request method: 'POST'
+Request headers:
+    'Content-Type': 'application/json'
+    'Content-Length': '22'
+    'Accept': 'application/json'
+    'x-ms-client-request-id': '50857ce8-7508-11f0-835e-569e7ef4899a'
+    'User-Agent': 'azsdk-python-mgmt-datafactory/8.0.0 Python/3.12.4 (Linux-5.15.0-139-generic-x86_64-with-glibc2.36)'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+[2025-08-09T10:05:06.009+0000] {_universal.py:549} INFO - Response status: 200
+Response headers:
+    'Cache-Control': 'no-cache'
+    'Pragma': 'no-cache'
+    'Content-Length': '53'
+    'Content-Type': 'application/json; charset=utf-8'
+    'Expires': '-1'
+    'x-ms-correlation-request-id': 'REDACTED'
+    'x-ms-operation-identifier': 'REDACTED'
+    'x-ms-ratelimit-remaining-subscription-writes': '199'
+    'x-ms-ratelimit-remaining-subscription-global-writes': 'REDACTED'
+    'x-ms-request-id': 'b5108383-d2c4-4ae1-9c62-6a46865359fd'
+    'x-ms-routing-request-id': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'X-Content-Type-Options': 'REDACTED'
+    'X-Cache': 'REDACTED'
+    'X-MSEdge-Ref': 'REDACTED'
+    'Date': 'Sat, 09 Aug 2025 10:05:05 GMT'
+[2025-08-09T10:05:06.083+0000] {data_factory.py:187} INFO - Waiting for pipeline run 50857ce8-7508-11f0-835e-569e7ef4899a to terminate.
+[2025-08-09T10:05:06.084+0000] {data_factory.py:806} INFO - Getting the status of run ID 50857ce8-7508-11f0-835e-569e7ef4899a.
+[2025-08-09T10:05:06.085+0000] {_universal.py:513} INFO - Request URL: 'https://management.azure.com/subscriptions/1c39c210-e3f2-4150-9318-db149d7bfec2/resourceGroups/data_platform/providers/Microsoft.DataFactory/factories/adf-data-platform/pipelineruns/50857ce8-7508-11f0-835e-569e7ef4899a?api-version=REDACTED'
+Request method: 'GET'
+Request headers:
+    'Accept': 'application/json'
+    'x-ms-client-request-id': '52faf3fe-7508-11f0-835e-569e7ef4899a'
+    'User-Agent': 'azsdk-python-mgmt-datafactory/8.0.0 Python/3.12.4 (Linux-5.15.0-139-generic-x86_64-with-glibc2.36)'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2025-08-09T10:05:07.098+0000] {_universal.py:549} INFO - Response status: 200
+Response headers:
+    'Cache-Control': 'no-cache'
+    'Pragma': 'no-cache'
+    'Content-Length': '810'
+    'Content-Type': 'application/json; charset=utf-8'
+    'Expires': '-1'
+    'x-ms-correlation-request-id': 'REDACTED'
+    'x-ms-operation-identifier': 'REDACTED'
+    'x-ms-ratelimit-remaining-subscription-reads': '249'
+    'x-ms-ratelimit-remaining-subscription-global-reads': 'REDACTED'
+    'x-ms-request-id': '51a82acc-45e8-4669-ad44-bacbf4f1271e'
+    'x-ms-routing-request-id': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'X-Content-Type-Options': 'REDACTED'
+    'X-Cache': 'REDACTED'
+    'X-MSEdge-Ref': 'REDACTED'
+    'Date': 'Sat, 09 Aug 2025 10:05:06 GMT'
+[2025-08-09T10:05:07.142+0000] {data_factory.py:808} INFO - Current status of pipeline run 50857ce8-7508-11f0-835e-569e7ef4899a: Queued
+[2025-08-09T10:06:07.147+0000] {data_factory.py:806} INFO - Getting the status of run ID 50857ce8-7508-11f0-835e-569e7ef4899a.
+[2025-08-09T10:06:07.148+0000] {_universal.py:513} INFO - Request URL: 'https://management.azure.com/subscriptions/1c39c210-e3f2-4150-9318-db149d7bfec2/resourceGroups/data_platform/providers/Microsoft.DataFactory/factories/adf-data-platform/pipelineruns/50857ce8-7508-11f0-835e-569e7ef4899a?api-version=REDACTED'
+Request method: 'GET'
+Request headers:
+    'Accept': 'application/json'
+    'x-ms-client-request-id': '77607d7c-7508-11f0-835e-569e7ef4899a'
+    'User-Agent': 'azsdk-python-mgmt-datafactory/8.0.0 Python/3.12.4 (Linux-5.15.0-139-generic-x86_64-with-glibc2.36)'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2025-08-09T10:06:08.063+0000] {_universal.py:549} INFO - Response status: 200
+Response headers:
+    'Cache-Control': 'no-cache'
+    'Pragma': 'no-cache'
+    'Content-Length': '812'
+    'Content-Type': 'application/json; charset=utf-8'
+    'Expires': '-1'
+    'x-ms-correlation-request-id': 'REDACTED'
+    'x-ms-operation-identifier': 'REDACTED'
+    'x-ms-ratelimit-remaining-subscription-reads': '249'
+    'x-ms-ratelimit-remaining-subscription-global-reads': 'REDACTED'
+    'x-ms-request-id': '3135beaf-7ac3-4958-bb29-b1862bc1f9ca'
+    'x-ms-routing-request-id': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'X-Content-Type-Options': 'REDACTED'
+    'X-Cache': 'REDACTED'
+    'X-MSEdge-Ref': 'REDACTED'
+    'Date': 'Sat, 09 Aug 2025 10:06:07 GMT'
+[2025-08-09T10:06:08.064+0000] {data_factory.py:808} INFO - Current status of pipeline run 50857ce8-7508-11f0-835e-569e7ef4899a: InProgress
+[2025-08-09T10:07:08.065+0000] {data_factory.py:806} INFO - Getting the status of run ID 50857ce8-7508-11f0-835e-569e7ef4899a.
+[2025-08-09T10:07:08.066+0000] {_universal.py:513} INFO - Request URL: 'https://management.azure.com/subscriptions/1c39c210-e3f2-4150-9318-db149d7bfec2/resourceGroups/data_platform/providers/Microsoft.DataFactory/factories/adf-data-platform/pipelineruns/50857ce8-7508-11f0-835e-569e7ef4899a?api-version=REDACTED'
+Request method: 'GET'
+Request headers:
+    'Accept': 'application/json'
+    'x-ms-client-request-id': '9bafc926-7508-11f0-835e-569e7ef4899a'
+    'User-Agent': 'azsdk-python-mgmt-datafactory/8.0.0 Python/3.12.4 (Linux-5.15.0-139-generic-x86_64-with-glibc2.36)'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2025-08-09T10:07:08.681+0000] {_universal.py:549} INFO - Response status: 200
+Response headers:
+    'Cache-Control': 'no-cache'
+    'Pragma': 'no-cache'
+    'Content-Length': '812'
+    'Content-Type': 'application/json; charset=utf-8'
+    'Expires': '-1'
+    'x-ms-correlation-request-id': 'REDACTED'
+    'x-ms-operation-identifier': 'REDACTED'
+    'x-ms-ratelimit-remaining-subscription-reads': '249'
+    'x-ms-ratelimit-remaining-subscription-global-reads': 'REDACTED'
+    'x-ms-request-id': '7eeb0354-ed0e-46d5-af5f-665384842deb'
+    'x-ms-routing-request-id': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'X-Content-Type-Options': 'REDACTED'
+    'X-Cache': 'REDACTED'
+    'X-MSEdge-Ref': 'REDACTED'
+    'Date': 'Sat, 09 Aug 2025 10:07:07 GMT'
+[2025-08-09T10:07:08.682+0000] {data_factory.py:808} INFO - Current status of pipeline run 50857ce8-7508-11f0-835e-569e7ef4899a: InProgress
+[2025-08-09T10:08:08.682+0000] {data_factory.py:806} INFO - Getting the status of run ID 50857ce8-7508-11f0-835e-569e7ef4899a.
+[2025-08-09T10:08:08.684+0000] {_universal.py:513} INFO - Request URL: 'https://management.azure.com/subscriptions/1c39c210-e3f2-4150-9318-db149d7bfec2/resourceGroups/data_platform/providers/Microsoft.DataFactory/factories/adf-data-platform/pipelineruns/50857ce8-7508-11f0-835e-569e7ef4899a?api-version=REDACTED'
+Request method: 'GET'
+Request headers:
+    'Accept': 'application/json'
+    'x-ms-client-request-id': 'bfd14ae6-7508-11f0-835e-569e7ef4899a'
+    'User-Agent': 'azsdk-python-mgmt-datafactory/8.0.0 Python/3.12.4 (Linux-5.15.0-139-generic-x86_64-with-glibc2.36)'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2025-08-09T10:08:09.353+0000] {_universal.py:549} INFO - Response status: 200
+Response headers:
+    'Cache-Control': 'no-cache'
+    'Pragma': 'no-cache'
+    'Content-Length': '812'
+    'Content-Type': 'application/json; charset=utf-8'
+    'Expires': '-1'
+    'x-ms-correlation-request-id': 'REDACTED'
+    'x-ms-operation-identifier': 'REDACTED'
+    'x-ms-ratelimit-remaining-subscription-reads': '249'
+    'x-ms-ratelimit-remaining-subscription-global-reads': 'REDACTED'
+    'x-ms-request-id': '0e114821-b5a5-4e42-92ea-8600009251c7'
+    'x-ms-routing-request-id': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'X-Content-Type-Options': 'REDACTED'
+    'X-Cache': 'REDACTED'
+    'X-MSEdge-Ref': 'REDACTED'
+    'Date': 'Sat, 09 Aug 2025 10:08:08 GMT'
+[2025-08-09T10:08:09.354+0000] {data_factory.py:808} INFO - Current status of pipeline run 50857ce8-7508-11f0-835e-569e7ef4899a: InProgress
+[2025-08-09T10:09:09.355+0000] {data_factory.py:806} INFO - Getting the status of run ID 50857ce8-7508-11f0-835e-569e7ef4899a.
+[2025-08-09T10:09:09.356+0000] {_universal.py:513} INFO - Request URL: 'https://management.azure.com/subscriptions/1c39c210-e3f2-4150-9318-db149d7bfec2/resourceGroups/data_platform/providers/Microsoft.DataFactory/factories/adf-data-platform/pipelineruns/50857ce8-7508-11f0-835e-569e7ef4899a?api-version=REDACTED'
+Request method: 'GET'
+Request headers:
+    'Accept': 'application/json'
+    'x-ms-client-request-id': 'e3fb3698-7508-11f0-835e-569e7ef4899a'
+    'User-Agent': 'azsdk-python-mgmt-datafactory/8.0.0 Python/3.12.4 (Linux-5.15.0-139-generic-x86_64-with-glibc2.36)'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2025-08-09T10:09:10.376+0000] {_universal.py:549} INFO - Response status: 200
+Response headers:
+    'Cache-Control': 'no-cache'
+    'Pragma': 'no-cache'
+    'Content-Length': '812'
+    'Content-Type': 'application/json; charset=utf-8'
+    'Expires': '-1'
+    'x-ms-correlation-request-id': 'REDACTED'
+    'x-ms-operation-identifier': 'REDACTED'
+    'x-ms-ratelimit-remaining-subscription-reads': '249'
+    'x-ms-ratelimit-remaining-subscription-global-reads': 'REDACTED'
+    'x-ms-request-id': 'cded4bcb-a853-49a4-b2d8-da30f0137a66'
+    'x-ms-routing-request-id': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'X-Content-Type-Options': 'REDACTED'
+    'X-Cache': 'REDACTED'
+    'X-MSEdge-Ref': 'REDACTED'
+    'Date': 'Sat, 09 Aug 2025 10:09:10 GMT'
+[2025-08-09T10:09:10.376+0000] {data_factory.py:808} INFO - Current status of pipeline run 50857ce8-7508-11f0-835e-569e7ef4899a: InProgress
+[2025-08-09T10:10:10.377+0000] {data_factory.py:806} INFO - Getting the status of run ID 50857ce8-7508-11f0-835e-569e7ef4899a.
+[2025-08-09T10:10:10.378+0000] {_universal.py:513} INFO - Request URL: 'https://management.azure.com/subscriptions/1c39c210-e3f2-4150-9318-db149d7bfec2/resourceGroups/data_platform/providers/Microsoft.DataFactory/factories/adf-data-platform/pipelineruns/50857ce8-7508-11f0-835e-569e7ef4899a?api-version=REDACTED'
+Request method: 'GET'
+Request headers:
+    'Accept': 'application/json'
+    'x-ms-client-request-id': '085a55dc-7509-11f0-835e-569e7ef4899a'
+    'User-Agent': 'azsdk-python-mgmt-datafactory/8.0.0 Python/3.12.4 (Linux-5.15.0-139-generic-x86_64-with-glibc2.36)'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2025-08-09T10:10:11.356+0000] {_universal.py:549} INFO - Response status: 200
+Response headers:
+    'Cache-Control': 'no-cache'
+    'Pragma': 'no-cache'
+    'Content-Length': '812'
+    'Content-Type': 'application/json; charset=utf-8'
+    'Expires': '-1'
+    'x-ms-correlation-request-id': 'REDACTED'
+    'x-ms-operation-identifier': 'REDACTED'
+    'x-ms-ratelimit-remaining-subscription-reads': '249'
+    'x-ms-ratelimit-remaining-subscription-global-reads': 'REDACTED'
+    'x-ms-request-id': 'a8ef5494-b650-4b80-b8e6-a3a001da9fb5'
+    'x-ms-routing-request-id': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'X-Content-Type-Options': 'REDACTED'
+    'X-Cache': 'REDACTED'
+    'X-MSEdge-Ref': 'REDACTED'
+    'Date': 'Sat, 09 Aug 2025 10:10:11 GMT'
+[2025-08-09T10:10:11.357+0000] {data_factory.py:808} INFO - Current status of pipeline run 50857ce8-7508-11f0-835e-569e7ef4899a: InProgress
+[2025-08-09T10:11:11.358+0000] {data_factory.py:806} INFO - Getting the status of run ID 50857ce8-7508-11f0-835e-569e7ef4899a.
+[2025-08-09T10:11:11.359+0000] {_universal.py:513} INFO - Request URL: 'https://management.azure.com/subscriptions/1c39c210-e3f2-4150-9318-db149d7bfec2/resourceGroups/data_platform/providers/Microsoft.DataFactory/factories/adf-data-platform/pipelineruns/50857ce8-7508-11f0-835e-569e7ef4899a?api-version=REDACTED'
+Request method: 'GET'
+Request headers:
+    'Accept': 'application/json'
+    'x-ms-client-request-id': '2cb349b6-7509-11f0-835e-569e7ef4899a'
+    'User-Agent': 'azsdk-python-mgmt-datafactory/8.0.0 Python/3.12.4 (Linux-5.15.0-139-generic-x86_64-with-glibc2.36)'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2025-08-09T10:11:12.443+0000] {_universal.py:549} INFO - Response status: 200
+Response headers:
+    'Cache-Control': 'no-cache'
+    'Pragma': 'no-cache'
+    'Content-Length': '812'
+    'Content-Type': 'application/json; charset=utf-8'
+    'Expires': '-1'
+    'x-ms-correlation-request-id': 'REDACTED'
+    'x-ms-operation-identifier': 'REDACTED'
+    'x-ms-ratelimit-remaining-subscription-reads': '249'
+    'x-ms-ratelimit-remaining-subscription-global-reads': 'REDACTED'
+    'x-ms-request-id': '89d939a6-df49-45a1-9d2a-45040475fe43'
+    'x-ms-routing-request-id': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'X-Content-Type-Options': 'REDACTED'
+    'X-Cache': 'REDACTED'
+    'X-MSEdge-Ref': 'REDACTED'
+    'Date': 'Sat, 09 Aug 2025 10:11:12 GMT'
+[2025-08-09T10:11:12.444+0000] {data_factory.py:808} INFO - Current status of pipeline run 50857ce8-7508-11f0-835e-569e7ef4899a: InProgress
+[2025-08-09T10:12:12.450+0000] {data_factory.py:806} INFO - Getting the status of run ID 50857ce8-7508-11f0-835e-569e7ef4899a.
+[2025-08-09T10:12:12.452+0000] {_universal.py:513} INFO - Request URL: 'https://management.azure.com/subscriptions/1c39c210-e3f2-4150-9318-db149d7bfec2/resourceGroups/data_platform/providers/Microsoft.DataFactory/factories/adf-data-platform/pipelineruns/50857ce8-7508-11f0-835e-569e7ef4899a?api-version=REDACTED'
+Request method: 'GET'
+Request headers:
+    'Accept': 'application/json'
+    'x-ms-client-request-id': '511d5c10-7509-11f0-835e-569e7ef4899a'
+    'User-Agent': 'azsdk-python-mgmt-datafactory/8.0.0 Python/3.12.4 (Linux-5.15.0-139-generic-x86_64-with-glibc2.36)'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2025-08-09T10:12:13.418+0000] {_universal.py:549} INFO - Response status: 200
+Response headers:
+    'Cache-Control': 'no-cache'
+    'Pragma': 'no-cache'
+    'Content-Length': '812'
+    'Content-Type': 'application/json; charset=utf-8'
+    'Expires': '-1'
+    'x-ms-correlation-request-id': 'REDACTED'
+    'x-ms-operation-identifier': 'REDACTED'
+    'x-ms-ratelimit-remaining-subscription-reads': '249'
+    'x-ms-ratelimit-remaining-subscription-global-reads': 'REDACTED'
+    'x-ms-request-id': 'd3bd2463-fab6-432d-874a-81991577b070'
+    'x-ms-routing-request-id': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'X-Content-Type-Options': 'REDACTED'
+    'X-Cache': 'REDACTED'
+    'X-MSEdge-Ref': 'REDACTED'
+    'Date': 'Sat, 09 Aug 2025 10:12:13 GMT'
+[2025-08-09T10:12:13.420+0000] {data_factory.py:808} INFO - Current status of pipeline run 50857ce8-7508-11f0-835e-569e7ef4899a: InProgress
+[2025-08-09T10:13:13.420+0000] {data_factory.py:806} INFO - Getting the status of run ID 50857ce8-7508-11f0-835e-569e7ef4899a.
+[2025-08-09T10:13:13.421+0000] {_universal.py:513} INFO - Request URL: 'https://management.azure.com/subscriptions/1c39c210-e3f2-4150-9318-db149d7bfec2/resourceGroups/data_platform/providers/Microsoft.DataFactory/factories/adf-data-platform/pipelineruns/50857ce8-7508-11f0-835e-569e7ef4899a?api-version=REDACTED'
+Request method: 'GET'
+Request headers:
+    'Accept': 'application/json'
+    'x-ms-client-request-id': '75748e08-7509-11f0-835e-569e7ef4899a'
+    'User-Agent': 'azsdk-python-mgmt-datafactory/8.0.0 Python/3.12.4 (Linux-5.15.0-139-generic-x86_64-with-glibc2.36)'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2025-08-09T10:13:14.381+0000] {_universal.py:549} INFO - Response status: 200
+Response headers:
+    'Cache-Control': 'no-cache'
+    'Pragma': 'no-cache'
+    'Content-Length': '812'
+    'Content-Type': 'application/json; charset=utf-8'
+    'Expires': '-1'
+    'x-ms-correlation-request-id': 'REDACTED'
+    'x-ms-operation-identifier': 'REDACTED'
+    'x-ms-ratelimit-remaining-subscription-reads': '249'
+    'x-ms-ratelimit-remaining-subscription-global-reads': 'REDACTED'
+    'x-ms-request-id': 'b71a0136-6cf0-4a95-9901-69d811955ccc'
+    'x-ms-routing-request-id': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'X-Content-Type-Options': 'REDACTED'
+    'X-Cache': 'REDACTED'
+    'X-MSEdge-Ref': 'REDACTED'
+    'Date': 'Sat, 09 Aug 2025 10:13:14 GMT'
+[2025-08-09T10:13:14.382+0000] {data_factory.py:808} INFO - Current status of pipeline run 50857ce8-7508-11f0-835e-569e7ef4899a: InProgress
+[2025-08-09T10:14:14.383+0000] {data_factory.py:806} INFO - Getting the status of run ID 50857ce8-7508-11f0-835e-569e7ef4899a.
+[2025-08-09T10:14:14.384+0000] {_universal.py:513} INFO - Request URL: 'https://management.azure.com/subscriptions/1c39c210-e3f2-4150-9318-db149d7bfec2/resourceGroups/data_platform/providers/Microsoft.DataFactory/factories/adf-data-platform/pipelineruns/50857ce8-7508-11f0-835e-569e7ef4899a?api-version=REDACTED'
+Request method: 'GET'
+Request headers:
+    'Accept': 'application/json'
+    'x-ms-client-request-id': '99cac04c-7509-11f0-835e-569e7ef4899a'
+    'User-Agent': 'azsdk-python-mgmt-datafactory/8.0.0 Python/3.12.4 (Linux-5.15.0-139-generic-x86_64-with-glibc2.36)'
+    'Authorization': 'REDACTED'
+No body was attached to the request
+[2025-08-09T10:14:14.948+0000] {_universal.py:549} INFO - Response status: 200
+Response headers:
+    'Cache-Control': 'no-cache'
+    'Pragma': 'no-cache'
+    'Content-Length': '837'
+    'Content-Type': 'application/json; charset=utf-8'
+    'Expires': '-1'
+    'x-ms-correlation-request-id': 'REDACTED'
+    'x-ms-operation-identifier': 'REDACTED'
+    'x-ms-ratelimit-remaining-subscription-reads': '249'
+    'x-ms-ratelimit-remaining-subscription-global-reads': 'REDACTED'
+    'x-ms-request-id': '5472a14b-9c8d-42c9-a7b6-c5a6778a8214'
+    'x-ms-routing-request-id': 'REDACTED'
+    'Strict-Transport-Security': 'REDACTED'
+    'X-Content-Type-Options': 'REDACTED'
+    'X-Cache': 'REDACTED'
+    'X-MSEdge-Ref': 'REDACTED'
+    'Date': 'Sat, 09 Aug 2025 10:14:14 GMT'
+[2025-08-09T10:14:14.949+0000] {data_factory.py:808} INFO - Current status of pipeline run 50857ce8-7508-11f0-835e-569e7ef4899a: Succeeded
+[2025-08-09T10:14:14.949+0000] {data_factory.py:197} INFO - Pipeline run 50857ce8-7508-11f0-835e-569e7ef4899a has completed successfully.
+[2025-08-09T10:14:14.949+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-08-09T10:14:14.962+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=silver_and_gold_adf_trigger, task_id=trigger_silver_pipeline, run_id=manual__2025-08-09T10:04:44.704645+00:00, execution_date=20250809T100444, start_date=20250809T100500, end_date=20250809T101414
+[2025-08-09T10:14:15.053+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-08-09T10:14:15.084+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-08-09T10:14:15.089+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
