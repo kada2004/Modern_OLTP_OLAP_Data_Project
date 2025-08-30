@@ -123,8 +123,10 @@ start kafka & Zookeper with command `sudo docker-compose -f docker-compose-kafka
 <img width="1355" height="595" alt="Zookeeper" src="https://github.com/user-attachments/assets/b63b653d-88cb-4013-9210-fc2408f2270c" />
 
 
-## Some Important to command to kafka topics:
-
+## Command to Create kafka topics from console:
+ A Kafka topics are the categories used to organize messages. Each topic has a name that is unique across the entire Kafka cluster.
+ Messages are sent to and read from specific topics.  In other words, producers write data to topics, and consumers read data from topics.
+ 
 <pre> ```
 #First to attach the Kafka shell then go to the dictory
 cd /opt/bitnami/kafka/bin
@@ -165,6 +167,9 @@ Spark also managed the configuration and libraries which are required to write d
   error message <pre> ```Writing batch 0 to Azure Blob Failed to write batch 0 to Azure Blob: An error occurred while calling o361.parquet. : org.apache.spark.SparkException: Job aborted.  at org.apache.spark.sql.execution.datasources.FileFormatWriter$.write(FileFormatWriter.scala:198)  at org.apache.spark.sql.execution.datasources.InsertIntoHadoopFsRelationCommand.run(InsertIntoHadoopFsRelationCommand.scala:159)  at org.apache.spark.sql.execution.command.DataWritingCommandExec.sideEffectResult$lzycompute(commands.scala:104)  at org.apache.spark.sql.execution.command.DataWritingCommandExec.sideEffectResult(commands.scala:102)  at org.apache.spark.sql.execution.command.DataWritingCommandExec.doExecute(commands.scala:122)``` </pre>
    Solution:
    To solve this, I upgraded spark image from version 2 to version 3. This allowed me to use the use abfss:// scheme instead of old wasb:// scheme, which is better supported in Spark 3. After the upgrade Spark is writting to Azure Data Lake without any problem.
+   * Wasb://  stand for Windows Azure Storage Blob a legacy Hadoop File System to interact with Azure Blob Storage and no support for hierarchical namespaces 
+   * abfss:// Stand Azure Blob File System Secure a Modern scheme to  interact with Azure Blob Storage and more secure, supports hierarchical namespaces, and works properly with Spark 3 and Hadoop-compatible tools
+   
 
  # PostreSQL set up
  PostgreSQL is hosted in Docker and is on the same network as rest of the service. pgAdmin also is configured in Docker to connect to PosgreSQL and visualize the data. The connection and passwords of pgAdmin and postgreSQL are stored in the `.env` file.             PostgreSQL is exposed on port 5432 and pgAdmin is exposed on port 8080 
@@ -200,6 +205,8 @@ Streamlit DashBoard
 
 
 # Azure OLAP Configuration
+# Project Architecture
+![Diagram-diagram](https://github.com/user-attachments/assets/861cfeb7-3703-4058-a826-3fefe097fda1)
 # Infrastructure as code : Terraform
 The entire infrastructure in Azure has been provisioned using Terraform, following best practices. Terraform State is stored in a remote backend in azure blob storage. This approach offers several benefits:
 * State Locking to prevent concurrent modifications
@@ -236,32 +243,32 @@ I have built a CI/CD pipeline to automate the infrastructure provision with Terr
 
  * Currently using `terraform apply -auto-approve` however in a team settings, a manual approval before apply is recommended.
 
-   Terraform SP
+   Terraform Service Principal
    
    <img width="2546" height="1000" alt="image" src="https://github.com/user-attachments/assets/0755b2d3-dd80-4b34-802f-0326e3b157ac" />
 
-   secrets
+   GitHub Secrets
    
    <img width="1423" height="951" alt="image" src="https://github.com/user-attachments/assets/922a83f0-8c69-452d-a7c5-74b912d61908" />
 
-   view CI/CD
+   GitHub CI/CD Workflow 
    
    <img width="2542" height="860" alt="image" src="https://github.com/user-attachments/assets/44e846a5-29b2-4d8d-8ccb-21dadc7b7123" />
    
-   view build task
+   Build Task in CI/CD
    
    <img width="852" height="797" alt="image" src="https://github.com/user-attachments/assets/8da33a27-c84a-43a9-8a4f-5c31571171b0" />
 
-   view deploy task
+   Deploy Task in CI/CD
    
    <img width="790" height="750" alt="image" src="https://github.com/user-attachments/assets/84604555-7cbf-4afc-b4d7-3f5ee855e362" />
 
-   view plan
+   Terraform Plan Output in GitHub Action
 
    
    <img width="748" height="1142" alt="image" src="https://github.com/user-attachments/assets/05ecef73-4c15-440b-babe-e6811f434ef1" />
 
-   view apply
+   Terraform Apply Output in GitHub Action
 
    <img width="496" height="1008" alt="image" src="https://github.com/user-attachments/assets/47c67dd0-8f8c-4e7b-bb97-d3448f2aa707" />
 
@@ -362,7 +369,7 @@ VsCode Logs
 
 <img width="1324" height="602" alt="dag_trigger_logs_from_vscode" src="https://github.com/user-attachments/assets/c1d3b1e8-55bb-4985-9680-7289accd124c" />
 
-## POWER BY 
+## Power BY 
 
 Power BY is connected directly to Azure Synapse (Gold Layer) direct query to enable reporting for the analyst.
 I have built a Sales Dashboard that supports The objectives defined for this dataset with insights such as:
@@ -380,12 +387,18 @@ Power By Dashboard
 
 ## Conclusion
 
+This project was a great way for me to show my skillsset in an industry relevant context. build solutions that meet user needs and project goals
+
+I used FastAPI, Kafka, Zookeeper, Apache Spark, Apache Airflow, and PostreSQL, all running  in Dcoker containers.
+
+"""
+
 This project helped me deepen my understanding of data engineering tools and data modelling by prioritizing end users goals and the overall project objectives and problems that the project will solve for the end-users. I have intergrated FastAP,Kafka, Zookeeper, Spark, Airflow and PostgrSQL withing a Dockerized environment.
 
 I have learned a lot from official documentation, especially for Airflow and Azure.
 Key challenges was to configure Zookeeper and Kafka, allow Spark to write to my Azure data lake.
 
-Going forward, I plan to explore how to run kafka without Zookeeper and adopt best practices for manging Docker images using container registries and deepen my knowledge about Data Modelling.
+Going forward, I plan to explore how to run kafka without Zookeeper and adopt best practices for manging Docker images using container registries and deepen my knowledge about Data Modelling.""""
 
 
 
