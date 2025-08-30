@@ -4,21 +4,14 @@
 This is project is designed to stream workflow data which is sent in Json to FastAPI application. Then the data is published to kafka for further downstream and processing. The data is written to azure as well for OLAP purposes to enable advance analytics. And the OLAP follow the medaillon architecture principle with BRONZE-SILVER-GOLD layers.
 
 ## Project Goals
- Objectives of the project
-* Build streaming data pipeline using open-source technologies.
-* Learn and understand stream processing.
-* Set up and connect different open-source tools to work together(API,Kafka,PostgreSQL)
-* Improve understanding of Docker and how to host applications
-* Practice and improve data modelling skills and SQL store procedures
-* Build an end-to-end pipeline in Azure.
-  
+
   Transaction Use Case (OLTP)
   * Store all Transaction  happening on the E-commerce platform (Items description,Amount,quantity) make the user to have access to each transaction
     * User to view their total spend up to date
     * View Order history by showing all invoices 
     * View all returned items
 
-  Analytics Use Case (OLTP)
+  Analytics Use Case (OLAP)
   * Business Intelligence for the analysts to view aggragate sales over time and analyse the Trends
     * Total Sales
     * Sales  Over time
@@ -30,6 +23,9 @@ This is project is designed to stream workflow data which is sent in Json to Fas
 ## The Project Overview
 
 The project contains a complete data pipeline that supports both OLTP (Online Transaction Processing) and OLAP (Online Analytical Processing) Workload. The workflow integrates multiple technologies for real-time data processing, storage, transformation and visualization.
+
+# Project Architecture
+![Diagram-diagram](https://github.com/user-attachments/assets/861cfeb7-3703-4058-a826-3fefe097fda1)
 
 ## Stack used in the project
 ## Streaming OLTP
@@ -57,10 +53,6 @@ The project contains a complete data pipeline that supports both OLTP (Online Tr
 6. Apache Airflow : Orchestrated and Schedule ADF pipelines.
 7. Docker: Hosting Airflow infrastructure : Airflow webserver, Schedule, DAG processor , Airflow metadata database.
 8. Power BI: Dashboards and Reports are powered by Power BI
-   
-
-# Project Architecture
-![Diagram-diagram](https://github.com/user-attachments/assets/861cfeb7-3703-4058-a826-3fefe097fda1)
 
 ## Project Setup and Prerequisites
 1. Ubuntu or WSL2 installed with al least 16 GB RAM.
@@ -70,17 +62,22 @@ The project contains a complete data pipeline that supports both OLTP (Online Tr
 
 ## The Dataset 
 I have used an E-Commerce dataset from kaggle [dataset link](https://www.kaggle.com/datasets/tunguz/online-retail)
-which Contains transactional records, customer details, and product information.
+which Contains transactional records, customer details, and product information. However added an extra column, `CustomerName` to meet the objective.
+
+Overview of dataset Columns (Kaggle)
+
+<img width="1181" height="770" alt="image" src="https://github.com/user-attachments/assets/c0706a81-4e5f-4e58-88d6-24d29eac7fee" />
+
 
 ## Building API:
-1. Created a python script that converts Kaggle E-commerce dataset from csv to Json format.
-2. Tested first with Postman and Created API client to POST Json data into the FastAPI app.
+1. Created a python script that converts Kaggle E-commerce dataset from csv to Json format [code](https://github.com/kada2004/Modern_OLTP_OLAP_Data_Project/blob/master/local/transform_csv_to_json.py).
+2. Tested first with PostMan and Created API client to POST Json data into the FastAPI app.
 3. The Fast API application is build in python [code](https://github.com/kada2004/Modern_OLTP_OLAP_Data_Project/blob/master/fastAPI/app/main.py) run inside of the Docker container and exposed on port 80:80 [link to compose and dockerfile](https://github.com/kada2004/Modern_OLTP_OLAP_Data_Project/blob/master/docker/docker-compose-kafka.yml)
 ## PostMan
    <img width="978" height="459" alt="image" src="https://github.com/user-attachments/assets/b02fc3d3-7fb1-4a23-a4ca-61626f71cd91" />
    
 ## Start the App
- I have used the same docker compose for all my stack like Kafka, PostgreSQL etc so I run this command in directory of the compose file `sudo docker-compose -f docker-compose-kafka.yml buid` first time to build the image or `sudo docker-compose -f docker-compose-kafka.yml up` to start the containers
+ I have used the same docker compose for all my stack like Kafka, PostgreSQL etc so I run this command in directory of the compose file `sudo docker-compose -f docker-compose-kafka.yml build` first time to build the image or `sudo docker-compose -f docker-compose-kafka.yml up` to start the containers
 
  <img width="804" height="195" alt="image" src="https://github.com/user-attachments/assets/38de7977-c932-4235-9821-85776ace427a" />
 <img width="1298" height="537" alt="image" src="https://github.com/user-attachments/assets/c9bb9580-03ba-4da4-8b17-fd7bf3cf76a3" />
@@ -244,7 +241,7 @@ I have built a CI/CD pipeline to automate the infrastructure provision with Terr
    
    <img width="1423" height="951" alt="image" src="https://github.com/user-attachments/assets/922a83f0-8c69-452d-a7c5-74b912d61908" />
 
-   view CD/CD
+   view CI/CD
    
    <img width="2542" height="860" alt="image" src="https://github.com/user-attachments/assets/44e846a5-29b2-4d8d-8ccb-21dadc7b7123" />
    
