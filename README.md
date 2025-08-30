@@ -101,9 +101,12 @@ On success, it returns a status message such as: `Status code:  201`
 Api app receiving the json documents
 <img width="1328" height="540" alt="fastapi_app_view" src="https://github.com/user-attachments/assets/d108d39b-3b55-4708-b411-75c10e66ea56" />
 
-
 ## Set Up Kafka and Zookeeper
 Apache Zookeper acts as the metadata database for kafka, managing brokers, topics, and comsumers. Both Kafka and Zookeeper are defined in single docker Docker Compose file [link_compose](https://github.com/kada2004/Modern_OLTP_OLAP_Data_Project/blob/master/docker/docker-compose-kafka.yml) Kafka depend on Zookeper to start and both are the same network including Spark and PostgreSQL.
+
+New version of Kafka does no longer requires Zookeeper.
+reference confluent: [link to documentation](https://developer.confluent.io/learn/kraft/)
+
 
     depends_on:
       - zookeeper
