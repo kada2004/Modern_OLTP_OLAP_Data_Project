@@ -12,7 +12,7 @@ This is project is designed to stream workflow data which is sent in Json to Fas
     * View all returned items
 
   Analytics Use Case (OLAP)
-  * Business Intelligence for the analysts to view aggragate sales over time and analyse the Trends
+  * Business Intelligence for the analysts to view aggregate sales over time and analyse the Trends
     * Total Sales
     * Sales  Over time
     * Top 10 Products by sales
@@ -39,7 +39,7 @@ The project contains a complete data pipeline that supports both OLTP (Online Tr
 5. Apache Spark:
    Processes real-time data from kafka and writes it to both postgreSQL     for transactional storage and Azure Data Lake for analytical (OLAP)   processing.
 6. PostgreSQL & pgAdmin:
-   PostgreSQL is used for persisten storage of processed streaming data     and pgAdmin provides a user interface for querying and visualizing the data.
+   PostgreSQL is used for persistent storage of processed streaming data     and pgAdmin provides a user interface for querying and visualizing the data.
 7. Streamlit:
    The front -end web app that consume and display the real-time data   from posgreSQL for OLTP use case.
 8. Docker and Docker compose which is hosting FastAPI, Kafka & zookepeer, Apache Spark , PostgreSQL & pgAdmin.
@@ -52,7 +52,7 @@ The project contains a complete data pipeline that supports both OLTP (Online Tr
 5. Azure Keyvault and Service principal: Manages and secures secrets, connections strings and credentials used in GITACTION pipeline and ADF, Synapse and Airflow.
 6. Apache Airflow : Orchestrated and Schedule ADF pipelines.
 7. Docker: Hosting Airflow infrastructure : Airflow webserver, Schedule, DAG processor , Airflow metadata database.
-8. Power BI: Dashboards and Reports are powered by Power BI
+8. Power BI: Dashboard and Report are powered by Power BI
 
 ## Project Setup and Prerequisites
 1. Ubuntu or WSL2 installed with al least 16 GB RAM.
@@ -387,7 +387,7 @@ Power By Dashboard
 
 ## Conclusion
 
-This project was a great way for me to show my skillsset in an industry relevant context. build solutions that meet user needs and project goals
+This project was a great way for me to show my skillsset in an industry relevant context. build solution that meet user needs and project goals
 
 I used FastAPI, Kafka, Zookeeper, Apache Spark, Apache Airflow, and PostreSQL, all running  in Docker containers, and along with  Azure stack for OLAP.
 Some of the challenges were setting up Zookeeper and Kafka and getting Spark to write to Azure Data Lake.
