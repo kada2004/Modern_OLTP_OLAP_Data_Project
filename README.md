@@ -29,7 +29,7 @@ The project contains a complete data pipeline that supports both OLTP (Online Tr
 
 ## Stack used in the project
 ## Streaming OLTP
-1. Python Script that Transfom csv to json format for the APi Client
+1. Python Script that Transfom csv to json format for the API Client
 2. Python Client:
    Utilized to post real-time streaming messages to the backend system
 3. FastAPI:
@@ -49,7 +49,7 @@ The project contains a complete data pipeline that supports both OLTP (Online Tr
 2. Synapse Anlytics: Acting both as datastore for Gold Layer and a query engine, PBI reads directly from synapse views
 3. Azure Data Factory:  Orchestrate the transformation process,  bronze ---> silver Triggering synapse notebook and silver -----> gold Executing Store procedures and loading the outputs into synapse Tables.
 4. Terraform and CI/CD : Creating azure resources and access permission via Terraform and automatic build and deploy of Terraform code.
-5. Azure Keyvault and Service principal: Manages and secures secrets, connections strings and credentials used in GITACTION pipeline and ADF, Synapse and AIRFLOW.
+5. Azure Keyvault and Service principal: Manages and secures secrets, connections strings and credentials used in GITACTION pipeline and ADF, Synapse and Airflow.
 6. Apache Airflow : Orchestrated and Schedule ADF pipelines.
 7. Docker: Hosting Airflow infrastructure : Airflow webserver, Schedule, DAG processor , Airflow metadata database.
 8. Power BI: Dashboards and Reports are powered by Power BI
@@ -389,16 +389,12 @@ Power By Dashboard
 
 This project was a great way for me to show my skillsset in an industry relevant context. build solutions that meet user needs and project goals
 
-I used FastAPI, Kafka, Zookeeper, Apache Spark, Apache Airflow, and PostreSQL, all running  in Dcoker containers.
+I used FastAPI, Kafka, Zookeeper, Apache Spark, Apache Airflow, and PostreSQL, all running  in Docker containers, and along with  Azure stack for OLAP.
+Some of the challenges were setting up Zookeeper and Kafka and getting Spark to write to Azure Data Lake.
 
-"""
-
-This project helped me deepen my understanding of data engineering tools and data modelling by prioritizing end users goals and the overall project objectives and problems that the project will solve for the end-users. I have intergrated FastAP,Kafka, Zookeeper, Spark, Airflow and PostgrSQL withing a Dockerized environment.
-
-I have learned a lot from official documentation, especially for Airflow and Azure.
-Key challenges was to configure Zookeeper and Kafka, allow Spark to write to my Azure data lake.
-
-Going forward, I plan to explore how to run kafka without Zookeeper and adopt best practices for manging Docker images using container registries and deepen my knowledge about Data Modelling.""""
+Going forward, I plan to:
+* To explore how to run kafka without Zookeeper
+* Follow best practices for managing Docker Images using container registries
 
 
 
