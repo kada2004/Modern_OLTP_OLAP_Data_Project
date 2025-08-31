@@ -4,13 +4,6 @@
 This is project is designed to stream workflow data which is sent in Json to FastAPI application. Then the data is published to kafka for further downstream and processing. The data is written to azure as well for OLAP purposes to enable advance analytics. And the OLAP follow the medaillon architecture principle with BRONZE-SILVER-GOLD layers.
 
 ## Project Goals
- Objectives of the project
-* Build streaming data pipeline using open-source technologies.
-* Learn and understand stream processing.
-* Set up and connect different open-source tools to work together(API,Kafka,PostgreSQL)
-* Improve understanding of Docker and how to host applications
-* Practice and improve data modelling skills and SQL store procedures
-* Build an end-to-end pipeline in Azure.
   
   Transaction Use Case (OLTP)
   * Store all Transaction  happening on the E-commerce platform (Items description,Amount,quantity) make the user to have access to each transaction
@@ -23,13 +16,17 @@ This is project is designed to stream workflow data which is sent in Json to Fas
     * Total Sales
     * Sales  Over time
     * Top 10 Products by sales
-    * Customer summary : Toal, loyal customers
+    * Customer summary : Loyal customers
     * Cancelled Orders or Return
   
 
 ## The Project Overview
 
 The project contains a complete data pipeline that supports both OLTP (Online Transaction Processing) and OLAP (Online Analytical Processing) Workload. The workflow integrates multiple technologies for real-time data processing, storage, transformation and visualization.
+
+# Project Architecture
+![Diagram-diagram](https://github.com/user-attachments/assets/861cfeb7-3703-4058-a826-3fefe097fda1)
+
 
 ## Stack used in the project
 ## Streaming OLTP
@@ -53,15 +50,11 @@ The project contains a complete data pipeline that supports both OLTP (Online Tr
 2. Synapse Anlytics: Acting both as datastore for Gold Layer and a query engine, PBI reads directly from synapse views
 3. Azure Data Factory:  Orchestrate the transformation process,  bronze ---> silver Triggering synapse notebook and silver -----> gold Executing Store procedures and loading the outputs into synapse Tables.
 4. Terraform and CI/CD : Creating azure resources and access permission via Terraform and automatic build and deploy of Terraform code.
-5. Azure Keyvault and Service principal: Manages and secures secrets, connections strings and credentials used in GITACTION pipeline and ADF, Synapse and AIRFLOW.
+5. Azure Keyvault and Service principal: Manages and secures secrets, connections strings and credentials used in GitHub Action pipeline and ADF, Synapse and Airflow.
 6. Apache Airflow : Orchestrated and Schedule ADF pipelines.
 7. Docker: Hosting Airflow infrastructure : Airflow webserver, Schedule, DAG processor , Airflow metadata database.
-8. Power BI: Dashboards and Reports are powered by Power BI
+8. Power BI: Dashboard and Report are powered by Power BI
    
-
-# Project Architecture
-![Diagram-diagram](https://github.com/user-attachments/assets/861cfeb7-3703-4058-a826-3fefe097fda1)
-
 ## Project Setup and Prerequisites
 1. Ubuntu or WSL2 installed with al least 16 GB RAM.
 2. IDE like VsCode or Pycharm
@@ -72,15 +65,20 @@ The project contains a complete data pipeline that supports both OLTP (Online Tr
 I have used an E-Commerce dataset from kaggle [dataset link](https://www.kaggle.com/datasets/tunguz/online-retail)
 which Contains transactional records, customer details, and product information.
 
+Overview of dataset Columns (Kaggle)
+
+<img width="1186" height="771" alt="image" src="https://github.com/user-attachments/assets/b2142b37-a611-4a5f-b1a6-018e13163a0d" />
+
+
 ## Building API:
-1. Created a python [script](code to be added after push to repo) that converts Kaggle E-commerce dataset from csv to Json format.
+1. Created a python [script](https://github.com/kada2004/Modern_OLTP_OLAP_Data_Project/blob/master/local/transform_csv_to_json.py) that converts Kaggle E-commerce dataset from csv to Json format.
 2. Tested first with Postman and Created API client to POST Json data into the FastAPI app.
-3. The Fast API application is build in python [code](to be added later) run inside of the Docker container and exposed on port 80:80 [link to compose and dockerfile](to be added later) 
+3. The Fast API application is build in python [code](https://github.com/kada2004/Modern_OLTP_OLAP_Data_Project/blob/master/fastAPI/app/main.py) run inside of the Docker container and exposed on port 80:80 [link to compose](https://github.com/kada2004/Modern_OLTP_OLAP_Data_Project/blob/master/docker/docker-compose-kafka.yml) 
 ## PostMan
    <img width="978" height="459" alt="image" src="https://github.com/user-attachments/assets/b02fc3d3-7fb1-4a23-a4ca-61626f71cd91" />
    
 ## Start the App
- I have used the same docker compose for all my stack like Kafka, PostgreSQL etc so I run this command in directory of the compose file `sudo docker-compose -f docker-compose-kafka.yml buid` for first or `sudo docker-compose -f docker-compose-kafka.yml up` to start the containers
+ I have used the same docker compose for all my stack like Kafka, PostgreSQL etc so I run this command in directory of the compose file `sudo docker-compose -f docker-compose-kafka.yml build`  first time to build the image or `sudo docker-compose -f docker-compose-kafka.yml up` to start the containers
 
  <img width="804" height="195" alt="image" src="https://github.com/user-attachments/assets/38de7977-c932-4235-9821-85776ace427a" />
 <img width="1298" height="537" alt="image" src="https://github.com/user-attachments/assets/c9bb9580-03ba-4da4-8b17-fd7bf3cf76a3" />
@@ -101,12 +99,15 @@ WORKDIR /app ``` </pre>
 The API client sends a JSON payload to the API app and displays the response in the terminal.  
 On success, it returns a status message such as: `Status code:  201`
 <img width="1336" height="321" alt="client_posting_data_api_app_sample" src="https://github.com/user-attachments/assets/db997d70-3dbc-4b36-8f27-23f15ad58f61" />
-Api app receiving the json documents
+API app receiving the json documents
 <img width="1328" height="540" alt="fastapi_app_view" src="https://github.com/user-attachments/assets/d108d39b-3b55-4708-b411-75c10e66ea56" />
 
 
 ## Set Up Kafka and Zookeeper
-Apache Zookeper acts as the metadata database for kafka, managing brokers, topics, and comsumers. Both Kafka and Zookeeper are defined in single docker Docker Compose file [link_compose](link) Kafka depend on Zookeper to start and both are Network including Spark and PostgreSQL.
+Apache Zookeper acts as the metadata database for kafka, managing brokers, topics, and comsumers. Both Kafka and Zookeeper are defined in single docker Docker Compose file [link_compose](https://github.com/kada2004/Modern_OLTP_OLAP_Data_Project/blob/master/docker/docker-compose-kafka.yml) Kafka depend on Zookeper to start and both are Network including Spark and PostgreSQL.
+
+New version of Kafka does no longer requires Zookeeper. 
+reference confluent: [link to documentation](https://developer.confluent.io/learn/kraft/)
 
     depends_on:
       - zookeeper
@@ -123,7 +124,8 @@ start kafka & Zookeper with command `sudo docker-compose -f docker-compose-kafka
 <img width="1355" height="595" alt="Zookeeper" src="https://github.com/user-attachments/assets/b63b653d-88cb-4013-9210-fc2408f2270c" />
 
 
-## Some Important to command to kafka topics:
+## Command to Create kafka topics from console:
+A Kafka topics are the categories used to organize messages. Each topic has a name that is unique across the entire Kafka cluster. Messages are sent to and read from specific topics. In other words, producers write data to topics, and consumers read data from topics.
 
 <pre> ```
 #First to attach the Kafka shell then go to the dictory
@@ -147,7 +149,6 @@ Spark reads the stream from Kafka ingest topic. Spark reads the Json stream and 
 At the same time, spark also writes the data to Azure  Data Lake in Parquet format as it is. Spark also managed the logic of insertion or update into PostgresSQL.
 Connection details (like passwords) are store in the `.env` files, which is listed in `.gitignore` so that the credentials are not shown in the repository.
 
-link to jupiter notebook code [link]()
 
 Spark Jupiter Notebook is exposed on Port 8080 and Spark UI is available on Port 4040
 
@@ -166,6 +167,8 @@ Spark also managed the configuration and libraries which are required to write d
   error message <pre> ```Writing batch 0 to Azure Blob Failed to write batch 0 to Azure Blob: An error occurred while calling o361.parquet. : org.apache.spark.SparkException: Job aborted.  at org.apache.spark.sql.execution.datasources.FileFormatWriter$.write(FileFormatWriter.scala:198)  at org.apache.spark.sql.execution.datasources.InsertIntoHadoopFsRelationCommand.run(InsertIntoHadoopFsRelationCommand.scala:159)  at org.apache.spark.sql.execution.command.DataWritingCommandExec.sideEffectResult$lzycompute(commands.scala:104)  at org.apache.spark.sql.execution.command.DataWritingCommandExec.sideEffectResult(commands.scala:102)  at org.apache.spark.sql.execution.command.DataWritingCommandExec.doExecute(commands.scala:122)``` </pre>
    Solution:
    To solve this, I upgraded spark image from version 2 to version 3. This allowed me to use the use abfss:// scheme instead of old wasb:// scheme, which is better supported in Spark 3. After the upgrade Spark is writting to Azure Data Lake without any problem.
+   * Wasb:// stand for Windows Azure Storage Blob a legacy Hadoop File System to interact with Azure Blob Storage and no support for hierarchical namespaces
+   * abfss:// Stand Azure Blob File System Secure a Modern scheme to interact with Azure Blob Storage and more secure, supports hierarchical namespaces, and works properly with Spark 3 and Hadoop-compatible tools
 
  # PostreSQL set up
  PostgreSQL is hosted in Docker and is on the same network as rest of the service. pgAdmin also is configured in Docker to connect to PosgreSQL and visualize the data. The connection and passwords of pgAdmin and postgreSQL are stored in the `.env` file.             PostgreSQL is exposed on port .... and pgAdmin is exposed on port..... 
@@ -178,7 +181,7 @@ In order to meet the objective processing the streaming dataset for OLTP  . I ne
 pgAdmin UI connect to PostgreSQL
 <img width="1844" height="939" alt="image" src="https://github.com/user-attachments/assets/61f2054e-f8be-4868-a953-bbaf674dfec0" />
 
-[link PostgreSQL Tables Code]()
+[link PostgreSQL Tables Code](https://github.com/kada2004/Modern_OLTP_OLAP_Data_Project/blob/master/postgrsql/spark_db_schema.py)
 
 
 # Streamlit Dahsboard App set up
@@ -187,7 +190,7 @@ Streamlit an open-source python Library that helps you to build customs applicat
 In my setup, Streamlit connect directly to PostgreSQL database using SQLAlchemy Library. it runs SQL queries and shows the results as a dashboard in Streamlit app.
 
 Command to start the app `streamlit run app.py`
-[Link to code]()
+[Link to code](https://github.com/kada2004/Modern_OLTP_OLAP_Data_Project/blob/master/Streamlitapp/app.py)
 
 Streamlit DashBoard
 
@@ -201,6 +204,9 @@ Streamlit DashBoard
 
 
 # Azure OLAP Configuration
+# Project Architecture
+![Diagram-diagram](https://github.com/user-attachments/assets/861cfeb7-3703-4058-a826-3fefe097fda1)
+
 # Infrastructure as code : Terraform
 The entire infrastructure in Azure has been provisioned using Terraform, following best practices. Terraform State is stored in a remote backend in azure blob storage. This approach offers several benefits:
 * State Locking to prevent concurrent modifications
@@ -231,38 +237,38 @@ And Storage account access key store in KeyVault for better security
 
 I have built a CI/CD pipeline to automate the infrastructure provision with Terraform:
  * Authentication: via service principal (Contributor role), credentialas store in GitHub Secrets.
- * Workflow: defined in `.github/workflows/ci_cd.yaml`. (code)[].
+ * Workflow: defined in `.github/workflows/ci_cd.yaml`. [code](https://github.com/kada2004/Modern_OLTP_OLAP_Data_Project/blob/master/.github/workflows/ci_cd.yaml.)
    * Build job: Azure login --> Terraform init/validate --> save plan as artifaact.
    * Deploy job: Azure login --> download plan --> Terraform init/apply.
 
  * Currently using `terraform apply -auto-approve` however in a team settings, a manual approval before apply is recommended.
 
-   Terraform SP
+   Terraform Service Principal
    
    <img width="2546" height="1000" alt="image" src="https://github.com/user-attachments/assets/0755b2d3-dd80-4b34-802f-0326e3b157ac" />
 
-   secrets
+   GitHub Secrets
    
    <img width="1423" height="951" alt="image" src="https://github.com/user-attachments/assets/922a83f0-8c69-452d-a7c5-74b912d61908" />
 
-   view CD/CD
+   GitHub Action CI/CD Workflow
    
    <img width="2542" height="860" alt="image" src="https://github.com/user-attachments/assets/44e846a5-29b2-4d8d-8ccb-21dadc7b7123" />
    
-   view build task
+  Build Task in CI/CD
    
    <img width="852" height="797" alt="image" src="https://github.com/user-attachments/assets/8da33a27-c84a-43a9-8a4f-5c31571171b0" />
 
-   view deploy task
+   Deploy Task in CI/CD
    
    <img width="790" height="750" alt="image" src="https://github.com/user-attachments/assets/84604555-7cbf-4afc-b4d7-3f5ee855e362" />
 
-   view plan
+   Terraform Plan Output in GitHub Action
 
    
    <img width="748" height="1142" alt="image" src="https://github.com/user-attachments/assets/05ecef73-4c15-440b-babe-e6811f434ef1" />
 
-   view apply
+   Terraform Apply Output in GitHub Action
 
    <img width="496" height="1008" alt="image" src="https://github.com/user-attachments/assets/47c67dd0-8f8c-4e7b-bb97-d3448f2aa707" />
 
@@ -271,7 +277,7 @@ I have built a CI/CD pipeline to automate the infrastructure provision with Terr
    <img width="1732" height="755" alt="image" src="https://github.com/user-attachments/assets/5cfd6d75-0caf-4b20-8acc-f65a46937fe5" />
 
    ## Datastore (Medallion Architecture)
-    The datastore is organized using the Medallion Architecture pattern with 3 Layers
+   The datastore is organized using the Medallion Architecture pattern with 3 Layers
    * Bronze Layer
      Store in Azure Data Lake Gen2, holds raw data in parquet format.
    * Silver Layer
@@ -284,6 +290,11 @@ I have built a CI/CD pipeline to automate the infrastructure provision with Terr
      - Dim_Product
      - Fact_Sales
 
+ * Gold Layer Store in Azure Synapse Analytics.
+
+   - Serves as query engine for Power BI
+   - Data from Silver is loaded via SQL stored procedures.
+
  Datastore portal
  <img width="1927" height="1078" alt="image" src="https://github.com/user-attachments/assets/c12b013f-fbfd-4541-9641-f7e10eb23f23" />
  
@@ -291,15 +302,7 @@ I have built a CI/CD pipeline to automate the infrastructure provision with Terr
  
  <img width="558" height="405" alt="image" src="https://github.com/user-attachments/assets/c9cb3990-3caf-43b1-bfda-7e1242513adf" />
 
-
-* Gold Layer
-  Store in Azure Synapse Analytics.
-  
-  Serves as query engine for Power BI
-  
-  Data from Silver is loaded via SQL stored procedures.
-
-  ERD GOLD
+ ERD GOLD
   
   <img width="1168" height="808" alt="image (5)" src="https://github.com/user-attachments/assets/c36fd257-72d9-478f-862d-f186f146696e" />
 
@@ -363,7 +366,7 @@ VsCode Logs
 
 <img width="1324" height="602" alt="dag_trigger_logs_from_vscode" src="https://github.com/user-attachments/assets/c1d3b1e8-55bb-4985-9680-7289accd124c" />
 
-## POWER BY 
+## Power BY 
 
 Power BY is connected directly to Azure Synapse (Gold Layer) direct query to enable reporting for the analyst.
 I have built a Sales Dashboard that supports The objectives defined for this dataset with insights such as:
@@ -378,6 +381,16 @@ Power By Dashboard
 
 <img width="1421" height="746" alt="image" src="https://github.com/user-attachments/assets/38a736ee-a267-49dd-8829-31b0449d81fd" />
 
+## Conclusion
+
+This project was a great way for me to show my skillset in an industry relevant context. build solution that meet user needs and project goals
+
+I used FastAPI, Kafka, Zookeeper, Apache Spark, Apache Airflow, and PostreSQL, all running in Docker containers, and along with Azure stack for OLAP. Some of the challenges were setting up Zookeeper and Kafka and getting Spark to write to Azure Data Lake.
+
+Going forward, I plan to:
+
+* To explore how to run kafka without Zookeeper
+* Follow best practices for managing Docker Images using container registries
 
  
 
